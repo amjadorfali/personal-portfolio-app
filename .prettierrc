@@ -1,0 +1,10 @@
+{
+	"useTabs": true,
+	"svelteIndentScriptAndStyle": true,
+	"svelteStrictMode": true,
+	"printWidth": 150,
+	"trailingComma": "es5",
+	"tabWidth": 2,
+	"semi": true,
+	"singleQuote": true
+}
