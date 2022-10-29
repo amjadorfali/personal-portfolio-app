@@ -2,7 +2,6 @@
 	import { enhance } from '$lib/form';
 	import { scale } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
-	import Buttons from '$lib/ButtonGroup.svelte';
 
 	type Todo = {
 		uid: string;
@@ -20,7 +19,6 @@
 	<meta name="description" content="A todo list app" />
 </svelte:head>
 
-<Buttons />
 <div class="todos">
 	<h1>Todos</h1>
 

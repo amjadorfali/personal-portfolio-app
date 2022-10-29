@@ -17,4 +17,12 @@ module.exports = {
 		es2017: true,
 		node: true,
 	},
+	overrides: [
+		{
+			files: ['*.ts', '*.mts', '*.cts', '*.tsx'],
+			rules: {
+				'no-undef': 'off',
+			},
+		},
+	],
 };
