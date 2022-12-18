@@ -1,52 +1,63 @@
 <script lang="ts">
 	import MediaQuery from '$lib/MediaQuery.svelte';
 	import { fade } from 'svelte/transition';
+	import { routes } from '$lib/config/routes';
+	import { page } from '$app/stores';
 
-	let menuOpen = false;
+	import type SlDrawer from '@shoelace-style/shoelace/dist/components/drawer/drawer';
+
+	import { onMount, tick } from 'svelte';
+	import { debug } from 'svelte/internal';
+
+	let drawer: SlDrawer;
+	let modalOpen = false;
+
+	$: modalOpen ? drawer?.show() : drawer?.hide();
+
+	const onHideDrawer = (event: Event) => {
+		modalOpen = false;
+	};
+
+	onMount(async () => {
+		await tick();
+		drawer?.addEventListener('sl-hide', onHideDrawer);
+		return () => drawer?.removeEventListener('sl-hide', onHideDrawer);
+	});
+
+	//Make sure the event listener is added
+	$: {
+		//Rerender whenever modalOpen changes
+		modalOpen;
+		tick().then(() => !drawer?.hasAttribute('sl-hide') && drawer?.addEventListener('sl-hide', onHideDrawer));
+	}
 </script>
 
 <!-- TODO put something else here? github link? -->
 <div class="corner">
-	<MediaQuery query="(max-width: 690px)" let:matches>
+	<MediaQuery query="(max-width: 768px)" eventName="show-mobile-menu" let:matches on:out="{() => (modalOpen = false)}">
 		{#if matches}
 			<!-- Hamburger Menu -->
-			<div class="menuToggle" transition:fade="{{ duration: 200 }}" on:outrostart="{() => (menuOpen = false)}">
-				<input type="checkbox" bind:checked="{menuOpen}" />
+			<div class="menuToggle" transition:fade="{{ duration: 200 }}">
+				<input type="checkbox" bind:checked="{modalOpen}" />
 				<span></span>
 				<span></span>
 				<span></span>
 			</div>
 
-			{#if menuOpen}
-				<!-- <div transition:customSlide="{{}}" class="mobile-menu backdrop-blur-sm">
-                <h1>Hi</h1>
-            </div> -->
-				<!-- TODO : 
-https://sveltematerialui.com/demo/drawer/
-Use this instead :  A modal drawer with header, activated items, subheading, icons, list groups
--->
-				<!-- <Drawer bind:open="{menuOpen}">
-                <Content>
-                    <List>
-                        <Item href="javascript:void(0)" on:click="{() => {}}">
-                            <Text>Gray Kittens</Text>
-                        </Item>
-                        <Item href="javascript:void(0)" on:click="{() => {}}">
-                            <Text>A Space Rocket</Text>
-                        </Item>
-                        <Item href="javascript:void(0)" on:click="{() => {}}">
-                            <Text>100 Pounds of Gravel</Text>
-                        </Item>
-                        <Item href="javascript:void(0)" on:click="{() => {}}">
-                            <Text>All of the Shrimp</Text>
-                        </Item>
-                        <Item href="javascript:void(0)" on:click="{() => {}}">
-                            <Text>A Planet with a Mall</Text>
-                        </Item>
-                    </List>
-                </Content>
-            </Drawer> -->
-			{/if}
+			<sl-drawer bind:this="{drawer}" label="Web & Software Eng." placement="bottom" class="drawer-placement-bottom">
+				<nav>
+					<ul class="">
+						{#each routes as route (route.label)}
+							<li
+								class="{`text-faded-primary ${$page.url.pathname === route.url ? 'text-primary' : 'hover:text-primary hover:underline '}`}"
+								class:active="{$page.url.pathname === route.url}"
+							>
+								<a on:click="{() => (modalOpen = false)}" data-sveltekit-preload-data href="{route.url}">{route.label}</a>
+							</li>
+						{/each}
+					</ul>
+				</nav>
+			</sl-drawer>
 		{/if}
 	</MediaQuery>
 </div>
@@ -74,8 +85,8 @@ Use this instead :  A modal drawer with header, activated items, subheading, ico
 	}
 
 	/*
- * Just a quick hamburger
- */
+	* Just a quick hamburger
+	*/
 	div.menuToggle span {
 		display: block;
 		width: 33px;
@@ -102,9 +113,9 @@ Use this instead :  A modal drawer with header, activated items, subheading, ico
 	}
 
 	/* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
+	* Transform all the slices of hamburger
+	* into a crossmark.
+	*/
 	div.menuToggle input:checked ~ span {
 		opacity: 1;
 		transform: rotate(45deg) translate(-2px, -1px);
@@ -112,16 +123,16 @@ Use this instead :  A modal drawer with header, activated items, subheading, ico
 	}
 
 	/*
- * But let's hide the middle one.
- */
+ 	* But let's hide the middle one.
+ 	*/
 	div.menuToggle input:checked ~ span:nth-of-type(2) {
 		opacity: 0;
 		transform: rotate(0deg) scale(0.2, 0.2);
 	}
 
 	/*
- * Ohyeah and the last one should go the other direction
- */
+ 	* Oh yeah and the last one should go the other direction
+ 	*/
 	div.menuToggle input:checked ~ span:nth-of-type(3) {
 		transform: rotate(-45deg) translate(0, -1px);
 	}
@@ -130,5 +141,55 @@ Use this instead :  A modal drawer with header, activated items, subheading, ico
 	div.corner {
 		display: flex;
 		align-items: center;
+	}
+
+	.drawer-placement-bottom {
+		--size: 100vh;
+	}
+	.drawer-placement-bottom::part(panel) {
+		background-color: black;
+		height: 100%;
+		color: white;
+	}
+
+	.drawer-placement-bottom::part(close-button) {
+		font-size: 3rem;
+	}
+
+	.drawer-placement-bottom::part(close-button__base) {
+		color: white;
+	}
+
+	li a {
+		transform: scale(1);
+		transition: transform 0.2s linear;
+	}
+
+	li.active a {
+		transform: scale(1.2);
+	}
+
+	nav {
+		height: 100%;
+	}
+	nav a {
+		display: flex;
+		height: 100%;
+		align-items: center;
+		font-weight: 700;
+		font-size: 3rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		text-decoration: none;
+		transition: color 0.2s linear;
+	}
+
+	ul {
+		display: flex;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		flex-direction: column;
 	}
 </style>

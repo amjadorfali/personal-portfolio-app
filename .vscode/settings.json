@@ -1,4 +1,5 @@
 {
+	"html.customData": ["./node_modules/@shoelace-style/shoelace/dist/vscode.html-custom-data"],
 	"editor.formatOnSave": true,
 	"workbench.colorCustomizations": {
 		"activityBar.background": "#2052A9",

@@ -12,7 +12,7 @@
 </script>
 
 <div>
-	<MediaQuery query="(min-width: 691px)" let:matches>
+	<MediaQuery query="(min-width: 769px)" eventName="show-desktop-menu" let:matches>
 		{#if matches}
 			<nav class="desktop-nav" transition:fade="{{ duration: 200 }}">
 				<svg viewBox="0 0 2 3" aria-hidden="true">
@@ -27,7 +27,7 @@
 							{#if $page.url.pathname === route.url}
 								<span class="active" out:send="{{ key: 'active-marker' }}" in:receive="{{ key: 'active-marker' }}"></span>
 							{/if}
-							<a sveltekit:prefetch href="{route.url}">{route.label}</a>
+							<a data-sveltekit-preload-data href="{route.url}">{route.label}</a>
 						</li>
 					{/each}
 				</ul>
@@ -103,13 +103,6 @@
 		height: 3rem;
 		min-width: 32px;
 		display: block;
-	}
-
-	/* Align properly on Mobile */
-	@media (max-width: 490px) {
-		header {
-			justify-content: space-around;
-		}
 	}
 
 	.mobile-menu {

@@ -1,6 +1,9 @@
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
+
 	import { onMount } from 'svelte';
 
+	const dispatch = createEventDispatcher();
 	export let query: string;
 
 	let mql: MediaQueryList;
@@ -8,9 +11,20 @@
 	let wasMounted = false;
 	let matches = false;
 
+	export let eventName: string;
+
+	$: {
+		if (matches) {
+			dispatch('in');
+		} else {
+			dispatch('out');
+		}
+	}
+
 	onMount(() => {
 		wasMounted = true;
 		return () => {
+			console.log('unmounted');
 			removeActiveListener();
 		};
 	});
@@ -34,6 +48,8 @@
 			mql.removeEventListener('change', mqlListener);
 		}
 	}
+
+	$: console.log('matches', matches);
 </script>
 
 <slot matches="{matches}" />

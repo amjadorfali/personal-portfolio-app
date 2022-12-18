@@ -18,15 +18,15 @@
 <!-- https://svelte.dev/repl/09abb8c287f745169f66f62d51f766d5?version=3.49.0 -->
 
 {#if canStartApp}
-	<div class="bg-primary" in:fade="{{ duration: 1000 }}" on:introend="{() => (sendLogoToHeader = true)}">
-		<div>
+	<div class="bg-primary " in:fade="{{ duration: 500 }}" on:introend="{() => (sendLogoToHeader = true)}">
+		<div class="header-wrapper">
 			{#if sendLogoToHeader}
 				<Header>
 					<div class="logo-wrapper">
-						<svg in:receive="{{ key: 'logo' }}" class="circle-logo" viewBox="0 0 500 700">
+						<svg in:receive="{{ key: 'logo' }}" class="circle-logo" viewBox="0 0 500 720">
 							<g fill="none" fill-rule="evenodd" stroke="black">
 								<g stroke-width="7.5" stroke="white">
-									<circle cx="263" cy="390" r="230"></circle>
+									<circle cx="263" cy="390" r="320"></circle>
 								</g>
 								<g>
 									<path
@@ -45,13 +45,13 @@
 			{/if}
 		</div>
 
-		<main class:full-h="{!sendLogoToHeader}" class="relative  items-center justify-center align-middle">
+		<main class="relative">
 			<slot />
 			{#if !sendLogoToHeader}
 				<svg out:send="{{ key: 'logo' }}" class="absolute circle" viewBox="0 0 500 700">
 					<g fill="none" fill-rule="evenodd" stroke="black">
 						<g stroke-width="7.5" stroke="white">
-							<circle cx="263" cy="390" r="230"></circle>
+							<circle cx="263" cy="390" r="240"></circle>
 						</g>
 						<g>
 							<path
@@ -71,6 +71,10 @@
 {/if}
 
 <style>
+	.header-wrapper {
+		min-height: 3rem;
+	}
+
 	.logo-wrapper {
 		margin-left: 8px;
 		width: 18rem;
@@ -87,18 +91,18 @@
 
 	svg.circle-logo {
 		opacity: 1;
-		width: 100%;
+		width: 50%;
 		/* position: absolute; */
 		height: 100%;
 	}
 
 	svg.circle-logo path {
-		transition: fill 1s alternate;
+		transition: fill 0.5s alternate;
 		fill: var(--secondary);
 	}
 
 	svg.circle-logo circle {
-		transition: stroke 1s alternate;
+		transition: stroke 0.5s alternate;
 		stroke: var(--secondary);
 	}
 
@@ -108,21 +112,6 @@
 
 	svg circle {
 		stroke: var(--secondary);
-	}
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 100vw;
-		margin: 0 auto;
-		box-sizing: border-box;
-		height: 81.3vh;
-	}
-
-	main.full-h {
-		height: 100vh;
 	}
 
 	footer {

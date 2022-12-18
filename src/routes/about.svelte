@@ -15,10 +15,10 @@
 
 <svelte:head>
 	<title>About</title>
-	<meta name="description" content="About this app" />
+	<meta name="description" content="About Amjad Orfali" />
 </svelte:head>
 
-<div class="content">
+<main class="content">
 	<h1>About this app</h1>
 
 	<p>
@@ -36,12 +36,24 @@
 	<p>
 		The <a href="/todos">TODOs</a> page illustrates SvelteKit's data loading and form handling. Try using it with JavaScript disabled!
 	</p>
-</div>
+</main>
 
 <style>
 	.content {
 		width: 100%;
 		max-width: var(--column-width);
 		margin: var(--column-margin-top) auto 0 auto;
+	}
+
+	main {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		padding: 1rem;
+		width: 100%;
+		max-width: 100vw;
+		margin: 0 auto;
+		box-sizing: border-box;
+		height: 81.3vh;
 	}
 </style>
