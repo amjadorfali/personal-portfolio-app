@@ -7,7 +7,7 @@ export function enhance(
 	{
 		pending,
 		error,
-		result,
+		result
 	}: {
 		pending?: ({ data, form }: { data: FormData; form: HTMLFormElement }) => void;
 		error?: ({ data, form, response, error }: { data: FormData; form: HTMLFormElement; response: Response | null; error: Error | null }) => void;
@@ -29,9 +29,9 @@ export function enhance(
 			const response = await fetch(form.action, {
 				method: form.method,
 				headers: {
-					accept: 'application/json',
+					accept: 'application/json'
 				},
-				body: data,
+				body: data
 			});
 
 			if (token !== current_token) return;
@@ -61,6 +61,6 @@ export function enhance(
 	return {
 		destroy() {
 			form.removeEventListener('submit', handle_submit);
-		},
+		}
 	};
 }

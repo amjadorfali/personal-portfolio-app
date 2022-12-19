@@ -1,7 +1,4 @@
-<script context="module" lang="ts">
-	import { fade } from 'svelte/transition';
-
-	export const prerender = true;
+<script lang="ts">
 </script>
 
 <svelte:head>
@@ -9,7 +6,7 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<main class="items-center justify-center align-middle">
+<main class=" relative items-center justify-center align-middle">
 	<section>
 		<h1>Website & Software Engineer</h1>
 	</section>

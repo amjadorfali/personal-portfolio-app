@@ -7,32 +7,29 @@
 
 	const [send, receive] = crossfade({
 		duration: 500,
-		easing: cubicInOut,
+		easing: cubicInOut
 	});
 </script>
 
 <div>
-	<MediaQuery query="(min-width: 769px)" eventName="show-desktop-menu" let:matches>
+	<MediaQuery query="(min-width: 769px)" let:matches>
 		{#if matches}
-			<nav class="desktop-nav" transition:fade="{{ duration: 200 }}">
+			<nav class="desktop-nav" transition:fade={{ duration: 200 }}>
 				<svg viewBox="0 0 2 3" aria-hidden="true">
-					<path class="fill-secondary" d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z"></path>
+					<path class="fill-secondary" d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
 				</svg>
 				<ul class="bg-secondary desktop-list">
 					{#each routes as route (route.label)}
-						<li
-							class="{`text-faded-primary ${$page.url.pathname === route.url && 'text-primary'}`}"
-							class:active="{$page.url.pathname === route.url}"
-						>
+						<li class={`text-faded-primary ${$page.url.pathname === route.url && 'text-primary'}`} class:active={$page.url.pathname === route.url}>
 							{#if $page.url.pathname === route.url}
-								<span class="active" out:send="{{ key: 'active-marker' }}" in:receive="{{ key: 'active-marker' }}"></span>
+								<span class="active" out:send={{ key: 'active-marker' }} in:receive={{ key: 'active-marker' }} />
 							{/if}
-							<a data-sveltekit-preload-data href="{route.url}">{route.label}</a>
+							<a data-sveltekit-preload-data href={route.url}>{route.label}</a>
 						</li>
 					{/each}
 				</ul>
 				<svg viewBox="0 0 2 3" aria-hidden="true">
-					<path class="fill-secondary" d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z"></path>
+					<path class="fill-secondary" d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
 				</svg>
 			</nav>
 		{/if}

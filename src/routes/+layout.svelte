@@ -8,7 +8,7 @@
 
 	const [send, receive] = crossfade({
 		duration: 500,
-		easing: cubicInOut,
+		easing: cubicInOut
 	});
 	let canStartApp = $page.url.pathname !== '/',
 		sendLogoToHeader = $page.url.pathname !== '/';
@@ -18,21 +18,21 @@
 <!-- https://svelte.dev/repl/09abb8c287f745169f66f62d51f766d5?version=3.49.0 -->
 
 {#if canStartApp}
-	<div class="bg-primary " in:fade="{{ duration: 500 }}" on:introend="{() => (sendLogoToHeader = true)}">
+	<div class="bg-primary " in:fade={{ duration: 500 }} on:introend={() => (sendLogoToHeader = true)}>
 		<div class="header-wrapper">
 			{#if sendLogoToHeader}
 				<Header>
 					<div class="logo-wrapper">
-						<svg in:receive="{{ key: 'logo' }}" class="circle-logo" viewBox="0 0 500 720">
+						<svg in:receive={{ key: 'logo' }} class="circle-logo" viewBox="0 0 500 720">
 							<g fill="none" fill-rule="evenodd" stroke="black">
 								<g stroke-width="7.5" stroke="white">
-									<circle cx="263" cy="390" r="320"></circle>
+									<circle cx="263" cy="390" r="320" />
 								</g>
 								<g>
 									<path
 										fill="white"
 										d="m395.36 542.5c-4.043 0-7.2109-0.94531-9.6758-2.8867-2.5742-2.0312-4.3906-4.5508-5.5312-7.7539l-33.512-88.707h-167.44l-33.496 88.637c-0.98047 2.7109-2.8711 5.1992-5.6172 7.4531-2.6406 2.1719-5.7734 3.2188-9.6094 3.2188l-36.957 0.003906 144.15-365.33h50.504l144.15 365.36zm-135.96-317.91c-1.8711 7.3672-3.7969 14.297-5.7383 20.578-1.9414 6.2812-3.8516 11.969-5.7031 16.906l-56.297 148.77h142.77l-56.559-149.29c-3.8867-9.7109-7.8242-22.137-11.707-36.977l-3.4297-13.125z"
-									></path>
+									/>
 								</g>
 							</g>
 						</svg>
@@ -45,29 +45,29 @@
 			{/if}
 		</div>
 
-		<main class="relative">
+		<main>
 			<slot />
 			{#if !sendLogoToHeader}
-				<svg out:send="{{ key: 'logo' }}" class="absolute circle" viewBox="0 0 500 700">
+				<svg out:send={{ key: 'logo' }} class="absolute circle" viewBox="0 0 500 700">
 					<g fill="none" fill-rule="evenodd" stroke="black">
 						<g stroke-width="7.5" stroke="white">
-							<circle cx="263" cy="390" r="240"></circle>
+							<circle cx="263" cy="390" r="240" />
 						</g>
 						<g>
 							<path
 								fill="white"
 								d="m395.36 542.5c-4.043 0-7.2109-0.94531-9.6758-2.8867-2.5742-2.0312-4.3906-4.5508-5.5312-7.7539l-33.512-88.707h-167.44l-33.496 88.637c-0.98047 2.7109-2.8711 5.1992-5.6172 7.4531-2.6406 2.1719-5.7734 3.2188-9.6094 3.2188l-36.957 0.003906 144.15-365.33h50.504l144.15 365.36zm-135.96-317.91c-1.8711 7.3672-3.7969 14.297-5.7383 20.578-1.9414 6.2812-3.8516 11.969-5.7031 16.906l-56.297 148.77h142.77l-56.559-149.29c-3.8867-9.7109-7.8242-22.137-11.707-36.977l-3.4297-13.125z"
-							></path>
+							/>
 						</g>
 					</g>
 				</svg>
 			{/if}
 		</main>
 
-		<footer></footer>
+		<footer />
 	</div>
 {:else}
-	<InitialLoader on:transitionsEnded="{() => (canStartApp = true)}" />
+	<InitialLoader on:transitionsEnded={() => (canStartApp = true)} />
 {/if}
 
 <style>

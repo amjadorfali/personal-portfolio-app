@@ -14,7 +14,7 @@
 
 	$: modalOpen ? drawer?.show() : drawer?.hide();
 
-	const onHideDrawer = (event: Event) => {
+	const onHideDrawer = () => {
 		modalOpen = false;
 	};
 
@@ -34,25 +34,25 @@
 
 <!-- TODO put something else here? github link? -->
 <div class="corner">
-	<MediaQuery query="(max-width: 768px)" eventName="show-mobile-menu" let:matches on:out="{() => (modalOpen = false)}">
+	<MediaQuery query="(max-width: 768px)" let:matches on:out={() => (modalOpen = false)}>
 		{#if matches}
 			<!-- Hamburger Menu -->
-			<div class="menuToggle" transition:fade="{{ duration: 200 }}">
-				<input type="checkbox" bind:checked="{modalOpen}" />
-				<span></span>
-				<span></span>
-				<span></span>
+			<div class="menuToggle" transition:fade={{ duration: 200 }}>
+				<input type="checkbox" bind:checked={modalOpen} />
+				<span />
+				<span />
+				<span />
 			</div>
 
-			<sl-drawer bind:this="{drawer}" label="Web & Software Eng." placement="bottom" class="drawer-placement-bottom">
+			<sl-drawer bind:this={drawer} label="Web & Software Eng." placement="bottom" class="drawer-placement-bottom">
 				<nav>
 					<ul class="">
 						{#each routes as route (route.label)}
 							<li
-								class="{`text-faded-primary ${$page.url.pathname === route.url ? 'text-primary' : 'hover:text-primary hover:underline '}`}"
-								class:active="{$page.url.pathname === route.url}"
+								class={`text-faded-primary ${$page.url.pathname === route.url ? 'text-primary' : 'hover:text-primary hover:underline '}`}
+								class:active={$page.url.pathname === route.url}
 							>
-								<a on:click="{() => (modalOpen = false)}" data-sveltekit-preload-data href="{route.url}">{route.label}</a>
+								<a on:click={() => (modalOpen = false)} data-sveltekit-preload-data href={route.url}>{route.label}</a>
 							</li>
 						{/each}
 					</ul>

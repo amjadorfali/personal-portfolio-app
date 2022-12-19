@@ -11,8 +11,6 @@
 	let wasMounted = false;
 	let matches = false;
 
-	export let eventName: string;
-
 	$: {
 		if (matches) {
 			dispatch('in');
@@ -52,4 +50,4 @@
 	$: console.log('matches', matches);
 </script>
 
-<slot matches="{matches}" />
+<slot {matches} />
