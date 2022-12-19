@@ -22,7 +22,6 @@
 	onMount(() => {
 		wasMounted = true;
 		return () => {
-			console.log('unmounted');
 			removeActiveListener();
 		};
 	});
@@ -46,8 +45,6 @@
 			mql.removeEventListener('change', mqlListener);
 		}
 	}
-
-	$: console.log('matches', matches);
 </script>
 
 <slot {matches} />
