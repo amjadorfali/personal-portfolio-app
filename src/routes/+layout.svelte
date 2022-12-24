@@ -5,6 +5,7 @@
 	import '../app.css';
 	import InitialLoader from '$lib/initialLoader.svelte';
 	import { cubicInOut } from 'svelte/easing';
+	import { routes } from '$lib/config/routes';
 
 	const [send, receive] = crossfade({
 		duration: 500,
@@ -45,7 +46,7 @@
 			{/if}
 		</div>
 
-		<main>
+		<main class={$page.url.pathname === routes[0].url ? 'flex relative items-center justify-center align-middle' : ''}>
 			<slot />
 			{#if !sendLogoToHeader}
 				<svg out:send={{ key: 'logo' }} class="absolute circle" viewBox="0 0 500 700">

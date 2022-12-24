@@ -141,6 +141,7 @@
 	div.corner {
 		display: flex;
 		align-items: center;
+		margin-right: 0.5rem;
 	}
 
 	.drawer-placement-bottom {
