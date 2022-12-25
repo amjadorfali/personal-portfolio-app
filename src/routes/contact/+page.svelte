@@ -39,7 +39,7 @@
 </form> -->
 
 <article class="flex items-center justify-center align-middle">
-	<p>Page in progress</p>
+	<p>Page is under development</p>
 </article>
 
 <style>
@@ -55,7 +55,7 @@
 	}
 	p {
 		font-size: 1.5rem;
-		width: 15rem;
+		width: 20rem;
 		margin: auto;
 	}
 	p::after {
