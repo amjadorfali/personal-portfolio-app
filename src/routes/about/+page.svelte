@@ -15,12 +15,15 @@
 
 		<h1 class="font-bold">
 			I'm Amjad Orfali, a web developer and software engineer with a focus on Front-End development. I am passionate about creating visually stunning
-			and intuitive user experiences. With a strong focus on best practices and design patterns, I take pride in delivering high-quality, scalable,
-			and maintainable code.
+			and intuitive user experiences.
 		</h1>
 	</section>
 
 	<section>
+		<p class="italic">
+			With a strong focus on best practices and design patterns, I take pride in delivering high-quality, scalable, and maintainable code.
+		</p>
+		<br />
 		<p>
 			With years of experience in the industry, I have developed a deep understanding of frontend technologies such as HTML, CSS, and JavaScript.
 			Whether it's building responsive layouts, animating smooth transitions, or integrating with APIs and back-end systems, I have the skills and
@@ -122,6 +125,10 @@
 		p,
 		caption {
 			text-align: start;
+		}
+
+		h1 {
+			font-size: 1.5rem;
 		}
 	}
 </style>
