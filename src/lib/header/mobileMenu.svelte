@@ -7,7 +7,6 @@
 	import type SlDrawer from '@shoelace-style/shoelace/dist/components/drawer/drawer';
 
 	import { onMount, tick } from 'svelte';
-	import { debug } from 'svelte/internal';
 
 	let drawer: SlDrawer;
 	let modalOpen = false;

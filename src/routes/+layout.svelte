@@ -146,6 +146,12 @@
 		align-items: center;
 		padding: 40px;
 	}
+	div h4,
+	div h6 {
+		color: var(--secondary);
+		font-size: 1rem;
+		line-height: normal;
+	}
 
 	@media (min-width: 480px) {
 		footer {

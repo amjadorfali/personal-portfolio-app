@@ -3,8 +3,8 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Amjad</title>
+	<meta name="description" content="Amjad Orfali's Portfolio" />
 </svelte:head>
 
 <article class="items-center justify-center align-middle">
