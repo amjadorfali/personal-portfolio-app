@@ -1,33 +1,36 @@
 <script lang="ts">
 </script>
 
-<article class="grid wrapper">
-	<!-- <p>
-		As a web developer and software engineer specializing in frontend development, I have a strong foundation in React and Typescript, as well as a
-		passion for creating visually stunning and responsive websites. My expertise in animations and dedication to following best practices ensures that
-		every project I work on is not only functional but also user-friendly and aesthetically pleasing. I pride myself on my ability to turn complex
-		requirements into intuitive and engaging web experiences for users. Whether working on a small project or a large-scale application, I have the
-		skills and experience to deliver high-quality results on time and within budget.
-	</p> -->
+<svelte:head>
+	<title>Amjad | About</title>
+	<meta name="description" content="About Amjad Orfali" />
+</svelte:head>
 
-	<section class=" flex flex-col">
+<article class="flex  items-center justify-center align-middle wrapper">
+	<section class=" flex flex-col gap-4">
 		<caption class="opacity-50 uppercase">a few words about me</caption>
 
 		<h1 class="font-bold">
 			I'm Amjad Orfali, a web developer and software engineer with a focus on Front-End development. I am passionate about creating visually stunning
 			and intuitive user experiences. With a strong focus on best practices and design patterns, I take pride in delivering high-quality, scalable,
-			and maintainable code.
+			and maintainable code, giving me the skills and expertise to bring your project to life.
 		</h1>
+
+		<a target="_blank" href="AmjadOrfaliResume.pdf" class=" self-start hover:underline-offset-8 hover:underline hover:animate-bounce">↓ Resume</a>
 	</section>
 
-	<section>
+	<!-- <section>
+		<p class="italic">
+			With a strong focus on best practices and design patterns, I take pride in delivering high-quality, scalable, and maintainable code.
+		</p>
+		<br />
 		<p>
 			With years of experience in the industry, I have developed a deep understanding of frontend technologies such as HTML, CSS, and JavaScript.
 			Whether it's building responsive layouts, animating smooth transitions, or integrating with APIs and back-end systems, I have the skills and
 			expertise to bring your project to life.
 		</p>
-	</section>
-
+	</section> -->
+	<!-- 
 	<section class="flex justify-between items-stretch gap-6  self-center justify-self-center">
 		<div class="max-w-md">
 			<h3 class="font-light opacity-70 text-xl">Skills</h3>
@@ -77,7 +80,7 @@
 			>
 			profiles.
 		</h5>
-	</section>
+	</section> -->
 
 	<!-- <p>
 		I have a strong foundation in computer science principles and a passion for staying up-to-date with the latest web development technologies and
@@ -98,19 +101,21 @@
 
 <style>
 	.wrapper {
-		margin: 7rem;
-		row-gap: 5rem;
+		width: 100%;
+		max-width: 85vw;
+		margin: 0 auto;
+		box-sizing: border-box;
+		height: 85vh;
+		max-height: 100vh;
 	}
 
 	h1,
-	h5,
-	p,
 	caption {
 		text-align: center;
 	}
 
-	h5 a {
-		text-decoration: none;
+	h1 {
+		font-size: 1.5rem;
 	}
 
 	@media (max-width: 768px) {
@@ -118,10 +123,12 @@
 			margin: 2.5rem;
 		}
 		h1,
-		h5,
-		p,
 		caption {
 			text-align: start;
+		}
+
+		h1 {
+			font-size: 1rem;
 		}
 	}
 </style>

@@ -7,7 +7,6 @@
 	import type SlDrawer from '@shoelace-style/shoelace/dist/components/drawer/drawer';
 
 	import { onMount, tick } from 'svelte';
-	import { debug } from 'svelte/internal';
 
 	let drawer: SlDrawer;
 	let modalOpen = false;
@@ -44,7 +43,7 @@
 				<span />
 			</div>
 
-			<sl-drawer bind:this={drawer} label="Web & Software Eng." placement="bottom" class="drawer-placement-bottom">
+			<sl-drawer bind:this={drawer} label="Amjad Orfali" placement="bottom" class="drawer-placement-bottom">
 				<nav>
 					<ul class="">
 						{#each routes as route (route.label)}
@@ -162,12 +161,12 @@
 	}
 
 	li a {
-		transform: scale(1);
+		transform: scale(0.75);
 		transition: transform 0.2s linear;
 	}
 
 	li.active a {
-		transform: scale(1.2);
+		transform: scale(1);
 	}
 
 	nav {

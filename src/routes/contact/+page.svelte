@@ -38,6 +38,11 @@
 	<input type="submit" value="Send" />
 </form> -->
 
+<svelte:head>
+	<title>Amjad | Contact</title>
+	<meta name="description" content="Contact Amjad Orfali" />
+</svelte:head>
+
 <article class="flex items-center justify-center align-middle">
 	<p>Page is under development</p>
 </article>
