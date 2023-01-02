@@ -19,7 +19,7 @@
 <!-- https://svelte.dev/repl/09abb8c287f745169f66f62d51f766d5?version=3.49.0 -->
 
 {#if canStartApp}
-	<div class="bg-primary " in:fade={{ duration: 500 }} on:introend={() => (sendLogoToHeader = true)}>
+	<div class="bg-primary " in:fade={{ duration: 500, delay: 100 }} on:introend={() => (sendLogoToHeader = true)}>
 		<div class="header-wrapper">
 			{#if sendLogoToHeader}
 				<Header>

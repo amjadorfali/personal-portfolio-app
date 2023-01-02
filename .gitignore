@@ -22,4 +22,5 @@ vite.config.ts.timestamp-*
 !.yarn/versions
 
 
-sendgrid.env
+
+.netlify

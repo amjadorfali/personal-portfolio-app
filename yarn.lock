@@ -5,13 +5,6 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@ctrl/tinycolor@npm:^3.5.0":
-  version: 3.5.0
-  resolution: "@ctrl/tinycolor@npm:3.5.0"
-  checksum: 4f0cc0005b53ca7e42b5137ff7069f95f05873168534e1c04e64429070eeb5e04dd309b52fb437601235807af7dedd4c43bbfce1df5fb11bfd3fb3c05a0eb3a5
-  languageName: node
-  linkType: hard
-
 "@esbuild/android-arm64@npm:0.16.9":
   version: 0.16.9
   resolution: "@esbuild/android-arm64@npm:0.16.9"
@@ -183,22 +176,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/core@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "@floating-ui/core@npm:1.0.4"
-  checksum: 6362a625ad0dba7cfd197fc4b6f620eed95147d38684d7347287569897098862c6ba1173f3758d76d22e7739112c57dc836a569c582e78f5807c26ef41df4989
-  languageName: node
-  linkType: hard
-
-"@floating-ui/dom@npm:^1.0.7":
-  version: 1.0.12
-  resolution: "@floating-ui/dom@npm:1.0.12"
-  dependencies:
-    "@floating-ui/core": ^1.0.4
-  checksum: fbcdec5fb8d096a65da346e76fc6c8f2e4db3c9c70b06dea17321c775bc125ae0b02450a8b195a224b8edf9acba205b607f6d638bda78a2ca1b2ec92fa15b784
-  languageName: node
-  linkType: hard
-
 "@fontsource/fira-mono@npm:^4.5.10":
   version: 4.5.10
   resolution: "@fontsource/fira-mono@npm:4.5.10"
@@ -269,27 +246,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lit-labs/react@npm:^1.1.0":
-  version: 1.1.1
-  resolution: "@lit-labs/react@npm:1.1.1"
-  checksum: e46b87a3e04b329b62e67360a7a1b21c55abf91c17d3059b550654565b53c73a25832e95426698e9b78488cc4ebaeb20b8a8ca64a220325e31633355a245710d
-  languageName: node
-  linkType: hard
-
-"@lit/reactive-element@npm:^1.3.0, @lit/reactive-element@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "@lit/reactive-element@npm:1.5.0"
-  checksum: 8f87a2d9d7630c26ad0dd6b9a8ad46bb184fcec11e04ded3d487859a6cfebbe871d07a8271dfdf3f2d4b9688d27c17de0f8fa3fc690602f5b86d742f969a3ca4
-  languageName: node
-  linkType: hard
-
-"@neoconfetti/svelte@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@neoconfetti/svelte@npm:1.0.0"
-  checksum: 9f2374fcb1748b161319f0070cf4fbc83703c8e4958a2a2a7d8b4eb240305939454f85b9781ad7ed2e5c9db4b88db4377c5a1be40172aca641c642a8d6710445
-  languageName: node
-  linkType: hard
-
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -353,64 +309,6 @@ __metadata:
   version: 1.0.0-next.21
   resolution: "@polka/url@npm:1.0.0-next.21"
   checksum: c7654046d38984257dd639eab3dc770d1b0340916097b2fac03ce5d23506ada684e05574a69b255c32ea6a144a957c8cd84264159b545fca031c772289d88788
-  languageName: node
-  linkType: hard
-
-"@sendgrid/client@npm:^7.7.0":
-  version: 7.7.0
-  resolution: "@sendgrid/client@npm:7.7.0"
-  dependencies:
-    "@sendgrid/helpers": ^7.7.0
-    axios: ^0.26.0
-  checksum: 81299ff65b67de3df8c20f545aa7c3416519865079a2d21ce1ee80c76da568799679eb680fca51ef0df0ad34628e695e1991ea9cd8809baa9173ce5cda17fa50
-  languageName: node
-  linkType: hard
-
-"@sendgrid/helpers@npm:^7.7.0":
-  version: 7.7.0
-  resolution: "@sendgrid/helpers@npm:7.7.0"
-  dependencies:
-    deepmerge: ^4.2.2
-  checksum: 20387aae1bff06b9febc39f82cd184dd6e59d0e1ae2e74565d88802a6c6a5e4e571924335bfc8b1493f5f09e832f526f71d81e813295b2060379cb6e53786429
-  languageName: node
-  linkType: hard
-
-"@sendgrid/mail@npm:^7.7.0":
-  version: 7.7.0
-  resolution: "@sendgrid/mail@npm:7.7.0"
-  dependencies:
-    "@sendgrid/client": ^7.7.0
-    "@sendgrid/helpers": ^7.7.0
-  checksum: 8bd446c367983e70b5d1f7a9a5796b2db3dd9304a3d6adf36fb3ee87ff0021e69223222e9ddfa62a40749ed9b136d0e6e4567e9dc4ad66b4ae38a404b07f24e1
-  languageName: node
-  linkType: hard
-
-"@shoelace-style/animations@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@shoelace-style/animations@npm:1.1.0"
-  checksum: 65a9782d27c4e295501298a033d6e102c7dcec7d71a906eeec7bfee7421156a7d7b5bde1f09d586d6efe55212233a6c134f38e70bb3a9b2de247a5e11ddb221e
-  languageName: node
-  linkType: hard
-
-"@shoelace-style/localize@npm:^3.0.3":
-  version: 3.0.3
-  resolution: "@shoelace-style/localize@npm:3.0.3"
-  checksum: e666f4d832ea9836abf93d160296b15de4cbc12afc34e6caafe4a1a5919482e1cb785e0a39b5742afdcc84ee288e8d25b4232b5d3a1dc001dfa6838e68e5d1ee
-  languageName: node
-  linkType: hard
-
-"@shoelace-style/shoelace@npm:^2.0.0-beta.87":
-  version: 2.0.0-beta.87
-  resolution: "@shoelace-style/shoelace@npm:2.0.0-beta.87"
-  dependencies:
-    "@ctrl/tinycolor": ^3.5.0
-    "@floating-ui/dom": ^1.0.7
-    "@lit-labs/react": ^1.1.0
-    "@shoelace-style/animations": ^1.1.0
-    "@shoelace-style/localize": ^3.0.3
-    lit: ^2.4.1
-    qr-creator: ^1.0.0
-  checksum: 9a835045ce884ec43e4c612122dcbb9f538e056ff356abd5a32b25bc855d41effac503355cbf9a31d75fb27bedf4e8929366d8a3982b38b4393982da9eb73712
   languageName: node
   linkType: hard
 
@@ -545,13 +443,6 @@ __metadata:
   version: 7.3.13
   resolution: "@types/semver@npm:7.3.13"
   checksum: 00c0724d54757c2f4bc60b5032fe91cda6410e48689633d5f35ece8a0a66445e3e57fa1d6e07eb780f792e82ac542948ec4d0b76eb3484297b79bd18b8cf1cb0
-  languageName: node
-  linkType: hard
-
-"@types/trusted-types@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "@types/trusted-types@npm:2.0.2"
-  checksum: 3371eef5f1c50e1c3c07a127c1207b262ba65b83dd167a1c460fc1b135a3fb0c97b9f508efebd383f239cc5dd5b7169093686a692a501fde9c3f7208657d9b0d
   languageName: node
   linkType: hard
 
@@ -862,15 +753,6 @@ __metadata:
   bin:
     autoprefixer: bin/autoprefixer
   checksum: dcb1cb7ae96a3363d65d82e52f9a0a7d8c982256f6fd032d7e1ec311f099c23acfebfd517ff8e96bf93f716a66c4ea2b80c60aa19efd2f474ce434bd75ef7b79
-  languageName: node
-  linkType: hard
-
-"axios@npm:^0.26.0":
-  version: 0.26.1
-  resolution: "axios@npm:0.26.1"
-  dependencies:
-    follow-redirects: ^1.14.8
-  checksum: d9eb58ff4bc0b36a04783fc9ff760e9245c829a5a1052ee7ca6013410d427036b1d10d04e7380c02f3508c5eaf3485b1ae67bd2adbfec3683704745c8d7a6e1a
   languageName: node
   linkType: hard
 
@@ -1641,16 +1523,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.8":
-  version: 1.15.2
-  resolution: "follow-redirects@npm:1.15.2"
-  peerDependenciesMeta:
-    debug:
-      optional: true
-  checksum: faa66059b66358ba65c234c2f2a37fcec029dc22775f35d9ad6abac56003268baf41e55f9ee645957b32c7d9f62baf1f0b906e68267276f54ec4b4c597c2b190
-  languageName: node
-  linkType: hard
-
 "fraction.js@npm:^4.2.0":
   version: 4.2.0
   resolution: "fraction.js@npm:4.2.0"
@@ -2089,36 +1961,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lit-element@npm:^3.2.0":
-  version: 3.2.2
-  resolution: "lit-element@npm:3.2.2"
-  dependencies:
-    "@lit/reactive-element": ^1.3.0
-    lit-html: ^2.2.0
-  checksum: e1df57c02ad5ae4c42b49a5066b3b623bccf7fa6610bbc3f65bc22cbbe1546ecd6a7f717b1f01863929262f416c4b8b7a39ff166114215f93cc22f4e5b3825c3
-  languageName: node
-  linkType: hard
-
-"lit-html@npm:^2.2.0, lit-html@npm:^2.5.0":
-  version: 2.5.0
-  resolution: "lit-html@npm:2.5.0"
-  dependencies:
-    "@types/trusted-types": ^2.0.2
-  checksum: 5376c423253037fbe1cb24f8178104eca6186df19d06bc91ad8d5d251af8467fd269a6c7e97ffaa5e9872a8dd453a40c3ffbe23c81d2823078f59be03f94c1bc
-  languageName: node
-  linkType: hard
-
-"lit@npm:^2.4.1":
-  version: 2.5.0
-  resolution: "lit@npm:2.5.0"
-  dependencies:
-    "@lit/reactive-element": ^1.5.0
-    lit-element: ^3.2.0
-    lit-html: ^2.5.0
-  checksum: 7f62ef9da4b21d37f8b476d8425903a22ed9c1e5b26597c811cb38760d28baf6cd83865457c971d1ac77d6ad59ecc73cd1870fa3478a08d0beffa0b74b016bec
-  languageName: node
-  linkType: hard
-
 "local-pkg@npm:^0.4.2":
   version: 0.4.2
   resolution: "local-pkg@npm:0.4.2"
@@ -2411,10 +2253,7 @@ __metadata:
   resolution: "my-app@workspace:."
   dependencies:
     "@fontsource/fira-mono": ^4.5.10
-    "@neoconfetti/svelte": ^1.0.0
     "@playwright/test": ^1.29.0
-    "@sendgrid/mail": ^7.7.0
-    "@shoelace-style/shoelace": ^2.0.0-beta.87
     "@sveltejs/adapter-auto": 1.0.0
     "@sveltejs/adapter-netlify": next
     "@sveltejs/kit": ^1.0.1
@@ -2838,13 +2677,6 @@ __metadata:
   version: 2.1.1
   resolution: "punycode@npm:2.1.1"
   checksum: 823bf443c6dd14f669984dea25757b37993f67e8d94698996064035edd43bed8a5a17a9f12e439c2b35df1078c6bec05a6c86e336209eb1061e8025c481168e8
-  languageName: node
-  linkType: hard
-
-"qr-creator@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "qr-creator@npm:1.0.0"
-  checksum: 64d2c67493eef1d5a165ba0017e10bc2d36f4964676e886a6bcc0b2cee686ce92727d2964f81744511af44052e34c93c184b18eefe0adefa933957ad2dcb14a1
   languageName: node
   linkType: hard
 
