@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
@@ -7,10 +7,7 @@
 		%sveltekit.head%
 	</head>
 
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.87/dist/themes/light.css" />
-	<script type="module" defer src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.87/dist/shoelace.js"></script>
-
-	<body data-sveltekit-preload-data="hover" class="bg-primary">
-		<div style="display: contents">%sveltekit.body%</div>
+	<body data-theme="skeleton" data-sveltekit-preload-data="hover">
+		<div class="h-screen overflow-hidden">%sveltekit.body%</div>
 	</body>
 </html>

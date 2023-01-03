@@ -7,6 +7,9 @@
 	export let query: string;
 
 	let mql: MediaQueryList;
+
+	//Choosing to ignore `any` type as that's the type provided from type `MediaQueryList`
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	let mqlListener: (this: MediaQueryList, ev: MediaQueryListEvent) => any;
 	let wasMounted = false;
 	let matches = false;

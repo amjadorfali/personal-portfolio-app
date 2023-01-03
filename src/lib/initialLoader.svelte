@@ -47,15 +47,6 @@
 {/if}
 
 <style>
-	svg.drawDone path {
-		transition: all 0.25s ease-in-out;
-		fill: var(--secondary);
-	}
-
-	svg.drawDone circle {
-		transition: all 0.25s ease-in-out;
-		stroke: var(--secondary);
-	}
 	svg.drawDone circle,
 	svg.drawDone path {
 		animation: fade 0.5s linear 0.25s forwards;
@@ -70,11 +61,6 @@
 	svg {
 		z-index: 1;
 	}
-	svg.letter {
-		width: 42%;
-		margin: -21%;
-	}
-
 	svg.circle {
 		width: 21%;
 		z-index: 2;

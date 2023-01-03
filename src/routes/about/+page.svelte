@@ -8,7 +8,7 @@
 
 <article class="flex  items-center justify-center align-middle wrapper">
 	<section class=" flex flex-col gap-4">
-		<caption class="opacity-50 uppercase">a few words about me</caption>
+		<caption class="opacity-50 uppercase text-tertiary-700-200-token">a few words about me</caption>
 
 		<h1 class="font-bold">
 			I'm Amjad Orfali, a web developer and software engineer with a focus on Front-End development. I am passionate about creating visually stunning
@@ -16,7 +16,11 @@
 			and maintainable code, giving me the skills and expertise to bring your project to life.
 		</h1>
 
-		<a target="_blank" href="AmjadOrfaliResume.pdf" class=" self-start hover:underline-offset-8 hover:underline hover:animate-bounce">↓ Resume</a>
+		<a
+			target="_blank"
+			href="AmjadOrfaliResume.pdf"
+			class=" self-start hover:underline-offset-8 hover:underline hover:animate-bounce !text-primary-500 !underline-offset-8">↓ Resume</a
+		>
 	</section>
 
 	<!-- <section>

@@ -1,13 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./src/**/*.{html,js,svelte,ts}'],
-	theme: {
-		extend: {},
-		colors: {
-			primary: '#ffffff',
-			secondary: '#10131f',
-			'faded-primary': '#ffffff7c'
-		}
-	},
-	plugins: []
+	content: ['./src/**/*.{html,js,svelte,ts}', require('path').join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')],
+	theme: {},
+	plugins: [require('@skeletonlabs/skeleton/tailwind/theme.cjs')],
+	darkMode: 'class'
 };

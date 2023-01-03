@@ -312,6 +312,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@skeletonlabs/skeleton@npm:0.86.9":
+  version: 0.86.9
+  resolution: "@skeletonlabs/skeleton@npm:0.86.9"
+  checksum: 1aa687b66942095c208e824227afdb3f73d4f6ae0669fc172b30f21e034f650709bba8fb23495fe3602b7f77cc57efcd763d49a5d6fdc4aae3b0f8baadc84b50
+  languageName: node
+  linkType: hard
+
 "@sveltejs/adapter-auto@npm:1.0.0":
   version: 1.0.0
   resolution: "@sveltejs/adapter-auto@npm:1.0.0"
@@ -2254,6 +2261,7 @@ __metadata:
   dependencies:
     "@fontsource/fira-mono": ^4.5.10
     "@playwright/test": ^1.29.0
+    "@skeletonlabs/skeleton": 0.86.9
     "@sveltejs/adapter-auto": 1.0.0
     "@sveltejs/adapter-netlify": next
     "@sveltejs/kit": ^1.0.1

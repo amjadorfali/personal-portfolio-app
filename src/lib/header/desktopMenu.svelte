@@ -4,6 +4,8 @@
 	import { page } from '$app/stores';
 	import { cubicInOut } from 'svelte/easing';
 	import { routes } from '$lib/config/routes';
+	import { LightSwitch } from '@skeletonlabs/skeleton';
+	import { supportedBreakPoint } from '$lib/config/breakpoints';
 
 	const [send, receive] = crossfade({
 		duration: 500,
@@ -11,30 +13,31 @@
 	});
 </script>
 
-<div>
-	<MediaQuery query="(min-width: 769px)" let:matches>
-		{#if matches}
-			<nav class="desktop-nav" transition:fade={{ duration: 200 }}>
-				<svg viewBox="0 0 2 3" aria-hidden="true">
-					<path class="fill-secondary" d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-				</svg>
-				<ul class="bg-secondary desktop-list">
-					{#each routes as route (route.label)}
-						<li class={`text-faded-primary ${$page.url.pathname === route.url && 'text-primary'}`} class:active={$page.url.pathname === route.url}>
-							{#if $page.url.pathname === route.url}
-								<span class="active" out:send={{ key: 'active-marker' }} in:receive={{ key: 'active-marker' }} />
-							{/if}
-							<a data-sveltekit-preload-data href={route.url}>{route.label}</a>
-						</li>
-					{/each}
-				</ul>
-				<svg viewBox="0 0 2 3" aria-hidden="true">
-					<path class="fill-secondary" d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-				</svg>
-			</nav>
-		{/if}
-	</MediaQuery>
-</div>
+<MediaQuery query={`(min-width: ${supportedBreakPoint}px)`} let:matches>
+	{#if matches}
+		<nav transition:fade={{ duration: 200 }}>
+			<svg viewBox="0 0 2 3" aria-hidden="true">
+				<path class="fill-primary-500" d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
+			</svg>
+			<ul class="desktop-list bg-primary-500">
+				{#each routes as route (route.label)}
+					<li class={` unstyled ${$page.url.pathname === route.url && '!text-secondary-800 active'} `}>
+						{#if $page.url.pathname === route.url}
+							<span class={'active !border-t-secondary-800'} out:send={{ key: 'active-marker' }} in:receive={{ key: 'active-marker' }} />
+						{/if}
+						<a data-sveltekit-preload-data href={route.url} class=" unstyled hover:!text-secondary-800">{route.label}</a>
+					</li>
+				{/each}
+			</ul>
+			<svg viewBox="0 0 2 3" aria-hidden="true">
+				<path class="fill-primary-500" d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
+			</svg>
+		</nav>
+		<div class="self-center px-8 dark:text-secondary-50">
+			<LightSwitch />
+		</div>
+	{/if}
+</MediaQuery>
 
 <style>
 	nav {
@@ -90,29 +93,13 @@
 		top: 0;
 		left: calc(50% - var(--size));
 		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--primary);
-	}
-	a:hover {
-		color: var(--primary);
+		border-top-width: var(--size);
+		border-top-style: solid;
 	}
 
 	svg {
 		height: 3rem;
 		min-width: 32px;
 		display: block;
-	}
-
-	.mobile-menu {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		display: flex;
-		flex: auto;
-		align-items: center;
-		width: 50vw;
-		right: 0;
-		justify-content: flex-end;
-		background-color: var(--secondary);
-		height: 40vh;
 	}
 </style>

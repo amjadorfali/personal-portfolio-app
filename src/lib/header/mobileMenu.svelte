@@ -1,65 +1,50 @@
 <script lang="ts">
 	import MediaQuery from '$lib/MediaQuery.svelte';
 	import { fade } from 'svelte/transition';
-	import { routes } from '$lib/config/routes';
-	import { page } from '$app/stores';
+	import { drawerStore, LightSwitch } from '@skeletonlabs/skeleton';
+	import type { DrawerSettings } from '@skeletonlabs/skeleton';
+	import { supportedBreakPoint } from '$lib/config/breakpoints';
 
-	import type SlDrawer from '@shoelace-style/shoelace/dist/components/drawer/drawer';
-
-	import { onMount, tick } from 'svelte';
-
-	let drawer: SlDrawer;
-	let modalOpen = false;
-
-	$: modalOpen ? drawer?.show() : drawer?.hide();
-
-	const onHideDrawer = () => {
-		modalOpen = false;
+	const settings: DrawerSettings = {
+		id: 'demo',
+		position: 'bottom',
+		width: 'w-screen',
+		height: 'h-screen',
+		bgBackdrop: 'fixed',
+		bgDrawer: 'overflow-y-hidden shadow-xl bg-surface-100-800-token   '
 	};
 
-	onMount(async () => {
-		await tick();
-		drawer?.addEventListener('sl-hide', onHideDrawer);
-		return () => drawer?.removeEventListener('sl-hide', onHideDrawer);
-	});
+	const drawerOpenStyled = () => {
+		drawerStore.open(settings);
+	};
 
-	//Make sure the event listener is added
-	$: {
-		//Rerender whenever modalOpen changes
-		modalOpen;
-		tick().then(() => !drawer?.hasAttribute('sl-hide') && drawer?.addEventListener('sl-hide', onHideDrawer));
-	}
+	const toggleStore = () => {
+		if ($drawerStore.open) {
+			drawerStore.close();
+		} else {
+			drawerOpenStyled();
+		}
+	};
 </script>
 
 <!-- TODO put something else here? github link? -->
-<div class="corner">
-	<MediaQuery query="(max-width: 768px)" let:matches on:out={() => (modalOpen = false)}>
-		{#if matches}
+<MediaQuery query={`(max-width: ${supportedBreakPoint - 1}px)`} let:matches on:out={() => drawerStore.close()}>
+	{#if matches}
+		<div />
+		<div class="corner">
 			<!-- Hamburger Menu -->
-			<div class="menuToggle" transition:fade={{ duration: 200 }}>
-				<input type="checkbox" bind:checked={modalOpen} />
-				<span />
-				<span />
-				<span />
+			<div class="menuToggle  " transition:fade={{ duration: 200 }}>
+				<input type="checkbox" checked={$drawerStore.open} on:click={toggleStore} class="peer" />
+				<span class="bg-surface-800 dark:bg-primary-300 dark:peer-checked:bg-primary-400 " />
+				<span class="bg-surface-800 dark:bg-primary-300 dark:peer-checked:bg-primary-400" />
+				<span class="bg-surface-800 dark:bg-primary-300 dark:peer-checked:bg-primary-400" />
 			</div>
-
-			<sl-drawer bind:this={drawer} label="Amjad Orfali" placement="bottom" class="drawer-placement-bottom">
-				<nav>
-					<ul class="">
-						{#each routes as route (route.label)}
-							<li
-								class={`text-faded-primary ${$page.url.pathname === route.url ? 'text-primary' : 'hover:text-primary hover:underline '}`}
-								class:active={$page.url.pathname === route.url}
-							>
-								<a on:click={() => (modalOpen = false)} data-sveltekit-preload-data href={route.url}>{route.label}</a>
-							</li>
-						{/each}
-					</ul>
-				</nav>
-			</sl-drawer>
-		{/if}
-	</MediaQuery>
-</div>
+		</div>
+		<div class="self-center  dark:text-secondary-50">
+			<LightSwitch />
+		</div>
+	{/if}
+</MediaQuery>
 
 <style>
 	div.menuToggle {
@@ -92,14 +77,9 @@
 		height: 4px;
 		margin-bottom: 5px;
 		position: relative;
-
-		background: var(--secondary);
 		border-radius: 3px;
-
 		z-index: 1;
-
 		transform-origin: 4px 0px;
-
 		transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 	}
 
@@ -118,7 +98,6 @@
 	div.menuToggle input:checked ~ span {
 		opacity: 1;
 		transform: rotate(45deg) translate(-2px, -1px);
-		background: var(--secondary);
 	}
 
 	/*
@@ -141,55 +120,5 @@
 		display: flex;
 		align-items: center;
 		margin-right: 0.5rem;
-	}
-
-	.drawer-placement-bottom {
-		--size: 100vh;
-	}
-	.drawer-placement-bottom::part(panel) {
-		background-color: black;
-		height: 100%;
-		color: white;
-	}
-
-	.drawer-placement-bottom::part(close-button) {
-		font-size: 3rem;
-	}
-
-	.drawer-placement-bottom::part(close-button__base) {
-		color: white;
-	}
-
-	li a {
-		transform: scale(0.75);
-		transition: transform 0.2s linear;
-	}
-
-	li.active a {
-		transform: scale(1);
-	}
-
-	nav {
-		height: 100%;
-	}
-	nav a {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		font-weight: 700;
-		font-size: 3rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		text-decoration: none;
-		transition: color 0.2s linear;
-	}
-
-	ul {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-		flex-direction: column;
 	}
 </style>
