@@ -30,7 +30,7 @@
 					href={routes[0].url}
 					class="unstyled  logo-wrapper grid-cols-2 gap-5 p-7 transition-all duration-150 hover:shadow-lg active:shadow-lg hover:-skew-y-3 active:-skew-y-3 hover:skew-x-3 active:skew-x-3 "
 				>
-					<img src={'favicon.png'} in:receive={{ key: 'logo' }} alt="" class="w-12 h-w-12 " />
+					<img src={'favicon.png'} in:receive={{ key: 'logo' }} alt="" class="w-12 h-w-12 prevent-select " />
 					<div>
 						<h4 class="dark:text-primary-300 text-surface-900 w-max ">Amjad Orfali <br />Software Engineer</h4>
 					</div>
@@ -65,12 +65,10 @@
 {/if}
 
 <style>
-	a img {
-		background-color: transparent;
-		background: transparent;
-	}
-	a {
-		text-decoration: none;
+	a img.prevent-select {
+		-webkit-user-select: none; /* Safari */
+		-ms-user-select: none; /* IE 10 and IE 11 */
+		user-select: none; /* Standard syntax */
 	}
 	.logo-wrapper {
 		margin-left: 8px;
