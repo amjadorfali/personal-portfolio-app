@@ -65,6 +65,13 @@
 {/if}
 
 <style>
+	a img {
+		background-color: transparent;
+		background: transparent;
+	}
+	a {
+		text-decoration: none;
+	}
 	.logo-wrapper {
 		margin-left: 8px;
 		height: 3rem;
