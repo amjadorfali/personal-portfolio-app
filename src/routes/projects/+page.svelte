@@ -3,6 +3,8 @@
 	<meta name="description" content="Projects from Amjad Orfali" />
 </svelte:head>
 
+<article class="flex items-center justify-center align-middle">
+	<p>Page is under development</p>
 </article>
 
 <style>
