@@ -5,5 +5,8 @@
 		"activityBar.background": "#2052A9",
 		"titleBar.activeForeground": "#ffffff",
 		"contrastBorder": "#2052A9"
-	}
+	},
+	"svelte.enable-ts-plugin": true,
+	"svelte.plugin.html.completions.enable": true,
+	"svelte.plugin.typescript.enable": true
 }
