@@ -10,7 +10,7 @@
 	<section class=" flex flex-col gap-4">
 		<caption class="opacity-50 uppercase text-tertiary-700-200-token">a few words about me</caption>
 
-		<h1 class="font-bold">
+		<h1 class="font-bold unstyled">
 			I'm Amjad Orfali, a web developer and software engineer with a focus on Front-End development. I am passionate about creating visually stunning
 			and intuitive user experiences. With a strong focus on best practices and design patterns, I take pride in delivering high-quality, scalable,
 			and maintainable code, giving me the skills and expertise to bring your project to life.
