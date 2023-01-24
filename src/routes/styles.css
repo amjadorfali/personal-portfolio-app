@@ -8,3 +8,6 @@ body {
 .dark body {
 	color: rgba(var(--theme-font-color-dark));
 }
+.body-wrapper {
+	margin-bottom: max(2rem, env(safe-area-inset-bottom));
+}
