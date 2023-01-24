@@ -13,7 +13,7 @@
 	<meta name="description" content="Projects from Amjad Orfali" />
 </svelte:head>
 
-<div class="h-[95vh] overflow-y-auto">
+<div class="overflow-y-auto">
 	<article class="flex items-center justify-around align-middle flex-col md:flex-row md:h-[-webkit-fill-available] ">
 		{#key $storeSingle}
 			<div

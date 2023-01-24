@@ -109,8 +109,7 @@
 		max-width: 85vw;
 		margin: 0 auto;
 		box-sizing: border-box;
-		height: 85vh;
-		max-height: 100vh;
+		height: 75vh;
 	}
 
 	h1,
