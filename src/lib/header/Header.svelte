@@ -19,7 +19,7 @@
 		left: 0;
 		right: 0;
 		opacity: 0.95;
-		height: 5vh;
+		min-height: 3rem;
 	}
 
 	@media (min-width: 843px) {
