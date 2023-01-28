@@ -1,97 +1,74 @@
-<!-- <script lang="ts">
-	import { env } from '$env/dynamic/public';
-	// using Twilio SendGrid's v3 Node.js Library
-	// https://github.com/sendgrid/sendgrid-nodejs
-	import sgMail from '@sendgrid/mail';
-	import type { MailDataRequired } from '@sendgrid/mail';
-
-	sgMail.setApiKey(env.PUBLIC_SENDGRID_API_KEY ?? '');
-	const msg: MailDataRequired = {
-		to: 'amjadorfali3+testtest@gmail.com', // Change to your recipient
-		from: 'amjadorfali3+sendgrid@gmail.com', // Change to your verified sender
-		subject: 'Sending with SendGrid is Fun',
-		text: 'and easy to do anywhere, even with Node.js',
-		html: '<strong>and easy to do anywhere, even with Node.js</strong>',
-		headers: { 'Access-Control-Allow-Origin': '*' }
-	};
-
-	const sendEmail = () => {
-		sgMail
-			.send(msg)
-			.then(() => {
-				console.log('Email sent');
-			})
-			.catch((error) => {
-				console.error(error);
-			});
-	};
-</script> -->
-
-<!-- <button on:click={sendEmail}>Click me</button> -->
-<!-- <form action="mailto:recipient@example.com" method="post" enctype="text/plain">
-	<label for="name">Name:</label><br />
-	<input type="text" id="name" name="name" /><br />
-	<label for="email">Email:</label><br />
-	<input type="text" id="email" name="email" /><br />
-	<label for="message">Message:</label><br />
-	<textarea id="message" name="message" /><br />
-	<input type="submit" value="Send" />
-</form> -->
+<script lang="ts">
+	import { links } from '$lib/config/links';
+</script>
 
 <svelte:head>
 	<title>Amjad | Contact</title>
 	<meta name="description" content="Contact Amjad Orfali" />
 </svelte:head>
 
-<article class="flex items-center justify-center align-middle">
-	<p>Page is under development</p>
+<article class="flex  items-center justify-center align-middle wrapper">
+	<section class=" flex flex-col gap-12">
+		<h1 class="font-bold ">Contact</h1>
+
+		<div class="flex justify-around">
+			<div class="flex basis-1/3 justify-evenly gap-4">
+				<h4>Work</h4>
+				<ul>
+					<li>
+						<a href={links.github} target="_blank" rel="noreferrer" aria-label="GitHub Account">Github</a>
+					</li>
+					<li>
+						<a href={links.email} target="_blank" rel="noreferrer" aria-label="Email Account">Email</a>
+					</li>
+				</ul>
+			</div>
+			<div class="flex basis-1/3 justify-evenly gap-4 ">
+				<h4>Social</h4>
+
+				<ul>
+					<li>
+						<a href={links.instagram} target="_blank" rel="noreferrer" aria-label="Instatgram Account">Instagram</a>
+					</li>
+					<li>
+						<a href={links.linkedIn} target="_blank" rel="noreferrer" aria-label="LinkedIn Account">LinkedIn</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
 </article>
 
 <style>
-	article {
-		gap: 1rem;
-		flex: 1;
-		padding: 1rem;
+	section {
 		width: 100%;
-		max-width: 100vw;
+	}
+	.wrapper {
+		width: 100%;
+		max-width: 85vw;
 		margin: 0 auto;
 		box-sizing: border-box;
-		height: 81.3vh;
+		height: 35vh;
 	}
-	p {
+
+	h1 {
+		text-align: center;
+	}
+
+	h1 {
 		font-size: 1.5rem;
-		width: 20rem;
-		margin: auto;
-	}
-	p::after {
-		animation: loader 1.5s normal ease infinite;
-		content: '';
 	}
 
-	@keyframes bounce {
-		from {
-			transform: scaleX(1.25);
+	@media (max-width: 768px) {
+		.wrapper {
+			margin: 2.5rem;
 		}
-		to {
-			transform: translateY(-50px) scaleX(1);
-		}
-	}
-
-	@keyframes loader {
-		0% {
-			content: '';
+		h1 {
+			text-align: start;
 		}
 
-		33% {
-			content: ' .';
-		}
-
-		66% {
-			content: ' ..';
-		}
-
-		100% {
-			content: ' ...';
+		h1 {
+			font-size: 1rem;
 		}
 	}
 </style>

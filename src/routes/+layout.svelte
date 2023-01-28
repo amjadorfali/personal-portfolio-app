@@ -23,7 +23,7 @@
 <CustomDrawer />
 
 {#if canStartApp}
-	<div class="bg-primary " in:fade={{ duration: 500, delay: 100 }} on:introend={() => (sendLogoToHeader = true)}>
+	<div class="bg-primary" in:fade={{ duration: 500, delay: 100 }} on:introend={() => (sendLogoToHeader = true)}>
 		{#if sendLogoToHeader}
 			<Header>
 				<a

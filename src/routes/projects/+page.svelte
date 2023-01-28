@@ -13,12 +13,12 @@
 	<meta name="description" content="Projects from Amjad Orfali" />
 </svelte:head>
 
-<div class="overflow-y-auto">
+<div class="overflow-y-auto wrapper">
 	<article class="flex items-center justify-around align-middle flex-col md:flex-row md:h-[-webkit-fill-available] ">
 		{#key $storeSingle}
 			<div
 				in:fly={{ duration: 500, x: -200 }}
-				class="order-2 card w-full md:basis-2/4 md:order-1  shadow-sm shadow-tertiary-500 dark:shadow-tertiary-900 card-hover"
+				class="order-2 card w-full md:basis-2/4 md:order-1  shadow-sm shadow-tertiary-500 dark:shadow-tertiary-900 card-hover self-center"
 			>
 				{#if normalizedProjects[$storeSingle].images.length}
 					<header>
@@ -40,7 +40,7 @@
 			</div>
 		{/key}
 
-		<div class="order-1 md:basis-1/5 md:order-2">
+		<div class="order-1 md:basis-1/5 md:order-2 self-stretch">
 			<ListBox selected={storeSingle} label="Projects">
 				{#each projects as project (project.name)}
 					<ListBoxItem value={project.name}>{project.name}</ListBoxItem>
@@ -60,7 +60,7 @@
 		gap: 1rem;
 		flex: 1;
 		padding: 1rem;
-		margin-top: 3rem;
+		margin-top: 7rem;
 		width: 100%;
 		max-width: 100vw;
 		box-sizing: border-box;
