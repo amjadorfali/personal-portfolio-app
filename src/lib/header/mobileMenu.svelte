@@ -27,7 +27,6 @@
 	};
 </script>
 
-<!-- TODO put something else here? github link? -->
 <MediaQuery query={`(max-width: ${supportedBreakPoint - 1}px)`} let:matches on:out={() => drawerStore.close()}>
 	{#if matches}
 		<div />

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="dark h-full">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
@@ -7,7 +7,7 @@
 		%sveltekit.head%
 	</head>
 
-	<body data-theme="skeleton" class="h-screen overflow-hidden" data-sveltekit-preload-data="hover">
-		<div class="h-full body-wrapper overflow-y-auto">%sveltekit.body%</div>
+	<body data-theme="skeleton" class="h-full" data-sveltekit-preload-data="hover">
+		<div class="min-h-full flex flex-col">%sveltekit.body%</div>
 	</body>
 </html>

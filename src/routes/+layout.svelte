@@ -1,7 +1,10 @@
 <script lang="ts">
+	//Should be imported first
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
 	import '@skeletonlabs/skeleton/styles/all.css';
 	import './styles.css';
+
+	import { navigating } from '$app/stores';
 	import Header from '$lib/header/Header.svelte';
 	import { page } from '$app/stores';
 	import { crossfade, fade } from 'svelte/transition';
@@ -59,9 +62,13 @@
 		{/if}
 
 		{#if showContent}
-			<main in:fade>
-				<slot />
-			</main>
+			{#if $navigating}
+				<h1 class="h-screen flex justify-center items-center">Loading ...</h1>
+			{:else}
+				<main in:fade>
+					<slot />
+				</main>
+			{/if}
 		{/if}
 	</div>
 {:else}

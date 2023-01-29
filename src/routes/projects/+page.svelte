@@ -13,7 +13,7 @@
 	<meta name="description" content="Projects from Amjad Orfali" />
 </svelte:head>
 
-<div class="overflow-y-auto wrapper">
+<div>
 	<article class="flex items-center justify-around align-middle flex-col md:flex-row md:h-[-webkit-fill-available] ">
 		{#key $storeSingle}
 			<div
@@ -64,9 +64,5 @@
 		width: 100%;
 		max-width: 100vw;
 		box-sizing: border-box;
-	}
-
-	.wrapper {
-		margin-bottom: 2rem;
 	}
 </style>
