@@ -14,8 +14,10 @@
 		duration: 500,
 		easing: cubicInOut
 	});
+
 	let canStartApp = $page.url.pathname !== '/',
-		sendLogoToHeader = $page.url.pathname !== '/';
+		sendLogoToHeader = canStartApp,
+		showContent = canStartApp;
 </script>
 
 <!-- //TODO : Lazy Loading ... -->
@@ -30,7 +32,7 @@
 					href={routes[0].url}
 					class="unstyled  logo-wrapper grid-cols-2 gap-5 p-7 transition-all duration-150 hover:shadow-lg active:shadow-lg hover:-skew-y-3 active:-skew-y-3 hover:skew-x-3 active:skew-x-3 "
 				>
-					<img src={'favicon.png'} in:receive={{ key: 'logo' }} alt="" class="w-12 h-w-12 prevent-select " />
+					<img src={'favicon.png'} in:receive={{ key: 'logo' }} on:introend={() => (showContent = true)} alt="" class="w-12 h-w-12 prevent-select " />
 					<div>
 						<h4 class="dark:text-primary-300 text-surface-900 w-max ">Amjad Orfali <br />Software Engineer</h4>
 					</div>
@@ -38,11 +40,9 @@
 			</Header>
 		{/if}
 
-		<main class={$page.url.pathname === routes[0].url ? 'flex relative items-center justify-center align-middle' : ''}>
-			<slot />
-
-			{#if !sendLogoToHeader}
-				<svg out:send={{ key: 'logo' }} class="absolute circle" viewBox="0 0 500 700">
+		{#if !sendLogoToHeader}
+			<div class="logo-to-send-wrapper">
+				<svg out:send={{ key: 'logo' }} class="absolute circle" viewBox="0 0 510 700">
 					<g fill="none" fill-rule="evenodd" stroke="black">
 						<g stroke-width="7.5" stroke="white">
 							<circle class="dark:stroke-primary-300 stroke-surface-900" cx="263" cy="390" r="240" />
@@ -55,16 +55,32 @@
 						</g>
 					</g>
 				</svg>
-			{/if}
-		</main>
+			</div>
+		{/if}
 
-		<footer />
+		{#if showContent}
+			<main in:fade>
+				<slot />
+			</main>
+		{/if}
 	</div>
 {:else}
 	<InitialLoader on:transitionsEnded={() => (canStartApp = true)} />
 {/if}
 
 <style>
+	.logo-to-send-wrapper {
+		display: flex;
+
+		width: 100%;
+		max-width: 100vw;
+		height: 81.3vh;
+		justify-content: center;
+		align-items: center;
+		vertical-align: middle;
+		position: relative;
+	}
+
 	a img.prevent-select {
 		-webkit-user-select: none; /* Safari */
 		-ms-user-select: none; /* IE 10 and IE 11 */
@@ -83,21 +99,8 @@
 		opacity: 0.25;
 	}
 
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 40px;
-	}
 	div h4 {
 		font-size: 1rem;
 		line-height: normal;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 40px 0;
-		}
 	}
 </style>

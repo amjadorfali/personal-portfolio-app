@@ -15,6 +15,7 @@
 
 	const circleDrawEnd = () => {
 		drawDone = true;
+		start = false;
 		dispatch('transitionsEnded');
 	};
 </script>
