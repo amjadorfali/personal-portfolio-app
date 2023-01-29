@@ -14,7 +14,7 @@
 </svelte:head>
 
 <div>
-	<article class="flex items-center justify-around align-middle flex-col md:flex-row md:h-[-webkit-fill-available] ">
+	<article class="flex items-center justify-around align-middle flex-col md:flex-row  ">
 		{#key $storeSingle}
 			<div
 				in:fly={{ duration: 500, x: -200 }}
