@@ -65,4 +65,8 @@
 		max-width: 100vw;
 		box-sizing: border-box;
 	}
+
+	.wrapper {
+		margin-bottom: 2rem;
+	}
 </style>
