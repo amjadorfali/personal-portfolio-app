@@ -12,6 +12,7 @@
 	import { cubicInOut } from 'svelte/easing';
 	import { routes } from '$lib/config/routes';
 	import CustomDrawer from '$lib/CustomDrawer/CustomDrawer.svelte';
+	import { PageLoader } from '$lib';
 
 	const [send, receive] = crossfade({
 		duration: 500,
@@ -63,7 +64,7 @@
 
 		{#if showContent}
 			{#if $navigating}
-				<h1 class="h-screen flex justify-center items-center">Loading ...</h1>
+				<PageLoader />
 			{:else}
 				<main in:fade>
 					<slot />
