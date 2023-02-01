@@ -1,25 +1,10 @@
-<article class="flex ">
-	<h1>Loading{' '}</h1>
+<article class="flex gap-4 flex-1 p-4 w-full max-w-[100vw] my-0 mx-auto h-[81.3vh] box-border items-center justify-center">
+	<span class="font-bold text-4xl min-w-[10.5rem]">Loading{' '}</span>
 </article>
 
 <style>
-	article {
-		gap: 1rem;
-		flex: 1;
-		padding: 1rem;
-		width: 100%;
-		max-width: 100vw;
-		margin: 0 auto;
-		box-sizing: border-box;
-		height: 81.3vh;
-	}
-	h1 {
-		font-size: 1.5rem;
-		width: 9rem;
-		margin: auto;
-	}
-	h1::after {
-		animation: loader 1.5s normal ease infinite;
+	span::after {
+		animation: loader 1s normal ease infinite;
 		content: '';
 	}
 

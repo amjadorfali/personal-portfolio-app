@@ -1,23 +1,16 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
-
 	import { draw } from 'svelte/transition';
 	import { onMount, createEventDispatcher } from 'svelte';
 
 	const dispatch = createEventDispatcher();
 
-	let drawDone = false,
-		start = false;
+	let start = false;
 
 	onMount(() => {
 		start = true;
 	});
 
-	const circleDrawEnd = () => {
-		drawDone = true;
-		start = false;
-		dispatch('transitionsEnded');
-	};
+	export let sendLogo: any;
 </script>
 
 <svelte:head>
@@ -25,12 +18,12 @@
 	<meta name="description" content="Amjad Orfali's Portfolio" />
 </svelte:head>
 {#if start}
-	<div class="box flex" out:fade={{ duration: 250 }}>
+	<div class="box flex">
 		<div class="slide slide-1  bg-secondary" />
-		<svg viewBox="0 0 500 700" class="circle" class:drawDone>
+		<svg viewBox="0 0 500 700" class="circle" out:sendLogo={{ key: 'logo' }}>
 			<g fill="none" fill-rule="evenodd" stroke="black">
 				<g stroke-width="7.5" stroke="white">
-					<circle in:draw={{ duration: 1000 }} on:introend={circleDrawEnd} cx="250" cy="350" r="250" />
+					<circle in:draw={{ duration: 1000 }} on:introend={() => dispatch('transitionsEnded')} cx="250" cy="350" r="250" />
 				</g>
 
 				<g transform="matrix(0.75 0 0 0.75 250 350)">
@@ -48,17 +41,6 @@
 {/if}
 
 <style>
-	svg.drawDone circle,
-	svg.drawDone path {
-		animation: fade 0.5s linear 0.25s forwards;
-		@keyframes fade {
-			0% {
-			}
-			100% {
-				opacity: 0.25;
-			}
-		}
-	}
 	svg {
 		z-index: 1;
 	}
