@@ -1,10 +1,14 @@
 <script lang="ts">
-	import { beforeNavigate } from '$app/navigation';
 	import { links, keyedRoutes } from '$lib/config';
 	import { navigatedFromFormSubmit } from '$lib/stores/navigation';
+	import { onMount } from 'svelte';
 
-	beforeNavigate((nav) => {
-		if (nav.to?.route.id?.endsWith('success')) navigatedFromFormSubmit.set(true);
+	const writeToStore = () => {
+		navigatedFromFormSubmit.set(true);
+	};
+	onMount(() => {
+		document?.querySelector('form')?.addEventListener('submit', writeToStore);
+		return () => document.querySelector('form')?.removeEventListener('submit', writeToStore);
 	});
 </script>
 
