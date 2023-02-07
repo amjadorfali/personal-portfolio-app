@@ -1,4 +1,5 @@
-<script lang="ts">
+<script lang="ts" module="context">
+	export const prerender = true;
 	import { links, keyedRoutes } from '$lib/config';
 </script>
 
@@ -37,7 +38,8 @@
 			</div>
 		</div>
 
-		<form name="contact" on:submit|preventDefault method="POST" data-netlify="true">
+		<form name="contact" data-netlify="true" method="POST" action={`${keyedRoutes.contact.url}/success`}>
+			<!-- <input type="hidden" name="form-name" value="contact" /> -->
 			<p>
 				<label>Your Name: <input type="text" name="name" /></label>
 			</p>
@@ -71,7 +73,7 @@
 		max-width: 85vw;
 		margin: 0 auto;
 		box-sizing: border-box;
-		height: 35vh;
+		min-height: 100vh;
 	}
 
 	h1 {
