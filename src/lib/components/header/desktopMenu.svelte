@@ -1,11 +1,11 @@
 <script lang="ts">
-	import MediaQuery from '$lib/MediaQuery.svelte';
+	import { MediaQuery } from '$lib/components';
 	import { crossfade, fade } from 'svelte/transition';
 	import { page } from '$app/stores';
 	import { cubicInOut } from 'svelte/easing';
-	import { routes } from '$lib/config/routes';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
-	import { supportedBreakPoint } from '$lib/config/breakpoints';
+	import { supportedBreakPoint, routes } from '$lib/config';
+	import { matchRoute } from '$lib/utils';
 
 	const [send, receive] = crossfade({
 		duration: 500,
@@ -21,8 +21,8 @@
 			</svg>
 			<ul class="desktop-list bg-primary-500">
 				{#each routes as route (route.label)}
-					<li class={` unstyled ${$page.url.pathname === route.url && '!text-secondary-800 active'} `}>
-						{#if $page.url.pathname === route.url}
+					<li class={` unstyled ${matchRoute(route.url, $page.url.pathname) && '!text-secondary-800 active'} `}>
+						{#if matchRoute(route.url, $page.url.pathname)}
 							<span class={'active !border-t-secondary-800'} out:send={{ key: 'active-marker' }} in:receive={{ key: 'active-marker' }} />
 						{/if}
 						<a data-sveltekit-preload-data href={route.url} class=" unstyled hover:!text-secondary-800">{route.label}</a>

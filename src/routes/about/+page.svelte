@@ -1,8 +1,9 @@
 <script lang="ts">
+	import { keyedRoutes } from '$lib/config';
 </script>
 
 <svelte:head>
-	<title>Amjad | About</title>
+	<title>Amjad | {keyedRoutes.about.label}</title>
 	<meta name="description" content="About Amjad Orfali" />
 </svelte:head>
 

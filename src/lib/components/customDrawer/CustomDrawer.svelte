@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { routes } from '$lib/config/routes';
 	import { Drawer, drawerStore } from '@skeletonlabs/skeleton';
+
+	import { routes } from '$lib/config';
+	import { matchRoute } from '$lib/utils';
 
 	const onHideDrawer = () => drawerStore.close();
 </script>
@@ -19,7 +21,10 @@
 	<nav>
 		<ul>
 			{#each routes as route (route.label)}
-				<li class={`${$page.url.pathname === route.url ? '' : 'opacity-40 hover:opacity-100 '}`} class:active={$page.url.pathname === route.url}>
+				<li
+					class={`${matchRoute(route.url, $page.url.pathname) ? '' : 'opacity-40 hover:opacity-100 '}`}
+					class:active={matchRoute(route.url, $page.url.pathname)}
+				>
 					<a data-sveltekit-preload-data href={route.url} on:click={onHideDrawer}>{route.label}</a>
 				</li>
 			{/each}

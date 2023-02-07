@@ -1,25 +1,25 @@
 <script lang="ts">
-	import { links } from '$lib/config/links';
+	import { links, keyedRoutes } from '$lib/config';
 </script>
 
 <svelte:head>
-	<title>Amjad | Contact</title>
+	<title>Amjad | {keyedRoutes.contact.label}</title>
 	<meta name="description" content="Contact Amjad Orfali" />
 </svelte:head>
 
 <article class="flex  items-center justify-center align-middle wrapper">
 	<section class=" flex flex-col gap-12">
-		<h1 class="font-bold ">Contact</h1>
+		<h1 class="font-bold ">{keyedRoutes.contact.label}</h1>
 
 		<div class="flex justify-around">
 			<div class="flex basis-1/3 justify-evenly gap-4">
 				<h4>Work</h4>
 				<ul>
 					<li>
-						<a href={links.github} target="_blank" rel="noreferrer" aria-label="GitHub Account">Github</a>
+						<a href={links.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub Account">Github</a>
 					</li>
 					<li>
-						<a href={links.email} target="_blank" rel="noreferrer" aria-label="Email Account">Email</a>
+						<a href={links.email} target="_blank" rel="noopener noreferrer" aria-label="Email Account">Email</a>
 					</li>
 				</ul>
 			</div>
@@ -28,10 +28,10 @@
 
 				<ul>
 					<li>
-						<a href={links.instagram} target="_blank" rel="noreferrer" aria-label="Instatgram Account">Instagram</a>
+						<a href={links.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instatgram Account">Instagram</a>
 					</li>
 					<li>
-						<a href={links.linkedIn} target="_blank" rel="noreferrer" aria-label="LinkedIn Account">LinkedIn</a>
+						<a href={links.linkedIn} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Account">LinkedIn</a>
 					</li>
 				</ul>
 			</div>

@@ -1,9 +1,10 @@
 <script lang="ts">
-	import MediaQuery from '$lib/MediaQuery.svelte';
 	import { fade } from 'svelte/transition';
 	import { drawerStore, LightSwitch } from '@skeletonlabs/skeleton';
 	import type { DrawerSettings } from '@skeletonlabs/skeleton';
-	import { supportedBreakPoint } from '$lib/config/breakpoints';
+
+	import { supportedBreakPoint } from '$lib/config';
+	import { MediaQuery } from '$lib/components';
 
 	const settings: DrawerSettings = {
 		id: 'demo',

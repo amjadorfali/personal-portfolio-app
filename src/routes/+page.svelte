@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { routes } from '$lib/config/routes';
+	import { keyedRoutes } from '$lib/config';
 </script>
 
 <svelte:head>
@@ -10,7 +10,7 @@
 <article class="items-center justify-center align-middle">
 	<section>
 		<h1>
-			<a class="!text-primary-500 !underline-offset-8" data-sveltekit-preload-data href={routes[1].url}>Software Engineer</a>
+			<a class="!text-primary-500 !underline-offset-8" data-sveltekit-preload-data href={keyedRoutes.about.url}>Software Engineer</a>
 		</h1>
 	</section>
 
