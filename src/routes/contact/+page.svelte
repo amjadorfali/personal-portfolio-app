@@ -1,5 +1,11 @@
 <script lang="ts">
+	import { beforeNavigate } from '$app/navigation';
 	import { links, keyedRoutes } from '$lib/config';
+	import { navigatedFromFormSubmit } from '$lib/stores/navigation';
+
+	beforeNavigate((nav) => {
+		if (nav.to?.route.id?.endsWith('success')) navigatedFromFormSubmit.set(true);
+	});
 </script>
 
 <svelte:head>
