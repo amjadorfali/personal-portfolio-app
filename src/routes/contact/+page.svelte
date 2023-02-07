@@ -37,7 +37,7 @@
 			</div>
 		</div>
 
-		<form data-netlify-recaptcha="true" name="contact" method="post" data-netlify="true">
+		<form name="contact" method="post" data-netlify="true">
 			<input type="hidden" name="form-name" value="contact" />
 			<p>
 				<label>Your Name: <input type="text" name="name" /></label>
@@ -56,7 +56,6 @@
 			<p>
 				<label>Message: <textarea name="message" /></label>
 			</p>
-			<div data-netlify-recaptcha="true" />
 			<p>
 				<button type="submit">Send</button>
 			</p>
