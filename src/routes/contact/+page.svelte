@@ -37,7 +37,7 @@
 			</div>
 		</div>
 
-		<form data-netlify-recaptcha="true" action={`${keyedRoutes.contact.url}/success`} name="contact" method="post" data-netlify="true">
+		<form data-netlify-recaptcha="true" name="contact" method="post" data-netlify="true">
 			<input type="hidden" name="form-name" value="contact" />
 			<p>
 				<label>Your Name: <input type="text" name="name" /></label>
