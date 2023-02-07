@@ -1,4 +1,4 @@
-<script lang="ts" module="context">
+<script lang="ts">
 	import { links, keyedRoutes } from '$lib/config';
 </script>
 
@@ -37,7 +37,7 @@
 			</div>
 		</div>
 
-		<form name="contact" method="post" data-netlify="true">
+		<form name="contact" method="post" data-netlify="true" action={`${keyedRoutes.contact.url}/success`}>
 			<input type="hidden" name="form-name" value="contact" />
 			<p>
 				<label>Your Name: <input type="text" name="name" /></label>
