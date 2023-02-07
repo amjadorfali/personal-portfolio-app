@@ -38,8 +38,9 @@
 			</div>
 		</div>
 
-		<form name="contact" data-netlify="true" method="POST" action={`${keyedRoutes.contact.url}/success`}>
-			<!-- <input type="hidden" name="form-name" value="contact" /> -->
+		<form name="contact" data-netlify-recaptcha="true" data-netlify="true" method="POST" action={`${keyedRoutes.contact.url}/success`}>
+			<input type="hidden" name="form-name" value="contact" />
+			<!-- <input type="hidden" name="form-name" value="netlify-form-example" /> -->
 			<p>
 				<label>Your Name: <input type="text" name="name" /></label>
 			</p>
@@ -57,6 +58,7 @@
 			<p>
 				<label>Message: <textarea name="message" /></label>
 			</p>
+			<div data-netlify-recaptcha="true" />
 			<p>
 				<button type="submit">Send</button>
 			</p>
