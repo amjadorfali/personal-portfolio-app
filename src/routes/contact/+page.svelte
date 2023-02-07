@@ -1,12 +1,10 @@
 <script lang="ts">
-	//eslint-disable-next-line @typescript-eslint/ban-ts-comment
-	//@ts-nocheck
-	export const prerender = true;
 </script>
 
 <article class="flex  items-center justify-center align-middle wrapper">
-	<form name="contact" netlify method="POST">
+	<form name="contact" method="post" data-netlify="true">
 		<input type="hidden" name="form-name" value="contact" />
+
 		<p>
 			<label>Your Name: <input type="text" name="name" /></label>
 		</p>
