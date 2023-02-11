@@ -28,6 +28,7 @@
 
 	onMount(async () => {
 		await tick();
+		console.log('$navigatedFromFormSubmit', $navigatedFromFormSubmit);
 		if (!$navigatedFromFormSubmit) {
 			goHome();
 		}
