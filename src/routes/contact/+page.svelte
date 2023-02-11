@@ -6,6 +6,7 @@
 	const writeToStore = () => {
 		console.log('WROTE to store');
 		navigatedFromFormSubmit.set(true);
+		console.log('value set is', $navigatedFromFormSubmit);
 	};
 	onMount(() => {
 		document?.querySelector('form')?.addEventListener('submit', writeToStore);
