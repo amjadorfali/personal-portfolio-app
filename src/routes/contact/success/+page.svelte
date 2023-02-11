@@ -2,7 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { keyedRoutes } from '$lib/config';
 	import { navigatedFromFormSubmit } from '$lib/stores/navigation';
-	import { onDestroy, onMount } from 'svelte';
+	import { onDestroy, onMount, tick } from 'svelte';
 
 	const goHome = () => {
 		goto(keyedRoutes.home.url);
@@ -26,7 +26,8 @@
 		navigatedFromFormSubmit.set(false);
 	});
 
-	onMount(() => {
+	onMount(async () => {
+		await tick();
 		if (!$navigatedFromFormSubmit) {
 			goHome();
 		}

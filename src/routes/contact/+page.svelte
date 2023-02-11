@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 
 	const writeToStore = () => {
+		console.log('WROTE to store');
 		navigatedFromFormSubmit.set(true);
 	};
 	onMount(() => {
