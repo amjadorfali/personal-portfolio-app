@@ -1,17 +1,11 @@
 <script lang="ts">
 	import { links, keyedRoutes } from '$lib/config';
-	import { navigatedFromFormSubmit } from '$lib/stores/navigation';
-	import { onMount } from 'svelte';
+	import { enhance } from '$app/forms';
+	import type { ActionData } from './$types';
 
-	const writeToStore = () => {
-		console.log('WROTE to store');
-		navigatedFromFormSubmit.set(true);
-		console.log('value set is', $navigatedFromFormSubmit);
-	};
-	onMount(() => {
-		document?.querySelector('form')?.addEventListener('submit', writeToStore);
-		return () => document.querySelector('form')?.removeEventListener('submit', writeToStore);
-	});
+	export let form: ActionData;
+
+	let submittingForm = false;
 </script>
 
 <svelte:head>
@@ -48,30 +42,41 @@
 				</ul>
 			</div>
 		</div>
+		{#if form?.success === true}
+			<h1>I recieved your email, will get back to you shortly!</h1>
+		{:else if form?.success === false}
+			<h1>Something went wrong :( <br /> <br /> please refresh page and try again</h1>
+		{:else if submittingForm}
+			<h1>Loading form submission</h1>
+		{:else}
+			<form
+				name="contact"
+				method="post"
+				use:enhance={() => {
+					//Before form is submitted
+					submittingForm = true;
+					return async ({ update }) => {
+						//After form is submitted
+						await update();
+						submittingForm = false;
+					};
+				}}
+			>
+				<p>
+					<label>Your Name: <input required type="text" name="name" /></label>
+				</p>
 
-		<form name="contact" method="post" data-netlify="true" action={`${keyedRoutes.contact.url}/success`}>
-			<input type="hidden" name="form-name" value="contact" />
-			<p>
-				<label>Your Name: <input type="text" name="name" /></label>
-			</p>
-			<p>
-				<label>Your Email: <input type="email" name="email" /></label>
-			</p>
-			<p>
-				<label
-					>Your Role: <select name="role[]" multiple>
-						<option value="leader">Leader</option>
-						<option value="follower">Follower</option>
-					</select></label
-				>
-			</p>
-			<p>
-				<label>Message: <textarea name="message" /></label>
-			</p>
-			<p>
-				<button type="submit">Send</button>
-			</p>
-		</form>
+				<p>
+					<label>Your Email: <input required type="email" name="email" /></label>
+				</p>
+				<p>
+					<label>Message: <textarea name="message" required /></label>
+				</p>
+				<p>
+					<button type="submit">Send</button>
+				</p>
+			</form>
+		{/if}
 	</section>
 </article>
 

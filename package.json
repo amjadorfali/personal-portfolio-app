@@ -12,12 +12,12 @@
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
 		"prepare": "yarn format && yarn lint &&  yarn check",
-		"start-build": "yarn prepare && yarn build && yarn preview",
-		"start-netlify-build": "yarn netlify build && yarn netlify dev"
+		"start-build": "yarn prepare && yarn build && yarn preview"
 	},
 	"devDependencies": {
 		"@fontsource/fira-mono": "^4.5.10",
 		"@playwright/test": "^1.30.0",
+		"@sendgrid/mail": "^7.7.0",
 		"@skeletonlabs/skeleton": "0.99.5",
 		"@sveltejs/adapter-netlify": "^2.0.1",
 		"@sveltejs/kit": "^1.5.0",
@@ -28,7 +28,6 @@
 		"eslint": "^8.33.0",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-plugin-svelte3": "^4.0.0",
-		"netlify-cli": "^12.10.0",
 		"postcss": "^8.4.21",
 		"postcss-import": "^15.1.0",
 		"prettier": "^2.8.3",
