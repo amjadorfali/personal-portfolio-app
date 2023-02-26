@@ -34,7 +34,7 @@
 			</svg>
 		</nav>
 		<div class="self-center px-8 dark:text-secondary-50">
-			<LightSwitch />
+			<LightSwitch width="w-12" height="h-6" />
 		</div>
 	{/if}
 </MediaQuery>

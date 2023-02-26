@@ -68,7 +68,7 @@
 		<Header>
 			<a
 				href={keyedRoutes.home.url}
-				class="unstyled  logo-wrapper grid-cols-2 gap-5 p-7 transition-all duration-150 hover:shadow-lg active:shadow-lg hover:-skew-y-3 active:-skew-y-3 hover:skew-x-3 active:skew-x-3 "
+				class="unstyled logo-wrapper grid-cols-2 gap-5 transition-all duration-150 hover:shadow-lg active:shadow-lg hover:-skew-y-3 active:-skew-y-3 hover:skew-x-3 active:skew-x-3 "
 			>
 				<div in:receive={{ key: 'logo' }} on:introend={() => (showContent = true)}>
 					<Avatar src={FavIcon} alt="" class="w-12 h-w-12 prevent-select " />
@@ -94,13 +94,7 @@
 {/if}
 
 <style>
-	a img.prevent-select {
-		-webkit-user-select: none; /* Safari */
-		-ms-user-select: none; /* IE 10 and IE 11 */
-		user-select: none; /* Standard syntax */
-	}
 	.logo-wrapper {
-		margin-left: 8px;
 		height: 3rem;
 		display: inline-flex;
 		align-items: center;

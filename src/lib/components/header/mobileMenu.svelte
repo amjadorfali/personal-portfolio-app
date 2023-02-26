@@ -37,11 +37,11 @@
 				<input type="checkbox" checked={$drawerStore.open} on:click={toggleStore} class="peer" />
 				<span class="bg-surface-800 dark:bg-primary-300 dark:peer-checked:bg-primary-400 " />
 				<span class="bg-surface-800 dark:bg-primary-300 dark:peer-checked:bg-primary-400" />
-				<span class="bg-surface-800 dark:bg-primary-300 dark:peer-checked:bg-primary-400" />
+				<span class="bg-surface-800 dark:bg-primary-300 dark:peer-checked:bg-primary-400 " />
 			</div>
 		</div>
-		<div class="self-center  dark:text-secondary-50">
-			<LightSwitch />
+		<div class="self-center">
+			<LightSwitch width="w-12" height="h-6" />
 		</div>
 	{/if}
 </MediaQuery>

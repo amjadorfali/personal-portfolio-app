@@ -4,7 +4,7 @@
 </script>
 
 <!-- Hamburger animation menu icon -->
-<header class="bg-surface-50-900-token grid px-1 ">
+<header class="bg-surface-50-900-token grid p-[0.3rem] ">
 	<slot />
 	<DesktopMenu />
 	<MobileMenu />
