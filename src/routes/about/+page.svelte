@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { keyedRoutes } from '$lib/config';
-	import MyImage from '$lib/assets/myself.jpg';
+	import MyImage from '$lib/assets/myself.png';
 </script>
 
 <svelte:head>
