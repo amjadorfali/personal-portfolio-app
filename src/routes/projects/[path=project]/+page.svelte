@@ -6,7 +6,7 @@
 	export let data: PageData;
 </script>
 
-<article class="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 ">
+<article class="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 h-full min-h-[90vh]">
 	<section>
 		<caption class="opacity-50 uppercase text-tertiary-700-200-token">Project</caption>
 		<br />
@@ -39,12 +39,10 @@
 
 <style>
 	article {
-		padding: 3rem 1rem 1rem 1rem;
-		/* margin: 1rem; */
+		padding: 0 1rem 1rem 1rem;
 		width: 100%;
 		max-width: 100vw;
 		box-sizing: border-box;
-		min-height: 100vh;
 		justify-content: center;
 		align-content: center;
 	}

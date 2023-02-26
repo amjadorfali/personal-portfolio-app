@@ -7,28 +7,26 @@
 	<meta name="description" content="Amjad Orfali's Portfolio" />
 </svelte:head>
 
-<article class="items-center justify-center align-middle">
-	<section>
-		<h1>
-			<a class="!text-primary-500 !underline-offset-8" data-sveltekit-preload-data href={keyedRoutes.about.url}>Software Engineer</a>
-		</h1>
-	</section>
+<article class="items-center justify-center align-middle h-full min-h-[90vh] gap-8 ">
+	<p class="unstyled capitalize">Hey, I'm Amjad <br /> but you can call me the Front-End Wizard!</p>
+	<div class="flex justify-center gap-8">
+		<a class="!text-primary-500 unstyled projects-link overflow-hidden" data-sveltekit-preload-data href={keyedRoutes.projects.url}>
+			See my projects
 
-	<section>
-		<p>
-			I have a strong foundation in computer science principles and a passion for staying up-to-date with the latest web development technologies and
-			trends. I am able to work effectively as part of a team or individually, and pride myself on my ability to take on complex problems and deliver
-			high-quality solutions in a timely manner.
-		</p>
-	</section>
+			<div class="link-underline" />
+		</a>
+		<a class="!text-primary-500 unstyled about-link overflow-hidden" data-sveltekit-preload-data href={keyedRoutes.about.url}
+			>More about me
+
+			<div class="link-underline" />
+		</a>
+	</div>
 </article>
 
 <style>
-	h1 a {
-		text-decoration: none;
-	}
 	p {
-		max-width: 60ch;
+		max-width: 40ch;
+		font-size: 2.5rem;
 	}
 
 	article {
@@ -41,6 +39,22 @@
 		max-width: 100vw;
 		margin: 0 auto;
 		box-sizing: border-box;
-		height: 81.3vh;
+	}
+
+	.link-underline {
+		position: relative;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		transform-origin: bottom right;
+		transition: all 0.25s ease-in-out;
+		transform: translateX(-101%) translateZ(0px);
+		height: 0.2rem;
+		background-color: rgb(var(--color-primary-500));
+	}
+
+	.projects-link:hover > .link-underline,
+	.about-link:hover > .link-underline {
+		transform: translateX(0%) translateZ(0px);
 	}
 </style>

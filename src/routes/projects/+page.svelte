@@ -10,7 +10,7 @@
 	<meta name="description" content="Projects from Amjad Orfali" />
 </svelte:head>
 
-<div class="wrapper flex flex-col">
+<div class="wrapper flex flex-col h-full min-h-[90vh]">
 	<h1 class="font-bold ">{keyedRoutes.projects.label}</h1>
 
 	<article class="flex flex-row justify-between flex-wrap gap-4">
@@ -46,8 +46,7 @@
 		box-sizing: border-box;
 	}
 	div.wrapper {
-		min-height: 100vh;
-		padding: 4rem 1rem;
+		padding: 0 1rem 4rem 1rem;
 		gap: 2rem;
 		align-items: center;
 		justify-content: space-evenly;

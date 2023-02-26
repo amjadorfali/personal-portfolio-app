@@ -16,7 +16,7 @@
 	<meta name="description" content="Contact Amjad Orfali" />
 </svelte:head>
 
-<article class="flex  items-center justify-center align-middle wrapper">
+<article class={`flex  items-center justify-center align-middle wrapper h-full min-h-[90vh]`}>
 	<section class=" flex flex-col gap-12">
 		<h1 class="font-bold ">{keyedRoutes.contact.label}</h1>
 
@@ -83,7 +83,6 @@
 		max-width: 85vw;
 		margin: 0 auto;
 		box-sizing: border-box;
-		min-height: 100vh;
 	}
 
 	h1 {
