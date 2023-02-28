@@ -16,7 +16,7 @@
 	<article class="flex flex-row justify-between flex-wrap gap-4">
 		{#each projects as project (project.config.path)}
 			<a
-				class=" card card-hover basis-full sm:basis-2/5 lg:basis-[30%] shadow-sm shadow-tertiary-500 dark:shadow-tertiary-900 self-center"
+				class=" card card-hover basis-full sm:basis-2/5 lg:basis-[30%] shadow-sm shadow-tertiary-500 dark:shadow-tertiary-900 self-stretch"
 				href={`${keyedRoutes.projects.url}/${project.config.path}`}
 				in:fly={{ duration: 500, x: -200 }}
 			>
@@ -29,7 +29,7 @@
 					</p>
 				</div>
 
-				<div class="p-4 max-w-[26ch]">
+				<div class="p-4 ">
 					<p>
 						{project.literals.summary}
 					</p>

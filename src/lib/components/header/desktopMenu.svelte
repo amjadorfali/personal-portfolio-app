@@ -33,7 +33,7 @@
 				<path class="fill-primary-500" d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
 			</svg>
 		</nav>
-		<div class="self-center px-8 dark:text-secondary-50">
+		<div class="self-center px-8 dark:text-secondary-50 justify-self-end">
 			<LightSwitch width="w-12" height="h-6" />
 		</div>
 	{/if}

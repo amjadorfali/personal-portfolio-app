@@ -14,6 +14,8 @@
 		<br />
 		<h3>{data.literals.summary}</h3>
 		<br />
+		<h4>{data.literals?.subSummary || ''}</h4>
+		<br />
 		<footer class="card-footer flex items-center gap-7">
 			{#if data.urls?.site}
 				<a href={data.urls?.site} target="_blank" rel="noopener noreferrer" aria-label="Project Link"> Visit Website </a>
@@ -31,9 +33,9 @@
 			{/if}
 		</footer>
 	</section>
-	<section class="gap-4 flex flex-col">
+	<section class="gap-6 flex flex-col">
 		<h3>Description</h3>
-		<p class="overflow-y-scroll max-h-[40vh]">{@html data.literals.description}</p>
+		<p class="overflow-y-scroll max-h-[40vh] text-[1.25rem] leading-6 unstyled">{@html data.literals.description}</p>
 	</section>
 </article>
 

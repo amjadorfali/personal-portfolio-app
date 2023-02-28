@@ -10,12 +10,16 @@
 <article class="items-center justify-center align-middle h-full min-h-[70vh] lg:min-h-[81.3vh] gap-8 ">
 	<p class="unstyled capitalize">Hey, I'm Amjad <br /> but you can call me the Front-End Wizard!</p>
 	<div class="flex justify-center gap-8">
-		<a class="!text-primary-500 unstyled projects-link overflow-hidden" data-sveltekit-preload-data href={keyedRoutes.projects.url}>
+		<a
+			class="!text-primary-500 unstyled projects-link overflow-hidden text-2xl capitalize"
+			data-sveltekit-preload-data
+			href={keyedRoutes.projects.url}
+		>
 			See my projects
 
 			<div class="link-underline" />
 		</a>
-		<a class="!text-primary-500 unstyled about-link overflow-hidden" data-sveltekit-preload-data href={keyedRoutes.about.url}
+		<a class="!text-primary-500 unstyled about-link overflow-hidden text-2xl capitalize" data-sveltekit-preload-data href={keyedRoutes.about.url}
 			>More about me
 
 			<div class="link-underline" />

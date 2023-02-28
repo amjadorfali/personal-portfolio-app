@@ -4,10 +4,33 @@ import PortfolioLogo from '$lib/assets/favicon.png';
 
 interface Project {
 	images?: string[];
-	literals: { name: string; description: string; summary: string };
+	literals: { name: string; description: string; summary: string; subSummary?: string };
 	config: { path: string; logo: string };
 	urls?: { site?: string; github?: { api?: string; client?: string } };
 }
+
+const getWashmenProjects = () =>
+	[
+		{
+			title: 'Sorting Station',
+			text: "The feature was the starting point of the items' journey. It was responsible for assigning the customer their items. The system allows the automatic insertion of item details. The feature also included a resolution center to ease communication between the staff"
+		},
+		{
+			title: 'Stain-man Station',
+			text: 'An app to maintain quality assurance for item issues and manage customer expectations if the stains found on garments were removed.The platform allowed for communication with the customers if there was a failure to remove a stain or fix damage to manage expectations and ensure customer satisfaction'
+		},
+		{
+			title: 'Pending-items Station',
+			text: 'Acts as a communication tool between our facility and customers, by managing expectation and informing our customers of any delays in advance.It also acts as an investigation tool for the dispatchers to find any items along with its status by providing all related information'
+		},
+		{
+			title: 'Customer Portal',
+			text: 'A portal where status updates were sent to the customer to notify them of the status of their items.It ensured the customer knew about any delays to the item delivery ahead of time.It can request approval for the cleaning of delicate items'
+		},
+		{
+			text: "Unfortunately, all those projects are internal apps for the company, so I don't have permission to share links or more info regarding them"
+		}
+	].reduce((prev, { text, title }) => (prev += `${title ? `<p class='text-center font-bold underline'>${title}</p> <br/>` : ''} ${text}<br/><br/>`), '');
 
 export const projects: Project[] = [
 	{
@@ -32,27 +55,15 @@ export const projects: Project[] = [
 		literals: {
 			name: 'Washmen',
 			summary: 'Exceptional cleaning at our award winning facility in UAE',
-			description: `Sorting Station: The feature was the starting point of the items' journey. It was responsible for assigning the customer their items. The system allows the automatic insertion of item details. The feature also included a resolution center to ease communication between the staff
-		<br/>
-		<br/>
-		Stain-man Station: An app to maintain quality assurance for item issues and manage customer expectations if the stains found on garments were removed. The platform allowed for communication with the customers if there was a failure to remove a stain or fix damage to manage expectations and ensure customer satisfaction
-		<br/>
-		<br/>
-		Pending-items Station: Acts as a communication tool between our facility and customers, by managing expectation and informing our customers of any delays in advance. It also acts as an investigation tool for the dispatchers to find any items along with its status by providing all related information
-		<br/>
-		<br/>
-		Customer Portal: A portal where status updates were sent to the customer to notify them of the status of their items. It ensured the customer knew about any delays to the item delivery ahead of time. It can request approval for the cleaning of delicate items
-		<br/>
-		<br/>
-		Unfortunately, all those projects are internal apps for the company, so I don't have access to share links or more info regarding them
-		`
+			subSummary: "My full-time job!",
+			description: getWashmenProjects()
 		},
 		config: { logo: WashmenLogo, path: 'washmen' }
 	},
 	{
 		literals: {
 			name: 'Personal Portfolio',
-			summary: 'Elegent portfolio made from scratch with love & Svelte',
+			summary: 'Elegent portfolio designed with the new Svelte framework, along with TailwindCSS',
 			description: `
 				My own web-app portfolio, runs on Svelte & SvelteKit, colored with TailwindCSS and Skeleton UI. Last but not least, TypeScript!
 				<br/>
