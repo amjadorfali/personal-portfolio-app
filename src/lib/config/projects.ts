@@ -30,7 +30,10 @@ const getWashmenProjects = () =>
 		{
 			text: "Unfortunately, all those projects are internal apps for the company, so I don't have permission to share links or more info regarding them"
 		}
-	].reduce((prev, { text, title }) => (prev += `${title ? `<p class='text-center font-bold underline'>${title}</p> <br/>` : ''} ${text}<br/><br/>`), '');
+	].reduce(
+		(prev, { text, title }) => (prev += `${title ? `<p class='text-center font-bold underline'>${title}</p> <br/>` : ''} ${text}<br/><br/>`),
+		''
+	);
 
 export const projects: Project[] = [
 	{
@@ -55,7 +58,7 @@ export const projects: Project[] = [
 		literals: {
 			name: 'Washmen',
 			summary: 'Exceptional cleaning at our award winning facility in UAE',
-			subSummary: "My full-time job!",
+			subSummary: 'My full-time job!',
 			description: getWashmenProjects()
 		},
 		config: { logo: WashmenLogo, path: 'washmen' }
