@@ -27,7 +27,7 @@
 			class=" self-start hover:underline-offset-8 hover:underline hover:animate-bounce !text-primary-500 !underline-offset-8">↓ Resume</a
 		>
 	</section>
-	<section class="basis-1/3  order-1"><img src={MyImage} alt="Me" /></section>
+	<section class="basis-1/3  order-1"><img src={MyImage} alt="Me" class="mix-blend-darken dark:mix-blend-lighten " /></section>
 </article>
 
 <style>
@@ -51,7 +51,6 @@
 		height: 100%;
 		width: 100%;
 		color: transparent;
-		mix-blend-mode: lighten;
 		border-radius: 3rem;
 		-o-object-position: 50% 100%;
 		object-position: 50% 100%;
