@@ -12,7 +12,11 @@
 </script>
 
 <svelte:head>
-	<title>{keyedRoutes.contact.label} Amjad Orfali</title>
+	<title>{keyedRoutes.contact.label} Amjad Orfali - Frontend Web Developer and Software Engineer</title>
+	<meta
+		name="description"
+		content="Contact Amjad Orfali, a frontend web developer and software engineer, to discuss how he can help you achieve your business goals through efficient and effective web development solutions. Use the contact form or listed platforms to reach out and discuss your project needs."
+	/>
 </svelte:head>
 
 <article class={`flex  items-center justify-center align-middle wrapper h-full min-h-[90vh]`}>

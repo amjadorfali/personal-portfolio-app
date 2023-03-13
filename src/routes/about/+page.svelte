@@ -4,7 +4,12 @@
 </script>
 
 <svelte:head>
-	<title>{keyedRoutes.about.label} Amjad Orfali</title>
+	<title>{keyedRoutes.about.label} Amjad Orfali - Frontend Web Developer and Software Engineer</title>
+
+	<meta
+		name="description"
+		content="Get to know Amjad Orfali, a frontend web developer and software engineer with years of experience in the field. Discover his technical skills, collaboration approach, and commitment to quality. Let's work together to achieve your business goals through efficient and effective web development solutions."
+	/>
 </svelte:head>
 
 <article class="items-center align-middle wrapper  flex flex-col  gap-4 justify-between lg:flex-row h-full min-h-[90vh] ">

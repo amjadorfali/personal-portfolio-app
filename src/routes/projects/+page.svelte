@@ -6,7 +6,11 @@
 </script>
 
 <svelte:head>
-	<title>{keyedRoutes.projects.label} from Amjad Orfali</title>
+	<title>Amjad Orfali's Portfolio - Frontend Web Developer and Software Engineer</title>
+	<meta
+		name="description"
+		content="Discover Amjad Orfali's portfolio of past projects that showcase his skills and expertise as a frontend web developer and software engineer. From developing responsive websites to creating user-friendly interfaces, Amjad has a solid understanding of the latest technologies such as HTML5, CSS3, and JavaScript frameworks like React and Svelte."
+	/>
 </svelte:head>
 
 <div class="wrapper flex flex-col h-full min-h-[90vh]">

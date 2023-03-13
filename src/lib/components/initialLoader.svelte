@@ -14,7 +14,11 @@
 </script>
 
 <svelte:head>
-	<title>Amjad Orfali | Frontend Web Developer and Software Engineer</title>
+	<title>Amjad Orfali - Frontend Web Developer and Software Engineer</title>
+	<meta
+		name="description"
+		content="Welcome to Amjad Orfali's portfolio website! Amjad is a skilled frontend web developer and software engineer with years of experience in the field. Discover his technical expertise and commitment to quality in creating responsive and visually appealing websites and user-friendly interfaces for web applications. Explore his past projects and let's discuss how he can help you achieve your business goals through efficient and effective web development solutions."
+	/>
 </svelte:head>
 {#if start}
 	<div class="box flex">
