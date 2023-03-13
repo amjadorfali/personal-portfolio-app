@@ -4,8 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Amjad | {keyedRoutes.about.label}</title>
-	<meta name="description" content="About Amjad Orfali" />
+	<title>{keyedRoutes.about.label} Amjad Orfali</title>
 </svelte:head>
 
 <article class="items-center align-middle wrapper  flex flex-col  gap-4 justify-between lg:flex-row h-full min-h-[90vh] ">

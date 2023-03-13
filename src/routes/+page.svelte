@@ -3,10 +3,8 @@
 </script>
 
 <svelte:head>
-	<title>Amjad</title>
-	<meta name="description" content="Amjad Orfali's Portfolio" />
+	<title>Amjad Orfali | Frontend Web Developer and Software Engineer</title>
 </svelte:head>
-
 <article class="items-center justify-center align-middle h-full min-h-[70vh] lg:min-h-[81.3vh] gap-8 ">
 	<p class="unstyled capitalize">Hey, I'm Amjad <br /> but you can call me the Front-End Wizard!</p>
 	<div class="flex justify-center gap-8">

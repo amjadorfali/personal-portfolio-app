@@ -14,8 +14,7 @@
 </script>
 
 <svelte:head>
-	<title>Amjad</title>
-	<meta name="description" content="Amjad Orfali's Portfolio" />
+	<title>Amjad Orfali | Frontend Web Developer and Software Engineer</title>
 </svelte:head>
 {#if start}
 	<div class="box flex">

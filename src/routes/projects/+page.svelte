@@ -6,8 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>Amjad | {keyedRoutes.projects.label}</title>
-	<meta name="description" content="Projects from Amjad Orfali" />
+	<title>{keyedRoutes.projects.label} from Amjad Orfali</title>
 </svelte:head>
 
 <div class="wrapper flex flex-col h-full min-h-[90vh]">

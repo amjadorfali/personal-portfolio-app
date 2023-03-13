@@ -12,8 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>Amjad | {keyedRoutes.contact.label}</title>
-	<meta name="description" content="Contact Amjad Orfali" />
+	<title>{keyedRoutes.contact.label} Amjad Orfali</title>
 </svelte:head>
 
 <article class={`flex  items-center justify-center align-middle wrapper h-full min-h-[90vh]`}>
