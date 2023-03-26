@@ -1,6 +1,6 @@
 export async function GET() {
-	return new Response(
-		`
+  return new Response(
+    `
       <?xml version="1.0" encoding="UTF-8" ?>
       <urlset
         xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
@@ -12,44 +12,44 @@ export async function GET() {
       >
         <url>
             <loc>https://www.amjadorfali.com/</loc>
-            <lastmod>2023-03-12</lastmod>
+            <lastmod>2023-03-26</lastmod>
         </url>
 
         <url>
         <loc>https://www.amjadorfali.com/projects</loc>
-        <lastmod>2023-03-12</lastmod>
+        <lastmod>2023-03-26</lastmod>
         </url>
    
         <url>
         <loc>https://www.amjadorfali.com/projects/just-do-it</loc>
-        <lastmod>2023-03-12</lastmod>
+        <lastmod>2023-03-26</lastmod>
         </url>
 
         <url>
         <loc>https://www.amjadorfali.com/projects/washmen</loc>
-        <lastmod>2023-03-12</lastmod>
+        <lastmod>2023-03-26</lastmod>
         </url>
 
         <url>
         <loc>https://www.amjadorfali.com/projects/personal-portfolio</loc>
-        <lastmod>2023-03-12</lastmod>
+        <lastmod>2023-03-26</lastmod>
         </url>
 
         <url>
         <loc>https://www.amjadorfali.com/contact</loc>
-        <lastmod>2023-03-12</lastmod>
+        <lastmod>2023-03-26</lastmod>
         </url>
         
         <url>
         <loc>https://www.amjadorfali.com/about</loc>
-        <lastmod>2023-03-12</lastmod>
+        <lastmod>2023-03-26</lastmod>
         </url>
 
       </urlset>`.trim(),
-		{
-			headers: {
-				'Content-Type': 'application/xml'
-			}
-		}
-	);
+    {
+      headers: {
+        'Content-Type': 'application/xml'
+      }
+    }
+  );
 }
