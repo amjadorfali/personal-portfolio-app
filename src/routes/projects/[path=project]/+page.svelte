@@ -6,6 +6,11 @@
 	export let data: PageData;
 </script>
 
+<svelte:head>
+	<title>{data.config.title}</title>
+	<meta name="description" content={data.config.metaDescription} />
+</svelte:head>
+
 <article class="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 h-full min-h-[90vh]">
 	<section>
 		<caption class="opacity-50 uppercase text-tertiary-700-200-token">Project</caption>

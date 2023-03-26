@@ -5,7 +5,7 @@ import PortfolioLogo from '$lib/assets/favicon.png';
 interface Project {
 	images?: string[];
 	literals: { name: string; description: string; summary: string; subSummary?: string };
-	config: { path: string; logo: string };
+	config: { path: string; logo: string; title: string; metaDescription: string };
 	urls?: { site?: string; github?: { api?: string; client?: string } };
 }
 
@@ -47,7 +47,13 @@ export const projects: Project[] = [
 				API: Blazingly fast backbones of the Todo App. A fully typed NestJS backend, wired with GraphQL, talks with MongoDB, and runs on Heroku!
 			`
 		},
-		config: { logo: JustDoItLogo, path: 'just-do-it' },
+		config: {
+			logo: JustDoItLogo,
+			path: 'just-do-it',
+			title: 'Just Do It - The Ultimate Todo App Built with React, MongoDB, GraphQL, and NestJS | My Work',
+			metaDescription:
+				'Boost your productivity with Just Do It, a powerful todo app built with cutting-edge technologies. As the developer behind this app, I can showcase my expertise in React, MongoDB, GraphQL, and NestJS. Discover how Just Do It can help you get things done.'
+		},
 		urls: {
 			github: { client: 'https://github.com/amjadorfali/todo-react-app', api: 'https://github.com/amjadorfali/todo-API' },
 			site: 'https://angry-amjads-homepage.netlify.app/'
@@ -61,7 +67,13 @@ export const projects: Project[] = [
 			subSummary: 'My full-time job!',
 			description: getWashmenProjects()
 		},
-		config: { logo: WashmenLogo, path: 'washmen' }
+		config: {
+			logo: WashmenLogo,
+			path: 'washmen',
+			title: 'Washmen - Your One-Stop Laundry and Dry Cleaning Solution in the UAE | My Work Experience',
+			metaDescription:
+				"Find the best laundry and dry cleaning services in the UAE with Washmen. As an employee, I have firsthand experience with the company's reliable and efficient services. Learn more about my role and contributions at Washmen."
+		}
 	},
 	{
 		literals: {
@@ -78,7 +90,13 @@ export const projects: Project[] = [
 				You may find splinters of my personal life as well 👀
 				`
 		},
-		config: { logo: PortfolioLogo, path: 'personal-portfolio' },
+		config: {
+			logo: PortfolioLogo,
+			path: 'personal-portfolio',
+			title: 'Personal Portfolio - Showcase of My Projects, Skills, and Achievements | My Work',
+			metaDescription:
+				'Explore my personal portfolio and discover my skills, projects, and achievements. As the creator of this portfolio, I have used Svelte, Skeleton UI, and TailwindCss to build a stunning and responsive website. See how I can add value to your business with my skills and experience.'
+		},
 		urls: { github: { client: 'https://github.com/amjadorfali/personal-portfolio-app' }, site: 'https://amjadorfali.com' }
 	}
 ];
