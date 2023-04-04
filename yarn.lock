@@ -528,9 +528,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sveltejs/kit@npm:1.11.0":
-  version: 1.11.0
-  resolution: "@sveltejs/kit@npm:1.11.0"
+"@sveltejs/kit@npm:1.15.1":
+  version: 1.15.1
+  resolution: "@sveltejs/kit@npm:1.15.1"
   dependencies:
     "@sveltejs/vite-plugin-svelte": ^2.0.0
     "@types/cookie": ^0.5.1
@@ -550,7 +550,7 @@ __metadata:
     vite: ^4.0.0
   bin:
     svelte-kit: svelte-kit.js
-  checksum: 8fa66b8028e2ae9390d9d4ed2f51a3da2e5dee2a21dbcf928e38a6cf4cd5359c4e4449bee8927dabcb7786cb740a75789dd91eab041a5ac8f9e3e4a50ca52589
+  checksum: 572c0a969500f218cf23ce36686602a66c97c98b3e656bedd0d14446d125f002dd1b37d2ede422570de18e5800e4bec109fe3ed57a78c9df4ac00718f53f6f1f
   languageName: node
   linkType: hard
 
@@ -2560,7 +2560,7 @@ __metadata:
     "@sendgrid/mail": ^7.7.0
     "@skeletonlabs/skeleton": ^1.0.0
     "@sveltejs/adapter-netlify": ^2.0.6
-    "@sveltejs/kit": 1.11.0
+    "@sveltejs/kit": 1.15.1
     "@tailwindcss/forms": ^0.5.3
     "@types/cookie": ^0.5.1
     "@typescript-eslint/eslint-plugin": ^5.54.1
