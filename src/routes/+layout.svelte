@@ -5,7 +5,7 @@
 	import './styles.css';
 	// ----                          ----
 
-	import { onDestroy } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { crossfade, fade } from 'svelte/transition';
@@ -15,7 +15,9 @@
 	import { Header, InitialLoader, PageLoader, CustomDrawer } from '$lib/components';
 
 	import FavIcon from '$lib/assets/favicon.png';
+
 	import { Avatar } from '@skeletonlabs/skeleton';
+	import BackgroundAnimation from '$lib/components/animations/backgroundAnimation.svelte';
 
 	const [send, receive] = crossfade({
 		duration: 500,
@@ -83,7 +85,8 @@
 			{#if !showPage}
 				<PageLoader />
 			{:else}
-				<main in:fade class="pt-16 ">
+				<main in:fade class="pt-16 main-wrapper">
+					<BackgroundAnimation />
 					<slot />
 				</main>
 			{/if}

@@ -1,5 +1,4 @@
 {
-	"html.customData": ["./node_modules/@shoelace-style/shoelace/dist/vscode.html-custom-data"],
 	"editor.formatOnSave": true,
 	"workbench.colorCustomizations": {
 		"activityBar.background": "#2052A9",
@@ -8,5 +7,8 @@
 	},
 	"svelte.enable-ts-plugin": true,
 	"svelte.plugin.html.completions.enable": true,
-	"svelte.plugin.typescript.enable": true
+	"svelte.plugin.typescript.enable": true,
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	}
 }

@@ -1992,6 +1992,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gsap@npm:^3.11.5":
+  version: 3.11.5
+  resolution: "gsap@npm:3.11.5"
+  checksum: 0d62c9405ed9703f8c65e6190b648d9691fa84bd03bcde0d286cd29d80c5865c22aa57a128b33299c0c15d41473e83f13be1645700325f3821dd912a3022350d
+  languageName: node
+  linkType: hard
+
 "has-flag@npm:^4.0.0":
   version: 4.0.0
   resolution: "has-flag@npm:4.0.0"
@@ -2569,6 +2576,7 @@ __metadata:
     eslint: ^8.35.0
     eslint-config-prettier: ^8.7.0
     eslint-plugin-svelte3: ^4.0.0
+    gsap: ^3.11.5
     postcss: ^8.4.21
     postcss-import: ^15.1.0
     prettier: ^2.8.4

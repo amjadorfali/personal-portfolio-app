@@ -13,6 +13,8 @@
 	/>
 </svelte:head>
 
+<!-- //FIXME: Apply `Prefer reduced motion` accessibility fixes for all needed transitions -->
+
 <div class="wrapper flex flex-col h-full min-h-[90vh]">
 	<h1 class="font-bold ">{keyedRoutes.projects.label}</h1>
 
