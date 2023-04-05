@@ -35,14 +35,14 @@
 	let timeStarted: number | undefined;
 
 	beforeNavigate((nav) => {
-		if (nav?.to?.url.hostname === nav.from?.url.hostname) {
+		if (nav?.to?.route.id !== nav.from?.route.id) {
 			showPage = false;
 			clearTimeout(timeout);
 			timeStarted = new Date().getTime();
 		}
 	});
 	afterNavigate((nav) => {
-		if (!nav.from || nav?.to?.url.hostname === nav.from?.url.hostname) {
+		if (!nav.from || nav?.to?.route.id !== nav.from?.route.id) {
 			const timeTook = new Date().getTime() - (timeStarted || 0);
 
 			if (timeTook > navigationLimit) {
@@ -81,12 +81,12 @@
 			</a>
 		</Header>
 
+		<BackgroundAnimation />
 		{#if showContent}
 			{#if !showPage}
 				<PageLoader />
 			{:else}
 				<main in:fade class="pt-16 main-wrapper">
-					<BackgroundAnimation />
 					<slot />
 				</main>
 			{/if}

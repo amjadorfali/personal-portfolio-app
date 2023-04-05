@@ -1,1 +1,1 @@
-export { default as BackgroundAnimation } from "./backgroundAnimation.svelte";
+export { default as BackgroundAnimation } from './backgroundAnimation.svelte';
