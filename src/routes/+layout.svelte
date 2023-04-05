@@ -64,7 +64,7 @@
 </script>
 
 <CustomDrawer />
-
+<BackgroundAnimation />
 {#if canStartApp}
 	<div class="bg-primary">
 		<Header>
@@ -81,12 +81,11 @@
 			</a>
 		</Header>
 
-		<BackgroundAnimation />
 		{#if showContent}
 			{#if !showPage}
 				<PageLoader />
 			{:else}
-				<main in:fade class="pt-16 main-wrapper">
+				<main in:fade class="pt-16">
 					<slot />
 				</main>
 			{/if}

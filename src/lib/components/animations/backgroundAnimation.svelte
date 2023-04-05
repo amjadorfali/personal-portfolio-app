@@ -12,8 +12,9 @@
 	}
 	// Animations
 	onMount(() => {
+		const blinkIcons = gsap.utils.selector('.main-wrapper')('.blink-icon');
 		//Transition accross screen
-		gsap.from(gsap.utils.selector('.main-wrapper')('.blink-icon'), {
+		gsap.from(blinkIcons, {
 			ease: 'power2.inOut',
 			x: '120vw',
 			duration: Math.floor(Math.random() * 11) + 10,
@@ -22,7 +23,7 @@
 		});
 
 		//Glow effect
-		gsap.from(gsap.utils.selector('.main-wrapper')('.blink-icon'), {
+		gsap.from(blinkIcons, {
 			ease: 'power2.in',
 			duration: 1.5,
 			repeat: -1,
