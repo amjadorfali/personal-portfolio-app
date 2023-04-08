@@ -10,7 +10,7 @@
 	/>
 </svelte:head>
 <article class="items-center justify-center align-middle h-full min-h-[70vh] lg:min-h-[81.3vh] gap-8 ">
-	<p class="unstyled capitalize">Hey, I'm Amjad <br /> but you can call me the Front-End Wizard!</p>
+	<h1 class="unstyled capitalize">Hey, I'm Amjad <br /> but you can call me the Front-End Wizard!</h1>
 	<div class="flex justify-center gap-8">
 		<a
 			class="!text-primary-500 unstyled projects-link overflow-hidden text-2xl capitalize"
@@ -30,9 +30,8 @@
 </article>
 
 <style>
-	p {
+	h1 {
 		max-width: 40ch;
-		font-size: 2.5rem;
 	}
 
 	article {

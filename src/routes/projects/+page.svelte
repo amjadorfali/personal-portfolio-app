@@ -29,13 +29,13 @@
 					<Avatar src={project.config.logo} background="bg-surface-900-50-token p-[0.35rem]" />
 				</div>
 				<div class="p-4">
-					<p>
+					<h3>
 						{project.literals.name}
-					</p>
+					</h3>
 				</div>
 
 				<div class="p-4 ">
-					<p>
+					<p class="unstyled">
 						{project.literals.summary}
 					</p>
 				</div>

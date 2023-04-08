@@ -60,7 +60,7 @@
 	li {
 		position: relative;
 		height: 100%;
-		padding: 0 1em;
+		padding: 0 2em;
 	}
 
 	nav a {
@@ -68,7 +68,6 @@
 		height: 100%;
 		align-items: center;
 		font-weight: 700;
-		font-size: 0.8rem;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		text-decoration: none;

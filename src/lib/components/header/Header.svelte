@@ -14,7 +14,7 @@
 	header {
 		position: fixed;
 		z-index: 1;
-		grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr;
+		grid-template-columns: 0.5fr 1fr 0.2fr 0.1fr;
 		top: 0;
 		left: 0;
 		right: 0;
@@ -22,7 +22,7 @@
 		min-height: 3rem;
 	}
 
-	@media (min-width: 843px) {
+	@media (min-width: 1000px) {
 		header {
 			grid-template-columns: 0.5fr 1fr 0.5fr;
 		}

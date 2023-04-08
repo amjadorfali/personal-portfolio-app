@@ -40,7 +40,7 @@
 	</section>
 	<section class="gap-6 flex flex-col">
 		<h3>Description</h3>
-		<p class="overflow-y-scroll max-h-[40vh] text-[1.25rem] leading-6 unstyled">{@html data.literals.description}</p>
+		<p class="overflow-y-scroll max-h-[40vh]  leading-6 unstyled">{@html data.literals.description}</p>
 	</section>
 </article>
 

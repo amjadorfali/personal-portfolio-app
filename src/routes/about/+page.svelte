@@ -14,16 +14,16 @@
 
 <article class="items-center align-middle wrapper  flex flex-col  gap-4 justify-between lg:flex-row h-full min-h-[90vh] ">
 	<section class="basis-1/2 flex flex-col gap-4 order-2  lg:order-1">
-		<caption class="opacity-50 uppercase text-tertiary-700-200-token">a few words about me</caption>
+		<h3 class="unstyled opacity-50 uppercase text-tertiary-700-200-token">a few words about me</h3>
 
-		<h1 class="font-bold unstyled">
+		<p class="font-bold unstyled">
 			I'm Amjad Orfali, a web developer and software engineer with a focus on Front-End development. I spend my days bringing designs to life and
 			crafting pixel-perfect experiences. When I'm not smashing away at my keyboard, you can find me gaming on Steam or sipping on a cup of coffee.
 			I'm also a music enthusiast, and singer as well!
 			<br />
 			<br />
 			Whether you need a stunning website, a jaw-dropping UI, or just someone to geek out about CSS with, I'm your guy.
-		</h1>
+		</p>
 
 		<a
 			target="_blank"
@@ -42,13 +42,12 @@
 		box-sizing: border-box;
 	}
 
-	h1,
-	caption {
+	h3 {
 		text-align: center;
 	}
 
-	h1 {
-		font-size: 1rem;
+	p {
+		text-align: center;
 	}
 	img {
 		max-height: 25rem;
@@ -65,13 +64,9 @@
 		.wrapper {
 			margin: 1.5rem;
 		}
-		h1,
-		caption {
+		p,
+		h3 {
 			text-align: start;
-		}
-
-		h1 {
-			font-size: 1rem;
 		}
 	}
 </style>

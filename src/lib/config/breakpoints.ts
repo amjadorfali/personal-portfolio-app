@@ -1,1 +1,1 @@
-export const supportedBreakPoint = 843;
+export const supportedBreakPoint = 1000;

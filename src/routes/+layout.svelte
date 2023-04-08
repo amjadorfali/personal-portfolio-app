@@ -2,7 +2,9 @@
 	// ---- Should be imported first ----
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
 	import '@skeletonlabs/skeleton/styles/all.css';
+	import './styles.scss';
 	import './styles.css';
+
 	// ----                          ----
 
 	import { onDestroy, onMount } from 'svelte';
@@ -76,7 +78,7 @@
 					<Avatar src={FavIcon} alt="" width="w-12" class="prevent-select " />
 				</div>
 				<div>
-					<h4 class="dark:text-primary-300 text-surface-900 w-max ">Amjad Orfali <br />Software Engineer</h4>
+					<p class="unstyled dark:text-primary-300 text-surface-900 w-max font-bold">Amjad Orfali <br />Software Engineer</p>
 				</div>
 			</a>
 		</Header>
@@ -103,7 +105,7 @@
 		justify-content: center;
 	}
 
-	div h4 {
+	div p {
 		font-size: 1rem;
 		line-height: normal;
 	}

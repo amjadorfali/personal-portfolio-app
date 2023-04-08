@@ -1,3 +1,8 @@
+:root {
+	--theme-font-family-base: 'Inter', 'Comic Sans MS', sans-serif;
+	--theme-font-family-heading: 'Inter', 'Comic Sans MS', sans-serif;
+	/* ... */
+}
 body {
 	margin: 0;
 	font-family: var(--theme-font-family-base);
@@ -9,4 +14,26 @@ body {
 }
 .body-wrapper {
 	margin-bottom: max(2rem, env(safe-area-inset-bottom));
+}
+
+
+h1 { 
+		font-size: 2.5rem;
+}
+
+
+p {
+	font-size: 1.5rem;
+	font-weight : 400;
+}
+
+
+@media (max-width: 768px) {
+	h1 { 
+		font-size: 1.75rem;
+}
+
+	p {
+		font-size: 1rem;
+	}
 }
