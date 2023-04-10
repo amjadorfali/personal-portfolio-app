@@ -1,4 +1,4 @@
-type RouteKeys = 'home' | 'about' | 'projects' | 'contact';
+export type RouteKeys = 'home' | 'about' | 'projects' | 'contact';
 type Route = { url: string; label: string; key: RouteKeys };
 export const routes: Route[] = [
 	{ url: '/', label: 'Home', key: 'home' },

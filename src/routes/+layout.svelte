@@ -18,7 +18,7 @@
 
 	import FavIcon from '$lib/assets/favicon.png';
 
-	import { Avatar } from '@skeletonlabs/skeleton';
+	import { Avatar, LightSwitch } from '@skeletonlabs/skeleton';
 	import BackgroundAnimation from '$lib/components/animations/backgroundAnimation.svelte';
 
 	const [send, receive] = crossfade({
@@ -68,7 +68,7 @@
 <CustomDrawer />
 <BackgroundAnimation />
 {#if canStartApp}
-	<div class="bg-primary">
+	<div class="bg-primary z-[0]">
 		<Header>
 			<a
 				href={keyedRoutes.home.url}
@@ -87,7 +87,7 @@
 			{#if !showPage}
 				<PageLoader />
 			{:else}
-				<main in:fade class="pt-16">
+				<main in:fade class="pt-16 ">
 					<slot />
 				</main>
 			{/if}
@@ -95,6 +95,10 @@
 	</div>
 {:else}
 	<InitialLoader sendLogo={send} on:transitionsEnded={() => (canStartApp = true)} />
+	<!-- //FIXME : Find a way to init lightswitch store other than this workaround -->
+	<div class="hidden">
+		<LightSwitch width="w-12" height="h-6" />
+	</div>
 {/if}
 
 <style>
@@ -108,5 +112,11 @@
 	div p {
 		font-size: 1rem;
 		line-height: normal;
+	}
+	div.hidden {
+		visibility: hidden;
+		opacity: 0;
+		width: 0;
+		height: 0;
 	}
 </style>
