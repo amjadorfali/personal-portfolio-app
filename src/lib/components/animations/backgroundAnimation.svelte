@@ -1,11 +1,10 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
-
-	import { routes } from '$lib/config';
-
 	import { page } from '$app/stores';
-	import { animateAmbience, blinkIcons, calculatePlanetX, routeConfig, starIcons } from './helpers/animations';
 	import { afterNavigate } from '$app/navigation';
+
+	import { routeFromUrl, routes } from '$lib/config';
+	import { animateAmbience, blinkIcons, calculatePlanetX, routeConfig, starIcons } from './helpers/animations';
 
 	let renderPlanets = false;
 	onMount(async () => {
@@ -16,18 +15,18 @@
 	});
 
 	afterNavigate((nav) => {
-		const prevRoute = routes.find((v) => nav.from?.route.id === v.url);
-		const nextRoute = routes.find((v) => nav.to?.route.id === v.url);
-		if (nextRoute && prevRoute && nextRoute.url !== prevRoute.url) {
-			calculatePlanetX(nextRoute.url, prevRoute.url);
-		}
+		const prevRoute = routeFromUrl(nav.from?.route.id);
+		const nextRoute = routeFromUrl(nav.to?.route.id);
+		if (nextRoute && prevRoute && nextRoute.url !== prevRoute.url) calculatePlanetX(nextRoute.url, prevRoute.url);
 	});
 </script>
 
 <div class="w-full h-full z-[-10] main-wrapper absolute overflow-hidden">
-	{#each blinkIcons as { icon: Icon }}
-		<Icon className={`blink-icon absolute `} style={`top:${Math.floor(Math.random() * 91) + 5}vh; left : -10vw; `} />
-	{/each}
+	{#if renderPlanets}
+		{#each blinkIcons as { icon: Icon }}
+			<Icon className={`blink-icon absolute `} style={`top:${Math.floor(Math.random() * 91) + 5}vh; `} />
+		{/each}
+	{/if}
 
 	{#each starIcons as { icon: Icon }}
 		<Icon className={`star-icon absolute`} style={`top:${Math.floor(Math.random() * 91) + 5}vh; right : ${Math.floor(Math.random() * 100)}vw;`} />
@@ -36,7 +35,7 @@
 	{#if renderPlanets}
 		<div class="flex relative  w-full h-full items-end">
 			{#each Object.entries(routeConfig) as [routeKey, config]}
-				<svelte:component this={config.planet} className={`${routeKey}-planet-icon absolute bottom-24`} />
+				<svelte:component this={config.planet} className={`${routeKey}-planet-icon absolute bottom-16  w-52 h-52 sm:w-80 sm:h-80 sm:bottom-24`} />
 			{/each}
 		</div>
 	{/if}

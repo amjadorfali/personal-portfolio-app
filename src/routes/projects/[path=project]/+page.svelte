@@ -38,8 +38,8 @@
 			{/if}
 		</footer>
 	</section>
-	<section class="gap-6 flex flex-col">
-		<h3>Description</h3>
+	<section class="card variant-glass-secondary p-4">
+		<h3 class="card-header">Description</h3>
 		<p class="overflow-y-scroll max-h-[40vh]  leading-6 unstyled">{@html data.literals.description}</p>
 	</section>
 </article>

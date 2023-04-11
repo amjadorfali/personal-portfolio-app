@@ -13,8 +13,8 @@
 </svelte:head>
 
 <article class="items-center align-middle wrapper  flex flex-col  gap-4 justify-between lg:flex-row h-full min-h-[90vh] ">
-	<section class="basis-1/2 flex flex-col gap-4 order-2  lg:order-1">
-		<h3 class="unstyled opacity-50 uppercase text-tertiary-700-200-token">a few words about me</h3>
+	<section class="basis-1/2 flex flex-col gap-4 order-2  lg:order-1 card  p-4   custom-variant-glass-secondary">
+		<h3 class="unstyled uppercase text-tertiary-300-600-token card-header">a few words about me</h3>
 
 		<p class="font-bold unstyled">
 			I'm Amjad Orfali, a web developer and software engineer with a focus on Front-End development. I spend my days bringing designs to life and
@@ -28,7 +28,8 @@
 		<a
 			target="_blank"
 			href="AmjadOrfaliResume.pdf"
-			class=" self-start hover:underline-offset-8 hover:underline hover:animate-bounce !text-primary-500 !underline-offset-8">↓ Resume</a
+			class="card-footer self-start text-lg hover:underline-offset-8 hover:underline hover:animate-bounce !text-primary-300-600-token !underline-offset-8"
+			>↓ Resume</a
 		>
 	</section>
 	<section class="basis-1/3  order-1"><img src={MyImage} alt="Me" class="mix-blend-darken dark:mix-blend-lighten " /></section>
@@ -68,5 +69,12 @@
 		h3 {
 			text-align: start;
 		}
+	}
+
+	.custom-variant-glass-secondary {
+		background-color: rgb(var(--color-secondary-500) / 0.7) !important;
+		--tw-backdrop-blur: blur(16px);
+		backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+			var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia) !important;
 	}
 </style>
