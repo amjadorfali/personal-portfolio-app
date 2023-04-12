@@ -6,7 +6,7 @@
 	import './styles.css';
 
 	// ------------------------------------
-
+	import type { PageData } from './$types';
 	import { onDestroy } from 'svelte';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
@@ -20,7 +20,11 @@
 
 	import { Avatar, LightSwitch } from '@skeletonlabs/skeleton';
 	import BackgroundAnimation from '$lib/components/animations/backgroundAnimation.svelte';
-	import Analytics from '$lib/analytics.svelte';
+	import Analytics from '$lib/analytics/analytics.svelte';
+
+	//Analytics
+	export let data: PageData;
+	const { key } = data;
 
 	const [send, receive] = crossfade({
 		duration: 500,
@@ -67,7 +71,7 @@
 	// ----- Navigation logic ends -----
 </script>
 
-<Analytics />
+<Analytics {key} />
 <CustomDrawer />
 <BackgroundAnimation />
 {#if canStartApp}
