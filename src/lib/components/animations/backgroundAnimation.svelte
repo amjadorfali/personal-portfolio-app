@@ -3,7 +3,7 @@
 	import { page } from '$app/stores';
 	import { afterNavigate } from '$app/navigation';
 
-	import { routeFromUrl, routes } from '$lib/config';
+	import { routeFromUrl } from '$lib/config';
 	import { animateAmbience, blinkIcons, calculatePlanetX, routeConfig, starIcons } from './helpers/animations';
 
 	let renderPlanets = false;

@@ -1,6 +1,6 @@
 import { Sine, gsap } from 'gsap';
 
-import { routes, type RouteKeys, routeFromUrl } from '$lib/config';
+import { type RouteKeys, routeFromUrl } from '$lib/config';
 
 import BlinkIcon from '$lib/assets/blink.svelte';
 import StarIcon from '$lib/assets/star.svelte';

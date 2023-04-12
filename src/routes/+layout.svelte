@@ -5,9 +5,9 @@
 	import './styles.scss';
 	import './styles.css';
 
-	// ----                          ----
+	// ------------------------------------
 
-	import { onDestroy, onMount } from 'svelte';
+	import { onDestroy } from 'svelte';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { crossfade, fade } from 'svelte/transition';
@@ -20,6 +20,7 @@
 
 	import { Avatar, LightSwitch } from '@skeletonlabs/skeleton';
 	import BackgroundAnimation from '$lib/components/animations/backgroundAnimation.svelte';
+	import Analytics from '$lib/analytics.svelte';
 
 	const [send, receive] = crossfade({
 		duration: 500,
@@ -44,6 +45,7 @@
 		}
 	});
 	afterNavigate((nav) => {
+		// nav.willUnload
 		if (!nav.from || nav?.to?.route.id !== nav.from?.route.id) {
 			const timeTook = new Date().getTime() - (timeStarted || 0);
 
@@ -65,6 +67,7 @@
 	// ----- Navigation logic ends -----
 </script>
 
+<Analytics />
 <CustomDrawer />
 <BackgroundAnimation />
 {#if canStartApp}

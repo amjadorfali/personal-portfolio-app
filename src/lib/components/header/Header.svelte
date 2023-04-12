@@ -4,7 +4,7 @@
 </script>
 
 <!-- Hamburger animation menu icon -->
-<header class="bg-surface-50-900-token grid px-[0.3rem] pb-[0.3rem]">
+<header class="bg-surface-50-900-token grid px-[0.3rem] pb-[0.3em]">
 	<slot />
 	<DesktopMenu />
 	<MobileMenu />
@@ -19,7 +19,6 @@
 		left: 0;
 		right: 0;
 		opacity: 0.95;
-		min-height: 3rem;
 	}
 
 	@media (min-width: 1000px) {

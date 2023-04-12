@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { draw } from 'svelte/transition';
+	import { draw, type CrossfadeParams, type TransitionConfig } from 'svelte/transition';
 	import { onMount, createEventDispatcher } from 'svelte';
 
 	const dispatch = createEventDispatcher();
@@ -10,7 +10,12 @@
 		start = true;
 	});
 
-	export let sendLogo: any;
+	export let sendLogo: (
+		node: Element,
+		params: CrossfadeParams & {
+			key: string;
+		}
+	) => () => TransitionConfig;
 </script>
 
 <svelte:head>
