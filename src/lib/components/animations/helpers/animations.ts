@@ -60,7 +60,6 @@ const animateAmbience = (options: AnimationOptions) => {
 	const starIconsRendered = gsap.utils.selector(options.wrapper)(options.childrenKeys[1]);
 	gsap.to(starIconsRendered, { y: '+=30', ease: Sine.easeInOut, duration: 10, yoyo: true, repeat: -1, stagger: 0.4 });
 
-
 	//Transition accross screen
 	gsap.from(blinkIconsRendered, {
 		ease: 'power2.in',
@@ -69,10 +68,9 @@ const animateAmbience = (options: AnimationOptions) => {
 		duration: Math.floor(Math.random() * 30),
 		stagger: {
 			each: 1,
-			repeat: -1,
+			repeat: -1
 			// axis: 'x'
-		},
-
+		}
 	});
 
 	//Glow effect
@@ -94,12 +92,11 @@ const findSign = (nextPosition: number, prevPosition: number) => {
 };
 
 const timeLine = gsap.timeline();
-const hideToRight = '130vw'
-const hideToLeft = '-100vw'
+const hideToRight = '130vw';
+const hideToLeft = '-100vw';
 const calculatePlanetX = (pageUrl: string | null, prevPageUrl = '') => {
-
-	const routeNow = routeFromUrl(pageUrl)
-	const prevRoute = routeFromUrl(prevPageUrl)
+	const routeNow = routeFromUrl(pageUrl);
+	const prevRoute = routeFromUrl(prevPageUrl);
 
 	if (!routeNow) return;
 
@@ -119,7 +116,6 @@ const calculatePlanetX = (pageUrl: string | null, prevPageUrl = '') => {
 			},
 			timeLineIsActive ? '-=1' : undefined
 		);
-
 	} else {
 		//On intro to site - hide all planets
 		Object.entries(routeConfig).forEach(([key, config]) => {
@@ -137,7 +133,7 @@ const calculatePlanetX = (pageUrl: string | null, prevPageUrl = '') => {
 				x: `${(nextPosition + 1) * 17}vw`,
 				ease: Sine.easeInOut,
 				duration: 1,
-				overwrite: true,
+				overwrite: true
 			},
 			'-=1'
 		);
@@ -150,9 +146,9 @@ const calculatePlanetX = (pageUrl: string | null, prevPageUrl = '') => {
 						? hideToLeft
 						: hideToRight
 					: nextPosition / (Object.keys(routeConfig).length / 2) >= 1
-						? hideToRight
-						: hideToLeft
-				, overwrite: true,
+					? hideToRight
+					: hideToLeft,
+				overwrite: true
 			},
 			{
 				x: `${(nextPosition + 1) * 17}vw`,

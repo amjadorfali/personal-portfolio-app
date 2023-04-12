@@ -33,7 +33,7 @@
 	{/each}
 
 	{#if renderPlanets}
-		<div class="flex relative  w-full h-full items-end">
+		<div class="flex relative w-full h-full items-end">
 			{#each Object.entries(routeConfig) as [routeKey, config]}
 				<svelte:component this={config.planet} className={`${routeKey}-planet-icon absolute bottom-16  w-52 h-52 sm:w-80 sm:h-80 sm:bottom-24`} />
 			{/each}

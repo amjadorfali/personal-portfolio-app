@@ -22,7 +22,7 @@
 </svelte:head>
 {#if start}
 	<div class="box flex">
-		<div class="slide slide-1  bg-secondary" />
+		<div class="slide slide-1 bg-secondary" />
 		<svg viewBox="0 0 500 700" class="circle" out:sendLogo={{ key: 'logo' }}>
 			<g fill="none" fill-rule="evenodd" stroke="black">
 				<g stroke-width="7.5" stroke="white">
@@ -39,7 +39,7 @@
 				</g>
 			</g>
 		</svg>
-		<div class="slide slide-2  bg-secondary" />
+		<div class="slide slide-2 bg-secondary" />
 	</div>
 {/if}
 

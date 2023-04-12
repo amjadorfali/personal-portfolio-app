@@ -21,7 +21,7 @@
 
 <article class={`flex  items-center justify-center align-middle wrapper h-full min-h-[90vh]`}>
 	<section class=" flex flex-col gap-12">
-		<h1 class="font-bold ">{keyedRoutes.contact.label}</h1>
+		<h1 class="font-bold">{keyedRoutes.contact.label}</h1>
 
 		{#if form?.success === true}
 			<h1>I recieved your email, will get back to you shortly!</h1>

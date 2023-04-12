@@ -16,7 +16,7 @@
 <!-- //FIXME: Apply `Prefer reduced motion` accessibility fixes for all needed transitions -->
 
 <div class="wrapper flex flex-col h-full min-h-[90vh]">
-	<h1 class="font-bold ">{keyedRoutes.projects.label}</h1>
+	<h1 class="font-bold">{keyedRoutes.projects.label}</h1>
 
 	<article class="flex flex-row justify-between flex-wrap gap-4">
 		{#each projects as project (project.config.path)}
@@ -34,7 +34,7 @@
 					</h3>
 				</div>
 
-				<div class="p-4 ">
+				<div class="p-4">
 					<p class="unstyled">
 						{project.literals.summary}
 					</p>

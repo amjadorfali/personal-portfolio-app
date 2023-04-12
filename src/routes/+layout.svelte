@@ -72,7 +72,7 @@
 		<Header>
 			<a
 				href={keyedRoutes.home.url}
-				class="unstyled logo-wrapper grid-cols-2 gap-5 transition-all duration-150 hover:shadow-lg active:shadow-lg hover:-skew-y-3 active:-skew-y-3 hover:skew-x-3 active:skew-x-3 p-[0.3rem] "
+				class="unstyled logo-wrapper grid-cols-2 gap-5 transition-all duration-150 hover:shadow-lg active:shadow-lg hover:-skew-y-3 active:-skew-y-3 hover:skew-x-3 active:skew-x-3 p-[0.3rem]"
 			>
 				<div in:receive={{ key: 'logo' }} on:introend={() => (showContent = true)}>
 					<Avatar src={FavIcon} alt="" width="w-12" class="prevent-select " />
@@ -87,7 +87,7 @@
 			{#if !showPage}
 				<PageLoader />
 			{:else}
-				<main in:fade class="pt-16 ">
+				<main in:fade class="pt-16">
 					<slot />
 				</main>
 			{/if}

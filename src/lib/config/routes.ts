@@ -16,11 +16,8 @@ export const keyedRoutes = routes.reduce<KeyedRoutes>((acc, curr) => {
 	return acc;
 }, {} as KeyedRoutes);
 
-
 /** @description Cleans up a string from all nested urls, and returns the route if found */
 export const routeFromUrl = (url: string | null = '') => {
 	const cleanUrl = (url || '').replace(/^(\/[^/]+).*$/, '$1');
-	return routes.find((route) => route.url === cleanUrl)
-}
-
-
+	return routes.find((route) => route.url === cleanUrl);
+};
