@@ -1,7 +1,6 @@
-# create-svelte
+# Personal portfolio web app
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/208b8f7e-c21c-46ea-a31a-0e1882c1bb8d/deploy-status)](https://app.netlify.com/sites/bespoke-florentine-6bcee7/deploys)
 ## Creating a project
 
 If you're seeing this, you've probably already done this step. Congrats!

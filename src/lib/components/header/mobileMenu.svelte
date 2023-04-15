@@ -34,7 +34,7 @@
 		<div class="corner">
 			<!-- Hamburger Menu -->
 			<div class="menuToggle" transition:fade={{ duration: 200 }}>
-				<input type="checkbox" checked={$drawerStore.open} on:click={toggleStore} class="peer" />
+				<input aria-label="Navigation Menu" type="checkbox" checked={$drawerStore.open} on:click={toggleStore} class="peer" />
 				<span class="bg-surface-800 dark:bg-primary-300 dark:peer-checked:bg-primary-400" />
 				<span class="bg-surface-800 dark:bg-primary-300 dark:peer-checked:bg-primary-400" />
 				<span class="bg-surface-800 dark:bg-primary-300 dark:peer-checked:bg-primary-400" />

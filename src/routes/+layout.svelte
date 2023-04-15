@@ -19,7 +19,7 @@
 	import FavIcon from '$lib/assets/favicon.png';
 
 	import { Avatar, LightSwitch } from '@skeletonlabs/skeleton';
-	import BackgroundAnimation from '$lib/components/animations/backgroundAnimation.svelte';
+	// import BackgroundAnimation from '$lib/components/animations/backgroundAnimation.svelte';
 	import Analytics from '$lib/analytics/analytics.svelte';
 
 	//Analytics
@@ -73,7 +73,7 @@
 
 <Analytics {key} />
 <CustomDrawer />
-<BackgroundAnimation />
+<!-- <BackgroundAnimation /> -->
 {#if canStartApp}
 	<div class="bg-primary z-[0]">
 		<Header>
