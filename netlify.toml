@@ -5,3 +5,33 @@
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
+
+
+  [[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+  # optional, fails build when a category is below a threshold
+  [plugins.inputs.thresholds]
+    performance = 0.9
+    accessibility = 0.9
+    best-practices = 0.9
+    seo = 0.9
+    # pwa = 0.9
+
+ # optional, deploy the lighthouse report to a path under your site
+  [[plugins.inputs.audits]]
+    output_path = "/lighthouse.html"
+
+  [[plugins.inputs.audits]]
+    path = "/"
+
+  [[plugins.inputs.audits]]
+    path = "/about"
+
+  [[plugins.inputs.audits]]
+    path = "/contact"
+
+  [[plugins.inputs.audits]]
+    path = "/projects"
+
+  # Refer to https://github.com/netlify/netlify-plugin-lighthouse#lighthouse-plugin-configuration-options for more options
