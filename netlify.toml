@@ -18,18 +18,16 @@
     seo = 0.9
     # pwa = 0.9
 
- # optional, deploy the lighthouse report to a path under your site
-  [[plugins.inputs.audits]]
-    output_path = "/lighthouse.html"
 
 
   [[plugins.inputs.audits]]
-    path = "about"
+    serveDir = "about"
+    path = ""
 
-  [[plugins.inputs.audits]]
-    path = "contact"
+  # [[plugins.inputs.audits]]
+  #   path = "contact"
 
-  [[plugins.inputs.audits]]
-    path = "projects"
+  # [[plugins.inputs.audits]]
+  #   path = "projects"
 
   # Refer to https://github.com/netlify/netlify-plugin-lighthouse#lighthouse-plugin-configuration-options for more options
