@@ -21,8 +21,7 @@
 
 
   [[plugins.inputs.audits]]
-    serveDir = "about"
-    path = ""
+    path = "/about"
 
   # [[plugins.inputs.audits]]
   #   path = "contact"
