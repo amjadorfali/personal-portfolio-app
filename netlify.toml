@@ -22,16 +22,14 @@
   [[plugins.inputs.audits]]
     output_path = "/lighthouse.html"
 
-  [[plugins.inputs.audits]]
-    path = "/"
 
   [[plugins.inputs.audits]]
-    path = "/about"
+    path = "about"
 
   [[plugins.inputs.audits]]
-    path = "/contact"
+    path = "contact"
 
   [[plugins.inputs.audits]]
-    path = "/projects"
+    path = "projects"
 
   # Refer to https://github.com/netlify/netlify-plugin-lighthouse#lighthouse-plugin-configuration-options for more options
