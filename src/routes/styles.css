@@ -8,10 +8,12 @@
 	}
 }
 body {
+	font-synthesis: none;
 	margin: 0;
 	font-family: var(--theme-font-family-base);
 	color: rgba(var(--theme-font-color-base));
 	-webkit-font-smoothing: antialiased;
+	font-display: swap;
 }
 .dark body {
 	color: rgba(var(--theme-font-color-dark));
