@@ -18,15 +18,4 @@
     seo = 0.9
     # pwa = 0.9
 
-
-
-  [[plugins.inputs.audits]]
-    path = "/about"
-
-  # [[plugins.inputs.audits]]
-  #   path = "contact"
-
-  # [[plugins.inputs.audits]]
-  #   path = "projects"
-
   # Refer to https://github.com/netlify/netlify-plugin-lighthouse#lighthouse-plugin-configuration-options for more options
