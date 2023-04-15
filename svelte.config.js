@@ -1,6 +1,8 @@
 import adapter from '@sveltejs/adapter-netlify';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import preprocess from 'svelte-preprocess';
+import tailwind from 'tailwindcss';
+import autoprefixer from 'autoprefixer';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,7 +11,9 @@ const config = {
 	preprocess: [
 		vitePreprocess(),
 		preprocess({
-			postcss: true
+			postcss: {
+				plugins: [tailwind, autoprefixer]
+			}
 		})
 	],
 
