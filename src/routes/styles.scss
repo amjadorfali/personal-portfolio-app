@@ -5,3 +5,45 @@
 	src: url('/fonts/Inter-VariableFont_slnt,wght.ttf');
 	font-display: swap;
 }
+
+:root {
+	--theme-font-family-base: 'Inter', sans-serif;
+	--theme-font-family-heading: 'Inter', sans-serif;
+	--user-pref-blacknwhite-rgb: rgba(0, 0, 0, 2);
+
+	@media (prefers-color-scheme: dark) {
+		--user-pref-blacknwhite-rgb: rgba(255, 255, 255, 5);
+	}
+}
+body {
+	font-synthesis: none;
+	margin: 0;
+	font-family: var(--theme-font-family-base);
+	color: rgba(var(--theme-font-color-base));
+	-webkit-font-smoothing: antialiased;
+}
+.dark body {
+	color: rgba(var(--theme-font-color-dark));
+}
+.body-wrapper {
+	margin-bottom: max(2rem, env(safe-area-inset-bottom));
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+p {
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+
+@media (max-width: 768px) {
+	h1 {
+		font-size: 1.75rem;
+	}
+
+	p {
+		font-size: 1rem;
+	}
+}
