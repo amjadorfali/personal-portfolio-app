@@ -1,20 +1,24 @@
-@font-face {
-	/* Reference name */
-	font-family: 'Inter';
-	/* For multiple files use commas, ex: url(), url(), ... */
-	src: url('/fonts/Inter-VariableFont_slnt,wght.ttf');
-	font-display: swap;
+/* @font-face {
+	Reference name
+font-family: 'Inter';
+For multiple files use commas, ex: url(), url(), ...
+src: url('/fonts/Inter-VariableFont_slnt,wght.woff2');
+font-display: swap;
 }
+ */
+
+
 
 :root {
-	--theme-font-family-base: 'Inter', sans-serif;
-	--theme-font-family-heading: 'Inter', sans-serif;
+	--theme-font-family-base: "Inter", sans-serif;
+	--theme-font-family-heading: "Inter", sans-serif;
 	--user-pref-blacknwhite-rgb: rgba(0, 0, 0, 2);
 
 	@media (prefers-color-scheme: dark) {
 		--user-pref-blacknwhite-rgb: rgba(255, 255, 255, 5);
 	}
 }
+
 body {
 	font-synthesis: none;
 	margin: 0;
@@ -22,9 +26,11 @@ body {
 	color: rgba(var(--theme-font-color-base));
 	-webkit-font-smoothing: antialiased;
 }
+
 .dark body {
 	color: rgba(var(--theme-font-color-dark));
 }
+
 .body-wrapper {
 	margin-bottom: max(2rem, env(safe-area-inset-bottom));
 }
