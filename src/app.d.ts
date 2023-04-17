@@ -11,7 +11,6 @@ declare namespace App {
 	// interface Platform {}
 }
 
-
 // Used to provide TS declarations for non-TS modules
 declare module '*&imagetools' {
 	/**
