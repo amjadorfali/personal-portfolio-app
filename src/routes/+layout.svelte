@@ -16,7 +16,7 @@
 	import { keyedRoutes } from '$lib/config';
 	import { Header, InitialLoader, PageLoader, CustomDrawer } from '$lib/components';
 
-	import FavIcon from '$lib/assets/favicon.png';
+	import FavIcon from '$lib/assets/favicon.png?w=48&h=48&webp&imagetools';
 
 	import { Avatar, LightSwitch } from '@skeletonlabs/skeleton';
 	// import BackgroundAnimation from '$lib/components/animations/backgroundAnimation.svelte';

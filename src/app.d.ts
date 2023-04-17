@@ -10,3 +10,15 @@ declare namespace App {
 	// interface PageData {}
 	// interface Platform {}
 }
+
+
+// Used to provide TS declarations for non-TS modules
+declare module '*&imagetools' {
+	/**
+	 * actual types
+	 * - code https://github.com/JonasKruckenberg/imagetools/blob/main/packages/core/src/output-formats.ts
+	 * - docs https://github.com/JonasKruckenberg/imagetools/blob/main/docs/guide/getting-started.md#metadata
+	 */
+	const out;
+	export default out;
+}

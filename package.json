@@ -11,7 +11,8 @@
 		"test:unit": "vitest",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"prepare": "yarn format && yarn lint &&  yarn check",
+		"prepare": "yarn format && yarn lint &&  yarn check &&  yarn optimize",
+		"optimize": "vite optimize --force",
 		"start-build": "yarn prepare && yarn build && yarn preview"
 	},
 	"devDependencies": {
@@ -44,6 +45,7 @@
 		"tslib": "^2.5.0",
 		"typescript": "^4.9.5",
 		"vite": "^4.2.1",
+		"vite-imagetools": "^4.0.18",
 		"vitest": "^0.26.3"
 	},
 	"type": "module",
