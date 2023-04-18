@@ -15,7 +15,7 @@
 
 <svelte:head>
 	{#if key}
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-CEBHNLTG7S">
+		<script defer src="https://www.googletagmanager.com/gtag/js?id=G-CEBHNLTG7S">
 		</script>
 
 		<script>
