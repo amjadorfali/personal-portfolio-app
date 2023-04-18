@@ -39,4 +39,5 @@ export const actions = {
 	}
 } satisfies Actions;
 
+//FIXME : Causing low performance due to slow Largest Contentful Paint
 export const prerender = false;
