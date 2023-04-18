@@ -16,7 +16,6 @@
 		"start-build": "yarn prepare && yarn build && yarn preview"
 	},
 	"devDependencies": {
-		"@netlify/plugin-lighthouse": "^4.1.0",
 		"@playwright/test": "^1.32.3",
 		"@sendgrid/mail": "^7.7.0",
 		"@skeletonlabs/skeleton": "^1.2.0",

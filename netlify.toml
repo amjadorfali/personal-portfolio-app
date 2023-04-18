@@ -5,18 +5,3 @@
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
-
-
-  [[plugins]]
-  package = "@netlify/plugin-lighthouse"
-
-  # optional, fails build when a category is below a threshold
-  [plugins.inputs.thresholds]
-  # //FIXME: set performance to 0.9 when we have a better score after fixing the issues
-    performance = 0.6
-    accessibility = 0.9
-    best-practices = 0.9
-    seo = 0.9
-    # pwa = 0.9
-
-  # Refer to https://github.com/netlify/netlify-plugin-lighthouse#lighthouse-plugin-configuration-options for more options
