@@ -15,9 +15,9 @@
 
 <svelte:head>
 	{#if key}
-		<script async src={`https://www.googletagmanager.com/gtag/js?id=${key}`}>
+		<script defer async src={`https://www.googletagmanager.com/gtag/js?id=${key}`}>
 		</script>
-		<script>
+		<script defer>
 			window.dataLayer = window.dataLayer || [];
 
 			function gtag() {
