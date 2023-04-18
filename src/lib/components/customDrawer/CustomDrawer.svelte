@@ -25,7 +25,7 @@
 					class={`${matchRoute(route.url, $page.url.pathname) ? '' : 'opacity-40 hover:opacity-100 '}`}
 					class:active={matchRoute(route.url, $page.url.pathname)}
 				>
-					<a data-sveltekit-preload-data href={route.url} on:click={onHideDrawer}>{route.label}</a>
+					<a href={route.url} on:click={onHideDrawer}>{route.label}</a>
 				</li>
 			{/each}
 		</ul>

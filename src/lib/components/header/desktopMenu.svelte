@@ -26,7 +26,7 @@
 						{#if matchRoute(route.url, $page.url.pathname)}
 							<span class={'active !border-t-secondary-800'} out:send={{ key: 'active-marker' }} in:receive={{ key: 'active-marker' }} />
 						{/if}
-						<a data-sveltekit-preload-data href={route.url} class=" unstyled hover:!text-secondary-800">{route.label}</a>
+						<a href={route.url} class=" unstyled hover:!text-secondary-800">{route.label}</a>
 					</li>
 				{/each}
 			</ul>

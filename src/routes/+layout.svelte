@@ -42,6 +42,7 @@
 	let timeout: NodeJS.Timeout;
 	let timeStarted: number | undefined;
 
+	//FIXME : Should be disabled if the page is already loaded
 	beforeNavigate((nav) => {
 		if (nav?.to?.route.id !== nav.from?.route.id) {
 			showPage = false;

@@ -11,8 +11,6 @@
 		content="Get to know Amjad Orfali, a frontend web developer and software engineer with years of experience in the field. Discover his technical skills, collaboration approach, and commitment to quality. Let's work together to achieve your business goals through efficient and effective web development solutions."
 	/>
 </svelte:head>
-<!-- //FIXME : reduce Cumulative Layout Shift for lighthouse -->
-
 <article class="items-center align-middle wrapper flex flex-col gap-4 justify-between lg:flex-row h-full min-h-[90vh]">
 	<section class="basis-1/2 flex flex-col gap-4 order-2 lg:order-1 card p-4 custom-variant-glass-secondary">
 		<h3 class="unstyled uppercase text-tertiary-300-600-token card-header">a few words about me</h3>
@@ -52,6 +50,7 @@
 		text-align: center;
 	}
 	img {
+		min-height: 9rem;
 		max-height: 25rem;
 		height: 100%;
 		width: 100%;
