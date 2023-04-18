@@ -20,7 +20,7 @@
 	import FavIcon from '$lib/assets/favicon.png?w=48&h=48&webp&imagetools';
 
 	import { Avatar } from '@skeletonlabs/skeleton';
-	// import BackgroundAnimation from '$lib/components/animations/backgroundAnimation.svelte';
+	import BackgroundAnimation from '$lib/components/animations/backgroundAnimation.svelte';
 	import Analytics from '$lib/analytics/analytics.svelte';
 
 	//Analytics
@@ -76,7 +76,7 @@
 <!-- Used to set Dark/Light mode on mount, as the Skeleton LightSwitch wouldn't be mounted at initial page load -->
 <svelte:head>{@html `<script>(${setInitialClassState.toString()})();</script>`}</svelte:head>
 <CustomDrawer />
-<!-- <BackgroundAnimation /> -->
+<BackgroundAnimation />
 {#if canStartApp}
 	<div class="bg-primary z-[0]">
 		<Header>
