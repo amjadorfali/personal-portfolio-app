@@ -120,10 +120,4 @@
 		font-size: 1rem;
 		line-height: normal;
 	}
-	div.hidden {
-		visibility: hidden;
-		opacity: 0;
-		width: 0;
-		height: 0;
-	}
 </style>

@@ -12,7 +12,14 @@
 	/>
 </svelte:head>
 <article class="items-center align-middle wrapper flex flex-col gap-4 justify-between lg:flex-row h-full min-h-[90vh]">
-	<section class="basis-1/2 flex flex-col gap-4 order-2 lg:order-1 card p-4 custom-variant-glass-secondary">
+	<section class="basis-1/3 lg:order-2">
+		<img
+			src={MyImage}
+			alt="Me"
+			class="w-[20rem] h-[20rem] mix-blend-darken dark:mix-blend-lighten lg:h-full lg:w-full lg:min-h-[9rem] lg:max-h-[25rem]"
+		/>
+	</section>
+	<section class="basis-1/2 flex flex-col gap-4 card p-4 custom-variant-glass-secondary">
 		<h3 class="unstyled uppercase text-tertiary-300-600-token card-header">a few words about me</h3>
 
 		<p class="font-bold unstyled">
@@ -31,29 +38,22 @@
 			>↓ Resume</a
 		>
 	</section>
-	<section class="basis-1/3 order-1"><img src={MyImage} alt="Me" class="mix-blend-darken dark:mix-blend-lighten" /></section>
 </article>
 
 <style>
 	.wrapper {
 		width: 100%;
 		max-width: 85vw;
-		margin: 0 auto;
+		margin: 1.5rem;
 		box-sizing: border-box;
 	}
 
-	h3 {
-		text-align: center;
+	h3,
+	p {
+		text-align: start;
 	}
 
-	p {
-		text-align: center;
-	}
 	img {
-		min-height: 9rem;
-		max-height: 25rem;
-		height: 100%;
-		width: 100%;
 		color: transparent;
 		border-radius: 3rem;
 		-o-object-position: 50% 100%;
@@ -61,13 +61,13 @@
 		-o-object-fit: cover;
 		object-fit: cover;
 	}
-	@media (max-width: 768px) {
+	@media (min-width: 767px) {
 		.wrapper {
-			margin: 1.5rem;
+			margin: 0 auto;
 		}
 		p,
 		h3 {
-			text-align: start;
+			text-align: center;
 		}
 	}
 
