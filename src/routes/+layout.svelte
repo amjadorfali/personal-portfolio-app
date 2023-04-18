@@ -75,7 +75,6 @@
 
 <!-- Used to set Dark/Light mode on mount, as the Skeleton LightSwitch wouldn't be mounted at initial page load -->
 <svelte:head>{@html `<script>(${setInitialClassState.toString()})();</script>`}</svelte:head>
-<Analytics {key} />
 <CustomDrawer />
 <!-- <BackgroundAnimation /> -->
 {#if canStartApp}
@@ -95,6 +94,7 @@
 		</Header>
 
 		{#if showContent}
+			<Analytics {key} />
 			{#if !showPage}
 				<PageLoader />
 			{:else}
