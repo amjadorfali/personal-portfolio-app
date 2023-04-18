@@ -4,6 +4,7 @@
 	import { page } from '$app/stores';
 	import { cubicInOut } from 'svelte/easing';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
+
 	import { supportedBreakPoint, routes } from '$lib/config';
 	import { matchRoute } from '$lib/utils';
 

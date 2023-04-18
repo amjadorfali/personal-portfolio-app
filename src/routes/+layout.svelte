@@ -12,13 +12,14 @@
 	import { page } from '$app/stores';
 	import { crossfade, fade } from 'svelte/transition';
 	import { cubicInOut } from 'svelte/easing';
+	import { setInitialClassState } from '@skeletonlabs/skeleton';
 
 	import { keyedRoutes } from '$lib/config';
 	import { Header, InitialLoader, PageLoader, CustomDrawer } from '$lib/components';
 
 	import FavIcon from '$lib/assets/favicon.png?w=48&h=48&webp&imagetools';
 
-	import { Avatar, LightSwitch } from '@skeletonlabs/skeleton';
+	import { Avatar } from '@skeletonlabs/skeleton';
 	// import BackgroundAnimation from '$lib/components/animations/backgroundAnimation.svelte';
 	import Analytics from '$lib/analytics/analytics.svelte';
 
@@ -71,6 +72,8 @@
 	// ----- Navigation logic ends -----
 </script>
 
+<!-- Used to set Dark/Light mode on mount, as the Skeleton LightSwitch wouldn't be mounted at initial page load -->
+<svelte:head>{@html `<script>(${setInitialClassState.toString()})();</script>`}</svelte:head>
 <Analytics {key} />
 <CustomDrawer />
 <!-- <BackgroundAnimation /> -->
@@ -102,10 +105,6 @@
 	</div>
 {:else}
 	<InitialLoader sendLogo={send} on:transitionsEnded={() => (canStartApp = true)} />
-	<!-- //FIXME : Find a way to init lightswitch store other than this workaround -->
-	<div class="hidden">
-		<LightSwitch width="w-12" height="h-6" />
-	</div>
 {/if}
 
 <style>

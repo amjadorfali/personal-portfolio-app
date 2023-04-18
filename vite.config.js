@@ -10,9 +10,6 @@ const config = {
 	server: {
 		open: true,
 		port: 3000
-	},
-	build: {
-		rollupOptions: {}
 	}
 };
 
