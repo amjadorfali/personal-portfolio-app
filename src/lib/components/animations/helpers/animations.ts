@@ -61,9 +61,9 @@ const animateAmbience = (options: AnimationOptions) => {
 	gsap.to(starIconsRendered, { y: '+=30', ease: Sine.easeInOut, duration: 10, yoyo: true, repeat: -1, stagger: 0.4 });
 
 	//Transition accross screen
-	gsap.from(blinkIconsRendered, {
+	gsap.to(blinkIconsRendered, {
 		ease: 'power2.in',
-		x: '110vw',
+		x: '0vw',
 		// duration: Math.floor(Math.random() * 50) + 5,
 		duration: Math.floor(Math.random() * 30),
 		stagger: {
@@ -146,8 +146,8 @@ const calculatePlanetX = (pageUrl: string | null, prevPageUrl = '') => {
 						? hideToLeft
 						: hideToRight
 					: nextPosition / (Object.keys(routeConfig).length / 2) >= 1
-					? hideToRight
-					: hideToLeft,
+						? hideToRight
+						: hideToLeft,
 				overwrite: true
 			},
 			{
