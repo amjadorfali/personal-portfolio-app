@@ -18,7 +18,7 @@
 	});
 </script>
 
-<div class="w-full h-full z-[-10] main-wrapper absolute overflow-hidden">
+<div class="w-full h-full z-[-10] main-wrapper absolute overflow-hidden bg-transparent">
 	{#each blinkIcons as { icon: Icon }}
 		<Icon className={`blink-icon absolute `} style={`top:${Math.floor(Math.random() * 91) + 5}vh; `} />
 	{/each}
