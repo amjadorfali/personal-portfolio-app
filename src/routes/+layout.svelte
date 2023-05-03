@@ -30,7 +30,7 @@
 	});
 	let routeOutroDone = true,
 		routeLoading = false,
-		showRoute = false,
+		showRoute = true,
 		currentKey: string = uuidv4(),
 		siteIntroDone = $page.url.pathname !== keyedRoutes.home.url,
 		showContent = siteIntroDone;
