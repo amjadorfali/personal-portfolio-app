@@ -7,7 +7,9 @@ declare namespace App {
 		userid: string;
 	}
 
-	// interface PageData {}
+	interface PageData {
+		url?: string;
+	}
 	// interface Platform {}
 }
 

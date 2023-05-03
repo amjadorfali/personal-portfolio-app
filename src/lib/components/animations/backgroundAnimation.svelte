@@ -7,14 +7,14 @@
 	import { animateAmbience, blinkIcons, calculatePlanetX, routeConfig, starIcons } from './helpers/animations';
 
 	onMount(() => {
-		calculatePlanetX($page.route.id);
+		calculatePlanetX($page.url.pathname);
 		animateAmbience({ wrapper: '.main-wrapper', childrenKeys: ['.blink-icon', '.star-icon'] });
 	});
 
 	afterNavigate((nav) => {
 		const prevRoute = routeFromUrl(nav.from?.route.id);
 		const nextRoute = routeFromUrl(nav.to?.route.id);
-		if (nextRoute && prevRoute && nextRoute.url !== prevRoute.url) calculatePlanetX(nextRoute.url, prevRoute.url);
+		if (nextRoute && prevRoute && nextRoute?.url !== prevRoute?.url) calculatePlanetX(nextRoute.url, prevRoute.url);
 	});
 </script>
 

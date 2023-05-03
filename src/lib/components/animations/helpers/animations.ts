@@ -146,8 +146,8 @@ const calculatePlanetX = (pageUrl: string | null, prevPageUrl = '') => {
 						? hideToLeft
 						: hideToRight
 					: nextPosition / (Object.keys(routeConfig).length / 2) >= 1
-						? hideToRight
-						: hideToLeft,
+					? hideToRight
+					: hideToLeft,
 				overwrite: true
 			},
 			{

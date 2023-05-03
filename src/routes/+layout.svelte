@@ -6,45 +6,62 @@
 	import './styles.css';
 
 	// ------------------------------------
-	import { page } from '$app/stores';
-	import { crossfade, fade } from 'svelte/transition';
+	import { crossfade, scale } from 'svelte/transition';
 	import { cubicInOut } from 'svelte/easing';
 	import { setInitialClassState } from '@skeletonlabs/skeleton';
 
 	import { keyedRoutes } from '$lib/config';
-	import { Header, InitialLoader, PageLoader, CustomDrawer } from '$lib/components';
+	import { Header, InitialLoader, CustomDrawer, PageLoader } from '$lib/components';
 
-	import FavIcon from '$lib/assets/favicon.png?w=48&h=48&webp&imagetools';
+	import FavIcon from '$lib/assets/favicon.png?w=48&h=48&format=webp&imagetools';
 
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import BackgroundAnimation from '$lib/components/animations/backgroundAnimation.svelte';
 	import Analytics from '$lib/analytics/analytics.svelte';
-	import Loader from '$lib/utils/loader';
 	import { PUBLIC_GTAG } from '$env/static/public';
+	import { navigating, page } from '$app/stores';
+	import { onDestroy } from 'svelte';
+	import { v4 as uuidv4 } from 'uuid';
 
 	const [send, receive] = crossfade({
 		duration: 500,
 		easing: cubicInOut,
 		delay: 200
 	});
+	let routeOutroDone = true,
+		routeLoading = false,
+		showRoute = false,
+		currentKey: string = uuidv4(),
+		siteIntroDone = $page.url.pathname !== keyedRoutes.home.url,
+		showContent = siteIntroDone;
 
-	let loadingDone = $page.url.pathname !== '/';
-	const showPage = Loader(loadingDone);
-	let contentVisible = $showPage;
+	const unsub = navigating.subscribe((nav) => {
+		if (!nav) return (routeLoading = false);
+
+		if (nav?.type === 'link' && nav.from?.url.pathname !== nav.to?.url.pathname) {
+			if (showRoute) routeOutroDone = false;
+			currentKey = uuidv4();
+			routeLoading = true;
+			showRoute = false;
+		}
+	});
+
+	onDestroy(unsub);
 </script>
 
 <!-- Used to set Dark/Light mode on mount, as the Skeleton LightSwitch wouldn't be mounted at initial page load -->
 <svelte:head>{@html `<script>(${setInitialClassState.toString()})();</script>`}</svelte:head>
 <CustomDrawer />
-<BackgroundAnimation />
-{#if loadingDone}
+<!-- <BackgroundAnimation /> -->
+
+{#if siteIntroDone}
 	<div class="bg-primary z-[0]">
 		<Header>
 			<a
 				href={keyedRoutes.home.url}
 				class="unstyled logo-wrapper grid-cols-2 gap-5 transition-all duration-150 hover:shadow-lg active:shadow-lg hover:-skew-y-3 active:-skew-y-3 hover:skew-x-3 active:skew-x-3 p-[0.3rem]"
 			>
-				<div in:receive={{ key: 'logo' }} on:introend={() => (contentVisible = true)}>
+				<div in:receive={{ key: 'logo' }} on:introend={() => (showContent = true)}>
 					<Avatar src={FavIcon} alt="" width="w-12" class="prevent-select " />
 				</div>
 				<div>
@@ -53,19 +70,21 @@
 			</a>
 		</Header>
 
-		{#if contentVisible}
+		{#if showContent}
 			<Analytics key={PUBLIC_GTAG} />
-			{#if !$showPage}
-				<PageLoader />
-			{:else}
-				<main in:fade class="pt-16">
+			{#if showRoute}
+				<main in:scale out:scale={{ duration: 200 }} on:outroend={() => (routeOutroDone = true)} class="pt-16">
 					<slot />
 				</main>
+			{:else if routeOutroDone}
+				{#key currentKey}
+					<PageLoader loadingDone={!routeLoading} on:tweenDone={() => (showRoute = true)} />
+				{/key}
 			{/if}
 		{/if}
 	</div>
 {:else}
-	<InitialLoader sendLogo={send} on:transitionsEnded={() => (loadingDone = true)} />
+	<InitialLoader sendLogo={send} on:transitionsEnded={() => (siteIntroDone = true)} />
 {/if}
 
 <style>

@@ -1,6 +1,6 @@
-import JustDoItLogo from '$lib/assets/just-do-it-logo.png?w=64&h=64&webp&imagetools';
-import WashmenLogo from '$lib/assets/washmen-logo.png?w=64&h=64&webp&imagetools';
-import PortfolioLogo from '$lib/assets/favicon.png?w=64&h=64&webp&imagetools';
+import JustDoItLogo from '$lib/assets/just-do-it-logo.png?w=64&h=64&format=webp&imagetools';
+import WashmenLogo from '$lib/assets/washmen-logo.png?w=64&h=64&format=webp&imagetools';
+import PortfolioLogo from '$lib/assets/favicon.png?w=64&h=64&format=webp&imagetools';
 
 interface Project {
 	images?: string[];
