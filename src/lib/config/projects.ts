@@ -106,3 +106,15 @@ export const projectsKeyedByPath = projects.reduce<{ [key in string]: Project }>
 	acc[curr.config.path] = curr;
 	return acc;
 }, {});
+
+export const projectTuples = projects.reduce<[Project?, Project?][]>((acc, curr) => {
+	const lastArray = acc[acc.length - 1];
+	if (!lastArray || [0, 2].includes(lastArray?.length)) {
+		acc.push([curr]);
+	} else {
+		acc.push([acc.pop()?.[0], curr]);
+	}
+
+	return acc;
+}, []);
+

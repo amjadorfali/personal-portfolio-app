@@ -2,7 +2,7 @@
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import { fly } from 'svelte/transition';
 
-	import { projects, keyedRoutes } from '$lib/config';
+	import { projectTuples, keyedRoutes } from '$lib/config';
 </script>
 
 <svelte:head>
@@ -18,28 +18,32 @@
 <div class="wrapper flex flex-col h-full min-h-[90vh]">
 	<h1 class="font-bold">{keyedRoutes.projects.label}</h1>
 
-	<article class="flex flex-row justify-between flex-wrap gap-4">
-		{#each projects as project (project.config.path)}
-			<a
-				class="card variant-glass-secondary card-hover basis-full sm:basis-2/5 lg:basis-[30%] shadow-sm shadow-tertiary-500 dark:shadow-tertiary-900 self-stretch"
-				href={`${keyedRoutes.projects.url}/${project.config.path}`}
-				in:fly={{ duration: 500, x: -200 }}
-			>
-				<div class="card-header">
-					<Avatar src={project.config.logo} background="bg-surface-900-50-token p-[0.35rem]" />
-				</div>
-				<div class="p-4">
-					<h3>
-						{project.literals.name}
-					</h3>
-				</div>
+	<article class="flex flex-col items-center gap-12">
+		{#each projectTuples as projectTuple}
+			<section class="flex flex-row flex-wrap self-stretch justify-center gap-12 sm:gap-32 sm:flex-nowrap">
+				{#each projectTuple as project (project?.config.path)}
+					<a
+						class="card variant-glass-secondary max-w-md card-hover basis-full sm:basis-[30%] shadow-sm shadow-tertiary-500 dark:shadow-tertiary-900 self-stretch"
+						href={`${keyedRoutes.projects.url}/${project?.config.path}`}
+						in:fly={{ duration: 500, x: -200 }}
+					>
+						<div class="card-header">
+							<Avatar src={project?.config.logo} background="bg-surface-900-50-token p-[0.35rem]" />
+						</div>
+						<div class="p-4">
+							<h3>
+								{project?.literals.name}
+							</h3>
+						</div>
 
-				<div class="p-4">
-					<p class="unstyled">
-						{project.literals.summary}
-					</p>
-				</div>
-			</a>
+						<div class="p-4">
+							<p class="unstyled">
+								{project?.literals.summary}
+							</p>
+						</div>
+					</a>
+				{/each}
+			</section>
 		{/each}
 	</article>
 </div>

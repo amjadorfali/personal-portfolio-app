@@ -11,7 +11,7 @@
 	<meta name="description" content={data.config.metaDescription} />
 </svelte:head>
 
-<article class="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 h-full min-h-[90vh]">
+<article class="grid gap-y-16 h-full min-h-[90vh] justify-items-center">
 	<section>
 		<caption class="opacity-50 uppercase text-tertiary-700-200-token">Project</caption>
 		<br />
@@ -38,9 +38,10 @@
 			{/if}
 		</footer>
 	</section>
-	<section class="card variant-glass-secondary p-4">
+	<section class="card variant-glass-secondary p-4 md:w-[50%]">
 		<h3 class="card-header">Description</h3>
-		<p class="overflow-y-scroll max-h-[40vh] leading-6 unstyled">{@html data.literals.description}</p>
+		<br />
+		<p class="overflow-y-auto max-h-[40vh] unstyled description pr-4">{@html data.literals.description}</p>
 	</section>
 </article>
 
@@ -52,5 +53,13 @@
 		box-sizing: border-box;
 		justify-content: center;
 		align-content: center;
+	}
+
+	p.description::-webkit-scrollbar {
+		width: 1rem;
+	}
+
+	p.description::-webkit-scrollbar-track {
+		border-radius: 10px;
 	}
 </style>

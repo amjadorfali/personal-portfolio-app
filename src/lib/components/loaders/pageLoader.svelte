@@ -4,6 +4,7 @@
 	import { tweened } from 'svelte/motion';
 
 	export let loadingDone = false;
+	let disable = false;
 	const dispatchEvent = createEventDispatcher();
 
 	const progress = tweened(0, {
@@ -14,16 +15,18 @@
 	$: $progress === 1 && dispatchEvent('tweenDone');
 
 	onMount(() => {
-		if (loadingDone) return progress.set(1);
+		if (loadingDone) return (disable = true);
 		progress.set(0.75, { duration: 10000 });
 	});
 </script>
 
-<div>
-	<h1>
-		{Math.round($progress * 100).toFixed()}%
-	</h1>
-</div>
+{#if !disable}
+	<div>
+		<h1>
+			{Math.round($progress * 100).toFixed()}%
+		</h1>
+	</div>
+{/if}
 
 <style>
 	div {
