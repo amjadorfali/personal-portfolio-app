@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { keyedRoutes } from '$lib/config';
 	import MyImage from '$lib/assets/myself.png?w=1024&h=1024&format=webp&imagetools';
+	import { Link } from '$lib/components';
 </script>
 
 <svelte:head>
@@ -31,12 +32,7 @@
 			Whether you need a stunning website, a jaw-dropping UI, or just someone to geek out about CSS with, I'm your guy.
 		</p>
 
-		<a
-			target="_blank"
-			href="AmjadOrfaliResume.pdf"
-			class="card-footer self-start text-lg hover:underline-offset-8 hover:underline hover:animate-bounce !text-primary-300-600-token !underline-offset-8"
-			>↓ Resume</a
-		>
+		<Link target="_blank" text="↓ Resume" href="AmjadOrfaliResume.pdf" className="w-fit" />
 	</section>
 </article>
 

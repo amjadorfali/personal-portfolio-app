@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Link } from '$lib/components';
 	import { keyedRoutes } from '$lib/config';
 </script>
 
@@ -12,16 +13,8 @@
 <article class="items-center justify-center align-middle h-full min-h-[70vh] lg:min-h-[81.3vh] gap-8">
 	<h1 class="unstyled capitalize">Hey, I'm Amjad <br /> but you can call me the Front-End Wizard!</h1>
 	<div class="flex justify-center gap-8">
-		<a class="!text-primary-500 unstyled projects-link overflow-hidden text-2xl capitalize" href={keyedRoutes.projects.url}>
-			See my projects
-
-			<div class="link-underline" />
-		</a>
-		<a class="!text-primary-500 unstyled about-link overflow-hidden text-2xl capitalize" href={keyedRoutes.about.url}
-			>More about me
-
-			<div class="link-underline" />
-		</a>
+		<Link text="See my projects" href={keyedRoutes.projects.url} />
+		<Link text="More about me" href={keyedRoutes.about.url} />
 	</div>
 </article>
 
@@ -40,22 +33,5 @@
 		max-width: 100vw;
 		margin: 0 auto;
 		box-sizing: border-box;
-	}
-
-	.link-underline {
-		position: relative;
-		width: 100%;
-		bottom: 0;
-		left: 0;
-		transform-origin: bottom right;
-		transition: all 0.25s ease-in-out;
-		transform: translateX(-101%) translateZ(0px);
-		height: 0.2rem;
-		background-color: rgb(var(--color-primary-500));
-	}
-
-	.projects-link:hover > .link-underline,
-	.about-link:hover > .link-underline {
-		transform: translateX(0%) translateZ(0px);
 	}
 </style>

@@ -15,10 +15,9 @@
 
 <!-- //FIXME: Apply `Prefer reduced motion` accessibility fixes for all needed transitions -->
 
-<div class="wrapper flex flex-col h-full min-h-[90vh]">
-	<h1 class="font-bold">{keyedRoutes.projects.label}</h1>
-
-	<article class="flex flex-col items-center gap-12">
+<article class="wrapper flex flex-col h-full min-h-[90vh]">
+	<h1 class="font-bold text-center">{keyedRoutes.projects.label}</h1>
+	<section class="flex flex-col items-center gap-12">
 		{#each projectTuples as projectTuple}
 			<section class="flex flex-row flex-wrap self-stretch justify-center gap-12 sm:gap-32 sm:flex-nowrap">
 				{#each projectTuple as project (project?.config.path)}
@@ -45,18 +44,16 @@
 				{/each}
 			</section>
 		{/each}
-	</article>
-</div>
+	</section>
+</article>
 
 <style>
-	article {
+	section {
 		width: 100%;
 		max-width: 100vw;
 		box-sizing: border-box;
 	}
-	div.wrapper {
-		padding: 0 1rem 4rem 1rem;
-		gap: 2rem;
+	article.wrapper {
 		align-items: center;
 		justify-content: space-evenly;
 	}

@@ -30,11 +30,7 @@ const getWashmenProjects = () =>
 		{
 			text: "Unfortunately, all those projects are internal apps for the company, so I don't have permission to share links or more info regarding them"
 		}
-	].reduce(
-		(prev, { text, title }) =>
-			(prev += `${title ? `<p class='text-center font-bold underline'>${title}</p> <br/>` : ''} ${text}<br/><br/><br/><br/><br/>`),
-		''
-	);
+	].reduce((prev, { text, title }) => (prev += `${title ? `<h4  class='card-header'>${title}</h4> <br/>` : ''} ${text}<br/><br/><br/><br/><br/>`), '');
 
 export const projects: Project[] = [
 	{
@@ -74,6 +70,9 @@ export const projects: Project[] = [
 			title: 'Washmen - Your One-Stop Laundry and Dry Cleaning Solution in the UAE | My Work Experience',
 			metaDescription:
 				"Find the best laundry and dry cleaning services in the UAE with Washmen. As an employee, I have firsthand experience with the company's reliable and efficient services. Learn more about my role and contributions at Washmen."
+		},
+		urls: {
+			site: 'https://washmen.com'
 		}
 	},
 	{
@@ -117,4 +116,3 @@ export const projectTuples = projects.reduce<[Project?, Project?][]>((acc, curr)
 
 	return acc;
 }, []);
-
