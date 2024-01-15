@@ -5,9 +5,7 @@
 	import GithubIcon from '$lib/assets/github.svelte';
 	import LinkedInIcon from '$lib/assets/linkedin.svelte';
 	import InstagramIcon from '$lib/assets/instagram.svelte';
-
 	export let form: ActionData;
-
 	let submittingForm = false;
 </script>
 
@@ -19,7 +17,7 @@
 	/>
 </svelte:head>
 
-<article class={`flex  items-center justify-center align-middle wrapper h-full min-h-[90vh]`}>
+<article class={`flex md:items-center md:justify-center md:align-middle  wrapper h-full min-h-[90vh]`}>
 	<section class=" flex flex-col gap-12">
 		<h1 class="font-bold">{keyedRoutes.contact.label}</h1>
 
@@ -124,7 +122,6 @@
 		0% {
 			content: '';
 		}
-
 		33% {
 			content: ' .';
 		}

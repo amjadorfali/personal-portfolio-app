@@ -30,26 +30,25 @@ const getWashmenProjects = () =>
 		{
 			text: "Unfortunately, all those projects are internal apps for the company, so I don't have permission to share links or more info regarding them"
 		}
-	].reduce((prev, { text, title }) => (prev += `${title ? `<h4  class='card-header'>${title}</h4> <br/>` : ''} ${text}<br/><br/><br/><br/><br/>`), '');
+	].reduce(
+		(prev, { text, title }) => (prev += `${title ? `<h4  class='card-header'>${title}</h4> <br/>` : ''} ${text}<br/><br/><br/><br/><br/>`),
+		''
+	);
 
 export const projects: Project[] = [
 	{
 		literals: {
 			name: 'Just Do It',
-			summary: 'Creative Full-stack Todo App for organization and simplicity',
-			description: `
-				UI: A simple react-based to-do app, built on a full-stack basis, with automated CI/CDs from GitHub to Heroku, using React, Graphql, MongoDB, and NestJS. Most importantly, fully typed, with many artistic animations and great UX
-				<br/>
-				<br/>
-				API: Blazingly fast backbones of the Todo App. A fully typed NestJS backend, wired with GraphQL, talks with MongoDB, and runs on Heroku!
-			`
+			summary: 'A simple todo app, built with React, MongoDB, GraphQL, and NestJS',
+			description: `All your life people have been telling you you can’t do things. I’m here to tell you that you can. In fact, you can do anything you want. You just need to believe in yourself. SO JUST DO IT!`
 		},
 		config: {
 			logo: JustDoItLogo,
 			path: 'just-do-it',
-			title: 'Just Do It - The Ultimate Todo App Built with React, MongoDB, GraphQL, and NestJS | My Work',
+			title: 'Just Do It!',
 			metaDescription:
-				'Boost your productivity with Just Do It, a powerful todo app built with cutting-edge technologies. As the developer behind this app, I can showcase my expertise in React, MongoDB, GraphQL, and NestJS. Discover how Just Do It can help you get things done.'
+				'JUST DO IT!'
+			// 'Boost your productivity with Just Do It, a powerful todo app built with cutting-edge technologies. As the developer behind this app, I can showcase my expertise in React, MongoDB, GraphQL, and NestJS. Discover how Just Do It can help you get things done.'
 		},
 		urls: {
 			github: { client: 'https://github.com/amjadorfali/todo-react-app', api: 'https://github.com/amjadorfali/todo-API' },
@@ -78,16 +77,9 @@ export const projects: Project[] = [
 	{
 		literals: {
 			name: 'Personal Portfolio',
-			summary: 'Elegent portfolio designed with the new Svelte framework, along with TailwindCSS',
+			summary: 'Designed with the Svelte, TailwindCSS, and zap!',
 			description: `
-				My own web-app portfolio, runs on Svelte & SvelteKit, colored with TailwindCSS and Skeleton UI. Last but not least, TypeScript!
-				<br/>
-				<br/>
-				It showcases a brief overview on my specialties, projects I've worked on, my resume, and a contact page to find me!
-
-				<br/>
-				<br/>
-				You may find splinters of my personal life as well 👀
+				Runs on Svelte & SvelteKit, TypeScript, and painted with TailwindCSS and Skeleton UI.
 				`
 		},
 		config: {
