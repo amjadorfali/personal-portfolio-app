@@ -32,7 +32,12 @@
 			Whether you need a stunning website, a jaw-dropping UI, or just someone to geek out about CSS with, I'm your guy.
 		</p>
 
-		<Link target="_blank" text="↓ Resume" href="AmjadOrfaliResume.pdf" className="w-fit" />
+		<Link
+			target="_blank"
+			text="↓ Resume"
+			href="https://drive.google.com/file/d/19ukhdVYAM6QU9F-eJf5qz0K_qCfjYBBm/view?usp=share_link"
+			className="w-fit"
+		/>
 	</section>
 </article>
 
