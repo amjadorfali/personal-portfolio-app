@@ -46,8 +46,7 @@ export const projects: Project[] = [
 			logo: JustDoItLogo,
 			path: 'just-do-it',
 			title: 'Just Do It!',
-			metaDescription:
-				'JUST DO IT!'
+			metaDescription: 'JUST DO IT!'
 			// 'Boost your productivity with Just Do It, a powerful todo app built with cutting-edge technologies. As the developer behind this app, I can showcase my expertise in React, MongoDB, GraphQL, and NestJS. Discover how Just Do It can help you get things done.'
 		},
 		urls: {

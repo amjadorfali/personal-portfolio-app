@@ -2,6 +2,7 @@
 	"name": "my-app",
 	"version": "0.0.1",
 	"scripts": {
+		"dev": "vite dev",
 		"start": "yarn prepare && vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
@@ -51,7 +52,8 @@
 	},
 	"type": "module",
 	"volta": {
-		"node": "18.14.1",
-		"yarn": "3.4.1"
-	}
+		"node": "20.17.0",
+		"yarn": "4.4.0"
+	},
+	"packageManager": "yarn@4.4.0"
 }
