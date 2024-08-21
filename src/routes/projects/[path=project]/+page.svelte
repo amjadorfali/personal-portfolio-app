@@ -15,14 +15,14 @@
 <article class="grid gap-y-16 h-full min-h-[90vh] justify-items-center">
 	<section>
 		<br />
-		<h1 class="flex items-center gap-4">
+		<h1 class="h1 flex items-center gap-4">
 			<Avatar src={data.config.logo} background="bg-surface-900-50-token p-[0.35rem]" />
 			<span>{data.literals.name}</span>
 		</h1>
 		<br />
-		<h3>{data.literals.summary}</h3>
+		<h3 class="h3">{data.literals.summary}</h3>
 		<br />
-		<h4>{data.literals?.subSummary || ''}</h4>
+		<h4 class="h4">{data.literals?.subSummary || ''}</h4>
 		<br />
 		<footer class="card-footer flex items-end gap-7">
 			{#if data.urls?.site}
@@ -56,9 +56,9 @@
 		</footer>
 	</section>
 	<section class="card variant-glass-secondary p-4 md:w-[70%] lg:w-[50%]">
-		<h3 class="card-header">Description</h3>
+		<h3 class="h3 card-header">Description</h3>
 		<br />
-		<p class="unstyled description pr-4">{@html data.literals.description}</p>
+		<p class=" description pr-4">{@html data.literals.description}</p>
 	</section>
 </article>
 

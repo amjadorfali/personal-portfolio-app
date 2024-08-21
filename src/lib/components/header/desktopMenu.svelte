@@ -21,11 +21,11 @@
 			</svg>
 			<ul class="desktop-list bg-primary-500">
 				{#each routes as route (route.label)}
-					<li class={` unstyled ${matchRoute(route.url, $page.url.pathname) && '!text-secondary-800 active'} `}>
+					<li class={`  ${matchRoute(route.url, $page.url.pathname) && '!text-secondary-800 active'} `}>
 						{#if matchRoute(route.url, $page.url.pathname)}
 							<span class={'active !border-t-secondary-800'} out:send={{ key: 'active-marker' }} in:receive={{ key: 'active-marker' }} />
 						{/if}
-						<a href={route.url} class=" unstyled hover:!text-secondary-800">{route.label}</a>
+						<a href={route.url} class="  hover:!text-secondary-800">{route.label}</a>
 					</li>
 				{/each}
 			</ul>

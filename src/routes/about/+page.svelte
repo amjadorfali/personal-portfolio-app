@@ -17,9 +17,9 @@
 		<img src={MyImage} alt="Me" class="w-[20rem] h-[20rem] mix-blend-lighten lg:h-full lg:w-full lg:min-h-[9rem] lg:max-h-[25rem]" />
 	</section>
 	<section class="basis-1/2 flex flex-col gap-4 card p-4 custom-variant-glass-secondary">
-		<h3 class="unstyled uppercase text-tertiary-300-600-token card-header">a few words about me</h3>
+		<h3 class="h3 uppercase text-tertiary-300-600-token card-header">a few words about me</h3>
 
-		<p class="font-bold unstyled">
+		<p class="">
 			I'm Amjad Orfali, a web developer and software engineer with a focus on Front-End development. I spend my days bringing designs to life and
 			crafting pixel-perfect experiences. When I'm not smashing away at my keyboard, you can find me gaming on Steam or sipping on a cup of coffee.
 			I'm also a music enthusiast, and singer as well!
@@ -61,10 +61,6 @@
 	@media (min-width: 767px) {
 		.wrapper {
 			margin: 0 auto;
-		}
-		p,
-		h3 {
-			text-align: center;
 		}
 	}
 

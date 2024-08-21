@@ -1,20 +1,16 @@
 <script lang="ts">
 	// ---- Should be imported first ----
-	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
-	import '@skeletonlabs/skeleton/styles/all.css';
 	import './styles.scss';
-	import './styles.css';
 
 	// ------------------------------------
 	import { crossfade, scale } from 'svelte/transition';
 	import { cubicInOut } from 'svelte/easing';
-	// eslint-disable-next-line  @typescript-eslint/no-unused-vars
-	import { setInitialClassState } from '@skeletonlabs/skeleton';
 
 	import { keyedRoutes } from '$lib/config';
 	import { Header, InitialLoader, CustomDrawer, PageLoader } from '$lib/components';
 
 	import FavIcon from '$lib/assets/favicon.png?w=48&h=48&format=webp&imagetools';
+	import { initializeStores } from '@skeletonlabs/skeleton';
 
 	import { Avatar } from '@skeletonlabs/skeleton';
 	// import BackgroundAnimation from '$lib/components/animations/backgroundAnimation.svelte';
@@ -22,6 +18,7 @@
 	import { onDestroy } from 'svelte';
 	import { v4 as uuidv4 } from 'uuid';
 
+	initializeStores();
 	const [send, receive] = crossfade({
 		duration: 500,
 		easing: cubicInOut,
@@ -55,13 +52,13 @@
 		<Header>
 			<a
 				href={keyedRoutes.home.url}
-				class="unstyled logo-wrapper grid-cols-2 gap-5 transition-all duration-150 hover:shadow-lg active:shadow-lg hover:-skew-y-3 active:-skew-y-3 hover:skew-x-3 active:skew-x-3 p-[0.3rem]"
+				class=" logo-wrapper grid-cols-2 gap-5 transition-all duration-150 hover:shadow-lg active:shadow-lg hover:-skew-y-3 active:-skew-y-3 hover:skew-x-3 active:skew-x-3 p-[0.3rem]"
 			>
 				<div in:receive={{ key: 'logo' }} on:introend={() => (showContent = true)}>
 					<Avatar src={FavIcon} alt="" width="w-12" class="prevent-select " />
 				</div>
 				<div>
-					<p class="unstyled text-primary-300 w-max font-bold">Amjad Orfali <br />Software Engineer</p>
+					<p class=" text-primary-300 w-max font-bold">Amjad Orfali <br />Software Engineer</p>
 				</div>
 			</a>
 		</Header>

@@ -31,7 +31,7 @@ const getWashmenProjects = () =>
 			text: "Unfortunately, all those projects are internal apps for the company, so I don't have permission to share links or more info regarding them"
 		}
 	].reduce(
-		(prev, { text, title }) => (prev += `${title ? `<h4  class='card-header'>${title}</h4> <br/>` : ''} ${text}<br/><br/><br/><br/><br/>`),
+		(prev, { text, title }) => (prev += `${title ? `<h4  class='card-header h4'>${title}</h4> <br/>` : ''} ${text}<br/><br/><br/><br/><br/>`),
 		''
 	);
 

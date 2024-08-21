@@ -22,7 +22,7 @@
 
 {#if !disable}
 	<div>
-		<h1>
+		<h1 class="h1">
 			{Math.round($progress * 100).toFixed()}%
 		</h1>
 	</div>

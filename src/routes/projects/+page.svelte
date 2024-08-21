@@ -15,8 +15,8 @@
 
 <!-- //FIXME: Apply `Prefer reduced motion` accessibility fixes for all needed transitions -->
 
-<article class="wrapper flex flex-col h-full min-h-[90vh]">
-	<h1 class="font-bold text-center">{keyedRoutes.projects.label}</h1>
+<article class="wrapper flex flex-col h-full min-h-[90vh] px-2 pb-5">
+	<h1 class="h1 font-bold text-center py-4">{keyedRoutes.projects.label}</h1>
 	<section class="flex flex-col items-center gap-12">
 		{#each projectTuples as projectTuple}
 			<section class="flex flex-row flex-wrap self-stretch justify-center gap-12 sm:gap-32 sm:flex-nowrap">
@@ -30,13 +30,13 @@
 							<Avatar src={project?.config.logo} background="bg-surface-900-50-token p-[0.35rem]" />
 						</div>
 						<div class="p-4">
-							<h3>
+							<h3 class="h3">
 								{project?.literals.name}
 							</h3>
 						</div>
 
 						<div class="p-4">
-							<p class="unstyled">
+							<p class="">
 								{project?.literals.summary}
 							</p>
 						</div>

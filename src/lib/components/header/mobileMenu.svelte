@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import { drawerStore } from '@skeletonlabs/skeleton';
+	import { getDrawerStore } from '@skeletonlabs/skeleton';
 	import type { DrawerSettings } from '@skeletonlabs/skeleton';
 
 	import { supportedBreakPoint } from '$lib/config';
@@ -14,6 +14,7 @@
 		bgBackdrop: 'fixed',
 		bgDrawer: 'overflow-y-hidden shadow-xl bg-surface-100-800-token   '
 	};
+	const drawerStore = getDrawerStore();
 
 	const drawerOpenStyled = () => {
 		drawerStore.open(settings);

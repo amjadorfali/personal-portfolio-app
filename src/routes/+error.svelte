@@ -4,7 +4,7 @@
 	import { onDestroy } from 'svelte';
 
 	let count = 3;
-	let interval: number;
+	let interval: NodeJS.Timeout;
 	$: {
 		if (count !== 0) changeInterval();
 		else goto('/');
@@ -23,5 +23,5 @@
 <div class="flex h-screen items-center justify-center flex-col">
 	<h1>Page {$page.error?.message}</h1>
 	<br />
-	<h2>Redirecting to homepage in {count}</h2>
+	<h2 class="h2">Redirecting to homepage in {count}</h2>
 </div>

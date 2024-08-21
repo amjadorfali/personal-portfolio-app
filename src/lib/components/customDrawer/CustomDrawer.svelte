@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { Drawer, drawerStore } from '@skeletonlabs/skeleton';
+	import { Drawer, getDrawerStore } from '@skeletonlabs/skeleton';
 
 	import { routes } from '$lib/config';
 	import { matchRoute } from '$lib/utils';
-
+	const drawerStore = getDrawerStore();
 	const onHideDrawer = () => drawerStore.close();
 </script>
 
@@ -19,13 +19,13 @@
 		</button>
 	</div>
 	<nav>
-		<ul>
+		<ul class="list gap-12">
 			{#each routes as route (route.label)}
 				<li
-					class={`${matchRoute(route.url, $page.url.pathname) ? '' : 'opacity-40 hover:opacity-100 '}`}
+					class={` ${matchRoute(route.url, $page.url.pathname) ? '' : 'opacity-40 hover:opacity-100 '}`}
 					class:active={matchRoute(route.url, $page.url.pathname)}
 				>
-					<a href={route.url} on:click={onHideDrawer}>{route.label}</a>
+					<a class="anchor" href={route.url} on:click={onHideDrawer}>{route.label}</a>
 				</li>
 			{/each}
 		</ul>
