@@ -16,8 +16,5 @@
 	path {
 		--user-pref-blacknwhite-rgb: black;
 		fill: --user-pref-blacknwhite-rgb;
-		@media (prefers-color-scheme: dark) {
-			--user-pref-blacknwhite-rgb: white;
-		}
 	}
 </style>

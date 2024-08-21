@@ -1,12 +1,10 @@
 <script lang="ts">
 	import { links, keyedRoutes } from '$lib/config';
 	import { enhance } from '$app/forms';
-	import type { ActionData } from './$types';
 	import GithubIcon from '$lib/assets/github.svelte';
 	import LinkedInIcon from '$lib/assets/linkedin.svelte';
 	import InstagramIcon from '$lib/assets/instagram.svelte';
-	export let form: ActionData;
-	let submittingForm = false;
+	import Link from '$lib/components/link.svelte';
 </script>
 
 <svelte:head>
@@ -17,50 +15,13 @@
 	/>
 </svelte:head>
 
-<article class={`flex md:items-center md:justify-center md:align-middle  wrapper h-full min-h-[90vh]`}>
+<article class={`flex items-center justify-center align-middle  wrapper h-full min-h-[90vh]`}>
 	<section class=" flex flex-col gap-12">
-		<h1 class="font-bold">{keyedRoutes.contact.label}</h1>
+		<div class="flex self-center">
+			<Link href={links.email} className="md:!text-6xl font-bold !text-3xl" text="Email me here" />
+		</div>
 
-		{#if form?.success === true}
-			<h1>I recieved your email, will get back to you shortly!</h1>
-		{:else if form?.success === false}
-			<h1>Something went wrong :( <br /> <br /> please refresh page and try again</h1>
-		{:else if submittingForm}
-			<h1 class="load-submission">Loading form submission</h1>
-		{:else}
-			<form
-				name="contact"
-				method="post"
-				class="gap-8 self-start flex flex-col w-3/4 md:w-1/3 md:self-center"
-				use:enhance={() => {
-					//Before form is submitted
-					submittingForm = true;
-					return async ({ update }) => {
-						//After form is submitted
-						await update();
-						submittingForm = false;
-					};
-				}}
-			>
-				<p>
-					<label class="label"
-						>Name: <input required type="text" class="input variant-form-material" name="name" placeholder="Enter your Name ..." /></label
-					>
-				</p>
-
-				<p>
-					<label>Email: <input required type="email" name="email" class="input variant-form-material" placeholder="Enter your Email ..." /></label>
-				</p>
-				<p>
-					<label>Message: <textarea name="message" required class="textarea variant-form-material" placeholder="Enter your Message ..." /></label>
-				</p>
-				<p>
-					<button class="btn variant-filled-primary" type="submit">Send</button>
-				</p>
-			</form>
-		{/if}
-
-		<div class="flex gap-12 md:justify-center">
+		<div class="flex gap-12 justify-center">
 			<a href={links.github} class="" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
 				<GithubIcon className="w-12 h-12 hover:scale-125 hover:fill-[black] active:scale-125  transition-all" />
 			</a>
@@ -84,24 +45,6 @@
 		max-width: 85vw;
 		margin: 0 auto;
 		box-sizing: border-box;
-	}
-
-	h1 {
-		text-align: center;
-	}
-
-	h1 {
-		font-size: 1.5rem;
-	}
-
-	@media (max-width: 768px) {
-		h1 {
-			text-align: start;
-		}
-
-		h1 {
-			font-size: 1rem;
-		}
 	}
 
 	.load-submission::after {

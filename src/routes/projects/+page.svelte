@@ -22,7 +22,7 @@
 			<section class="flex flex-row flex-wrap self-stretch justify-center gap-12 sm:gap-32 sm:flex-nowrap">
 				{#each projectTuple as project (project?.config.path)}
 					<a
-						class="card variant-glass-secondary max-w-md card-hover basis-full sm:basis-[30%] shadow-sm shadow-tertiary-500 dark:shadow-tertiary-900 self-stretch"
+						class="card variant-glass-secondary max-w-md card-hover basis-full sm:basis-[30%] shadow-sm shadow-tertiary-900 self-stretch"
 						href={`${keyedRoutes.projects.url}/${project?.config.path}`}
 						in:fly={{ duration: 500, x: -200 }}
 					>

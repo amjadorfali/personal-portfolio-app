@@ -18,8 +18,6 @@
 
 	import { Avatar } from '@skeletonlabs/skeleton';
 	// import BackgroundAnimation from '$lib/components/animations/backgroundAnimation.svelte';
-	import Analytics from '$lib/analytics/analytics.svelte';
-	import { PUBLIC_GTAG } from '$env/static/public';
 	import { navigating, page } from '$app/stores';
 	import { onDestroy } from 'svelte';
 	import { v4 as uuidv4 } from 'uuid';
@@ -50,10 +48,7 @@
 	onDestroy(unsub);
 </script>
 
-<!-- Used to set Dark/Light mode on mount, as the Skeleton LightSwitch wouldn't be mounted at initial page load -->
-<svelte:head>{@html `<script>(${setInitialClassState.toString()})();</script>`}</svelte:head>
 <CustomDrawer />
-<!-- <BackgroundAnimation /> -->
 
 {#if siteIntroDone}
 	<div class="bg-primary z-[0]">
@@ -66,13 +61,12 @@
 					<Avatar src={FavIcon} alt="" width="w-12" class="prevent-select " />
 				</div>
 				<div>
-					<p class="unstyled dark:text-primary-300 text-surface-900 w-max font-bold">Amjad Orfali <br />Software Engineer</p>
+					<p class="unstyled text-primary-300 w-max font-bold">Amjad Orfali <br />Software Engineer</p>
 				</div>
 			</a>
 		</Header>
 
 		{#if showContent}
-			<Analytics key={PUBLIC_GTAG} />
 			{#if showRoute}
 				<main in:scale out:scale={{ duration: 200 }} on:outroend={() => (routeOutroDone = true)} class="pt-16">
 					<slot />

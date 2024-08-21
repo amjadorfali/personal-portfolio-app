@@ -1,10 +1,10 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import { afterNavigate } from '$app/navigation';
 
 	import { routeFromUrl } from '$lib/config';
-	import { animateAmbience, blinkIcons, calculatePlanetX, routeConfig, starIcons } from './helpers/animations';
+	// import { animateAmbience, blinkIcons, calculatePlanetX, routeConfig, starIcons } from './helpers/animations';
 
 	onMount(() => {
 		calculatePlanetX($page.url.pathname);
@@ -46,4 +46,4 @@
 	:global(.planet) {
 		transform: translate3d(120vw, 0px, 0px);
 	}
-</style>
+</style> -->
