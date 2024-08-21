@@ -8,6 +8,7 @@
 	// ------------------------------------
 	import { crossfade, scale } from 'svelte/transition';
 	import { cubicInOut } from 'svelte/easing';
+	// eslint-disable-next-line  @typescript-eslint/no-unused-vars
 	import { setInitialClassState } from '@skeletonlabs/skeleton';
 
 	import { keyedRoutes } from '$lib/config';
@@ -16,7 +17,7 @@
 	import FavIcon from '$lib/assets/favicon.png?w=48&h=48&format=webp&imagetools';
 
 	import { Avatar } from '@skeletonlabs/skeleton';
-	import BackgroundAnimation from '$lib/components/animations/backgroundAnimation.svelte';
+	// import BackgroundAnimation from '$lib/components/animations/backgroundAnimation.svelte';
 	import Analytics from '$lib/analytics/analytics.svelte';
 	import { PUBLIC_GTAG } from '$env/static/public';
 	import { navigating, page } from '$app/stores';
