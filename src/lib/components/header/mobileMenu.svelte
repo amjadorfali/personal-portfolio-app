@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import { drawerStore, LightSwitch } from '@skeletonlabs/skeleton';
+	import { drawerStore } from '@skeletonlabs/skeleton';
 	import type { DrawerSettings } from '@skeletonlabs/skeleton';
 
 	import { supportedBreakPoint } from '$lib/config';

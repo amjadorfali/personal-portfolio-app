@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { links, keyedRoutes } from '$lib/config';
-	import { enhance } from '$app/forms';
 	import GithubIcon from '$lib/assets/github.svelte';
 	import LinkedInIcon from '$lib/assets/linkedin.svelte';
 	import InstagramIcon from '$lib/assets/instagram.svelte';
