@@ -32,7 +32,7 @@
 			<g fill="none" fill-rule="evenodd" stroke="black">
 				<g stroke-width="7.5" stroke="white">
 					<circle
-						in:draw|global={{ duration: 1000 }}
+						in:draw|global={{ duration: 500 }}
 						on:introend={() => dispatch('transitionsEnded')}
 						cx="250"
 						cy="350"

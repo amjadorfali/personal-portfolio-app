@@ -22,7 +22,7 @@
 	const [send, receive] = crossfade({
 		duration: 500,
 		easing: cubicInOut,
-		delay: 200
+		delay: 50
 	});
 	let routeOutroDone = true,
 		routeLoading = false,
