@@ -31,7 +31,7 @@
 			{#if data.urls?.github?.api}
 				<a
 					href={data.urls?.github.api}
-					class="flex flex-col items-center !no-underline gap-1 text-center"
+					class="flex anchor flex-col items-center !no-underline gap-1 text-center"
 					target="_blank"
 					rel="noopener noreferrer"
 					aria-label="GitHub"
@@ -44,7 +44,7 @@
 			{#if data.urls?.github?.client}
 				<a
 					href={data.urls?.github.client}
-					class="flex flex-col items-center !no-underline gap-1 text-center"
+					class="anchor flex flex-col items-center !no-underline gap-1 text-center"
 					target="_blank"
 					rel="noopener noreferrer"
 					aria-label="GitHub"
