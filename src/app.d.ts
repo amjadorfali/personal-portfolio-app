@@ -1,25 +1,31 @@
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
-// and what to do when importing types
-declare namespace App {
-	// interface Error {}
-	interface Locals {
-		userid: string;
+declare global {
+	namespace App {
+		interface Locals {
+			userid: string;
+		}
+
+		interface PageData {
+			url?: string;
+		}
+		// interface Error {}
+		// interface Locals {}
+		// interface PageData {}
+		// interface PageState {}
+		// interface Platform {}
 	}
 
-	interface PageData {
-		url?: string;
+	// Used to provide TS declarations for non-TS modules
+	declare module '*&imagetools' {
+		/**
+		 * actual types
+		 * - code https://github.com/JonasKruckenberg/imagetools/blob/main/packages/core/src/output-formats.ts
+		 * - docs https://github.com/JonasKruckenberg/imagetools/blob/main/docs/guide/getting-started.md#metadata
+		 */
+		const out;
+		export default out;
 	}
-	// interface Platform {}
 }
 
-// Used to provide TS declarations for non-TS modules
-declare module '*&imagetools' {
-	/**
-	 * actual types
-	 * - code https://github.com/JonasKruckenberg/imagetools/blob/main/packages/core/src/output-formats.ts
-	 * - docs https://github.com/JonasKruckenberg/imagetools/blob/main/docs/guide/getting-started.md#metadata
-	 */
-	const out;
-	export default out;
-}
+export {};

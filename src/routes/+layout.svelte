@@ -54,7 +54,7 @@
 				href={keyedRoutes.home.url}
 				class=" logo-wrapper grid-cols-2 gap-5 transition-all duration-150 hover:shadow-lg active:shadow-lg hover:-skew-y-3 active:-skew-y-3 hover:skew-x-3 active:skew-x-3 p-[0.3rem]"
 			>
-				<div in:receive={{ key: 'logo' }} on:introend={() => (showContent = true)}>
+				<div in:receive|global={{ key: 'logo' }} on:introend={() => (showContent = true)}>
 					<Avatar src={FavIcon} alt="" width="w-12" class="prevent-select " />
 				</div>
 				<div>
@@ -65,7 +65,12 @@
 
 		{#if showContent}
 			{#if showRoute}
-				<main in:scale out:scale={{ duration: 200 }} on:outroend={() => (routeOutroDone = true)} class="pt-16">
+				<main
+					in:scale|global
+					out:scale|global={{ duration: 200 }}
+					on:outroend={() => (routeOutroDone = true)}
+					class="pt-16"
+				>
 					<slot />
 				</main>
 			{:else if routeOutroDone}

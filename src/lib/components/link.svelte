@@ -7,7 +7,13 @@
 	export let ariaLabel = '';
 </script>
 
-<a {target} {rel} {href} aria-label={ariaLabel} class={`my-link !text-primary-500  projects-link overflow-hidden text-base capitalize ${className}`}>
+<a
+	{target}
+	{rel}
+	{href}
+	aria-label={ariaLabel}
+	class={`my-link !text-primary-500  projects-link overflow-hidden text-base capitalize ${className}`}
+>
 	{text}
 	<div class="link-underline" />
 </a>

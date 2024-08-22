@@ -26,7 +26,13 @@
 		<br />
 		<footer class="card-footer flex items-end gap-7">
 			{#if data.urls?.site}
-				<Link text="Visit Website" href={data.urls?.site} target="_blank" rel="noopener noreferrer" ariaLabel="Project Link" />
+				<Link
+					text="Visit Website"
+					href={data.urls?.site}
+					target="_blank"
+					rel="noopener noreferrer"
+					ariaLabel="Project Link"
+				/>
 			{/if}
 			{#if data.urls?.github?.api}
 				<a
@@ -36,7 +42,9 @@
 					rel="noopener noreferrer"
 					aria-label="GitHub"
 				>
-					<GithubIcon className="w-12 h-12 hover:scale-125 hover:fill-[black] active:scale-125  transition-all" />
+					<GithubIcon
+						className="w-12 h-12 hover:scale-125 hover:fill-[black] active:scale-125  transition-all"
+					/>
 					<span>Api Code</span>
 				</a>
 			{/if}
@@ -49,7 +57,9 @@
 					rel="noopener noreferrer"
 					aria-label="GitHub"
 				>
-					<GithubIcon className="w-12 h-12 hover:scale-125 hover:fill-[black] active:scale-125  transition-all" />
+					<GithubIcon
+						className="w-12 h-12 hover:scale-125 hover:fill-[black] active:scale-125  transition-all"
+					/>
 					<span>Client Code</span>
 				</a>
 			{/if}

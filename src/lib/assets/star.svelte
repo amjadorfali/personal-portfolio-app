@@ -3,7 +3,15 @@
 	export let style = '';
 </script>
 
-<svg class={className} {style} width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg
+	class={className}
+	{style}
+	width="29"
+	height="29"
+	viewBox="0 0 29 29"
+	fill="none"
+	xmlns="http://www.w3.org/2000/svg"
+>
 	<g opacity="0.7">
 		<path
 			opacity="0.7"

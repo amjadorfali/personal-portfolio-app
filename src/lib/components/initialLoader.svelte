@@ -28,10 +28,16 @@
 {#if start}
 	<div class="box flex">
 		<div class="slide slide-1 bg-secondary" />
-		<svg viewBox="0 0 500 700" class="circle" out:sendLogo={{ key: 'logo' }}>
+		<svg viewBox="0 0 500 700" class="circle" out:sendLogo|global={{ key: 'logo' }}>
 			<g fill="none" fill-rule="evenodd" stroke="black">
 				<g stroke-width="7.5" stroke="white">
-					<circle in:draw={{ duration: 1000 }} on:introend={() => dispatch('transitionsEnded')} cx="250" cy="350" r="250" />
+					<circle
+						in:draw|global={{ duration: 1000 }}
+						on:introend={() => dispatch('transitionsEnded')}
+						cx="250"
+						cy="350"
+						r="250"
+					/>
 				</g>
 
 				<g transform="matrix(0.75 0 0 0.75 250 350)">

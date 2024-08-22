@@ -29,13 +29,23 @@
 	};
 </script>
 
-<MediaQuery query={`(max-width: ${supportedBreakPoint - 1}px)`} let:matches on:out={() => drawerStore.close()}>
+<MediaQuery
+	query={`(max-width: ${supportedBreakPoint - 1}px)`}
+	let:matches
+	on:out={() => drawerStore.close()}
+>
 	{#if matches}
 		<div />
 		<div class="corner">
 			<!-- Hamburger Menu -->
-			<div class="menuToggle" transition:fade={{ duration: 200 }}>
-				<input aria-label="Navigation Menu" type="checkbox" checked={$drawerStore.open} on:click={toggleStore} class="peer" />
+			<div class="menuToggle" transition:fade|global={{ duration: 200 }}>
+				<input
+					aria-label="Navigation Menu"
+					type="checkbox"
+					checked={$drawerStore.open}
+					on:click={toggleStore}
+					class="peer"
+				/>
 				<span class=" bg-primary-300 peer-checked:bg-primary-400" />
 				<span class=" bg-primary-300 peer-checked:bg-primary-400" />
 				<span class=" bg-primary-300 peer-checked:bg-primary-400" />
@@ -81,7 +91,10 @@
 		border-radius: 3px;
 		z-index: 1;
 		transform-origin: 4px 0px;
-		transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+		transition:
+			transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+			background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+			opacity 0.55s ease;
 	}
 
 	div.menuToggle span:first-child {

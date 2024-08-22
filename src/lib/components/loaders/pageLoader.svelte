@@ -11,8 +11,12 @@
 		easing: cubicOut
 	});
 
-	$: loadingDone && progress.set(1, { duration: 300 });
-	$: $progress === 1 && dispatchEvent('tweenDone');
+	$: {
+		if (loadingDone) progress.set(1, { duration: 300 });
+	}
+	$: {
+		if ($progress === 1) dispatchEvent('tweenDone');
+	}
 
 	onMount(() => {
 		if (loadingDone) return (disable = true);

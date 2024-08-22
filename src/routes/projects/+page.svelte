@@ -19,12 +19,14 @@
 	<h1 class="h1 font-bold text-center py-4">{keyedRoutes.projects.label}</h1>
 	<section class="flex flex-col items-center gap-12">
 		{#each projectTuples as projectTuple}
-			<section class="flex flex-row flex-wrap self-stretch justify-center gap-12 sm:gap-32 sm:flex-nowrap">
+			<section
+				class="flex flex-row flex-wrap self-stretch justify-center gap-12 sm:gap-32 sm:flex-nowrap"
+			>
 				{#each projectTuple as project (project?.config.path)}
 					<a
 						class="card variant-glass-secondary max-w-md card-hover basis-full sm:basis-[30%] shadow-sm shadow-tertiary-900 self-stretch"
 						href={`${keyedRoutes.projects.url}/${project?.config.path}`}
-						in:fly={{ duration: 500, x: -200 }}
+						in:fly|global={{ duration: 500, x: -200 }}
 					>
 						<div class="card-header">
 							<Avatar src={project?.config.logo} background="bg-surface-900-50-token p-[0.35rem]" />

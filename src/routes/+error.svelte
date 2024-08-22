@@ -4,7 +4,8 @@
 	import { onDestroy } from 'svelte';
 
 	let count = 3;
-	let interval: NodeJS.Timeout;
+	/* eslint-disable @typescript-eslint/no-explicit-any */
+	let interval: any;
 	$: {
 		if (count !== 0) changeInterval();
 		else goto('/');

@@ -31,7 +31,8 @@ const getWashmenProjects = () =>
 			text: "Unfortunately, all those projects are internal apps for the company, so I don't have permission to share links or more info regarding them"
 		}
 	].reduce(
-		(prev, { text, title }) => (prev += `${title ? `<h4  class='card-header h4'>${title}</h4> <br/>` : ''} ${text}<br/><br/><br/><br/><br/>`),
+		(prev, { text, title }) =>
+			(prev += `${title ? `<h4  class='card-header h4'>${title}</h4> <br/>` : ''} ${text}<br/><br/><br/><br/><br/>`),
 		''
 	);
 
@@ -50,7 +51,10 @@ export const projects: Project[] = [
 			// 'Boost your productivity with Just Do It, a powerful todo app built with cutting-edge technologies. As the developer behind this app, I can showcase my expertise in React, MongoDB, GraphQL, and NestJS. Discover how Just Do It can help you get things done.'
 		},
 		urls: {
-			github: { client: 'https://github.com/amjadorfali/todo-react-app', api: 'https://github.com/amjadorfali/todo-API' },
+			github: {
+				client: 'https://github.com/amjadorfali/todo-react-app',
+				api: 'https://github.com/amjadorfali/todo-API'
+			},
 			site: 'https://angry-amjads-homepage.netlify.app/'
 		}
 	},
@@ -65,7 +69,8 @@ export const projects: Project[] = [
 		config: {
 			logo: WashmenLogo,
 			path: 'washmen',
-			title: 'Washmen - Your One-Stop Laundry and Dry Cleaning Solution in the UAE | My Work Experience',
+			title:
+				'Washmen - Your One-Stop Laundry and Dry Cleaning Solution in the UAE | My Work Experience',
 			metaDescription:
 				"Find the best laundry and dry cleaning services in the UAE with Washmen. As an employee, I have firsthand experience with the company's reliable and efficient services. Learn more about my role and contributions at Washmen."
 		},
@@ -88,7 +93,10 @@ export const projects: Project[] = [
 			metaDescription:
 				'Explore my personal portfolio and discover my skills, projects, and achievements. As the creator of this portfolio, I have used Svelte, Skeleton UI, and TailwindCss to build a stunning and responsive website. See how I can add value to your business with my skills and experience.'
 		},
-		urls: { github: { client: 'https://github.com/amjadorfali/personal-portfolio-app' }, site: 'https://amjadorfali.com' }
+		urls: {
+			github: { client: 'https://github.com/amjadorfali/personal-portfolio-app' },
+			site: 'https://amjadorfali.com'
+		}
 	}
 ];
 

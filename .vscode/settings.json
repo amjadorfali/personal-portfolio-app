@@ -1,5 +1,4 @@
 {
-	"editor.formatOnSave": true,
 	"workbench.colorCustomizations": {
 		"activityBar.background": "#2052A9",
 		"titleBar.activeForeground": "#ffffff",
@@ -8,9 +7,44 @@
 	"svelte.enable-ts-plugin": true,
 	"svelte.plugin.html.completions.enable": true,
 	"svelte.plugin.typescript.enable": true,
-	"[svelte]": {
-		"editor.defaultFormatter": "svelte.svelte-vscode"
-	},
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"i18n-ally.localesPaths": []
+	"typescript.enablePromptUseWorkspaceTsdk": true, // For security reasons it's require that users opt into using the workspace version of typescript
+	"search.exclude": {
+		"**/.yarn": true,
+		"**/.pnp.*": true,
+		"yarn.lock": true,
+		"**/.next": true,
+		"**/node_modules": true
+	},
+	"prettier.ignorePath": ".gitignore", // Don't run prettier for files listed in .gitignore
+	"eslint.debug": true,
+	"typescript.preferences.preferTypeOnlyAutoImports": true, // Prefer type-only imports
+	"prettier.enable": true,
+	"eslint.format.enable": true,
+	"editor.tabSize": 2,
+	"todo-tree.general.tags": [
+		"BUG",
+		"HACK",
+		"FIXME",
+		"TODO",
+		"XXX",
+		"[ ]",
+		"[x]",
+		"MIGRATION",
+		"SETUP"
+	],
+	"editor.detectIndentation": false,
+	"editor.formatOnSave": false,
+	"editor.codeActionsOnSave": ["editor.formatOnSave", "source.fixAll"],
+	"tailwindCSS.experimental.classRegex": [
+		[
+			"cva(?:<[^>]*>)?(([^)]*))",
+			"[\"'`]([^\"'`]*).*?[\"'`]",
+			"(?:twMerge|twJoin)\\(([^\\);]*)[\\);]"
+		]
+	],
+	"[svg]": {
+		"editor.defaultFormatter": "jock.svg"
+	},
+	"tailwindCSS.classAttributes": ["class", "className", "ngClass", "class:list", "classNames"]
 }

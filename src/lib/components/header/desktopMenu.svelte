@@ -15,15 +15,21 @@
 
 <MediaQuery query={`(min-width: ${supportedBreakPoint}px)`} let:matches>
 	{#if matches}
-		<nav transition:fade={{ duration: 200 }}>
+		<nav transition:fade|global={{ duration: 200 }}>
 			<svg viewBox="0 0 2 3" aria-hidden="true">
 				<path class="fill-primary-500" d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
 			</svg>
 			<ul class="desktop-list bg-primary-500">
 				{#each routes as route (route.label)}
-					<li class={`  ${matchRoute(route.url, $page.url.pathname) && '!text-secondary-800 active'} `}>
+					<li
+						class={`  ${matchRoute(route.url, $page.url.pathname) && '!text-secondary-800 active'} `}
+					>
 						{#if matchRoute(route.url, $page.url.pathname)}
-							<span class={'active !border-t-secondary-800'} out:send={{ key: 'active-marker' }} in:receive={{ key: 'active-marker' }} />
+							<span
+								class={'active !border-t-secondary-800'}
+								out:send|global={{ key: 'active-marker' }}
+								in:receive|global={{ key: 'active-marker' }}
+							/>
 						{/if}
 						<a href={route.url} class="  hover:!text-secondary-800">{route.label}</a>
 					</li>
