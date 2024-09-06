@@ -3,10 +3,8 @@ import WashmenLogo from '$lib/assets/washmen-logo.png?w=64&h=64&format=webp&imag
 import PortfolioLogo from '$lib/assets/favicon.png?w=64&h=64&format=webp&imagetools';
 
 interface Project {
-	images?: string[];
 	literals: { name: string; description: string; summary: string; subSummary?: string };
-	config: { path: string; logo: string; title: string; metaDescription: string };
-	urls?: { site?: string; github?: { api?: string; client?: string } };
+	config: { path: string; logo: string };
 }
 
 const getWashmenProjects = () =>
@@ -45,17 +43,17 @@ export const projects: Project[] = [
 		},
 		config: {
 			logo: JustDoItLogo,
-			path: 'just-do-it',
-			title: 'Just Do It!',
-			metaDescription: 'JUST DO IT!'
+			path: 'just-do-it'
+			// title: 'Just Do It!',
+			// metaDescription: 'JUST DO IT!'
 			// 'Boost your productivity with Just Do It, a powerful todo app built with cutting-edge technologies. As the developer behind this app, I can showcase my expertise in React, MongoDB, GraphQL, and NestJS. Discover how Just Do It can help you get things done.'
-		},
-		urls: {
-			github: {
-				client: 'https://github.com/amjadorfali/todo-react-app',
-				api: 'https://github.com/amjadorfali/todo-API'
-			},
-			site: 'https://angry-amjads-homepage.netlify.app/'
+			// },
+			// urls: {
+			// github: {
+			// client: 'https://github.com/amjadorfali/todo-react-app',
+			// api: 'https://github.com/amjadorfali/todo-API'
+			// },
+			// site: 'https://angry-amjads-homepage.netlify.app/'
 		}
 	},
 
@@ -68,15 +66,15 @@ export const projects: Project[] = [
 		},
 		config: {
 			logo: WashmenLogo,
-			path: 'washmen',
-			title:
-				'Washmen - Your One-Stop Laundry and Dry Cleaning Solution in the UAE | My Work Experience',
-			metaDescription:
-				"Find the best laundry and dry cleaning services in the UAE with Washmen. As an employee, I have firsthand experience with the company's reliable and efficient services. Learn more about my role and contributions at Washmen."
-		},
-		urls: {
-			site: 'https://washmen.com'
+			path: 'washmen'
+			// title:
+			// 'Washmen - Your One-Stop Laundry and Dry Cleaning Solution in the UAE | My Work Experience',
+			// metaDescription:
+			// "Find the best laundry and dry cleaning services in the UAE with Washmen. As an employee, I have firsthand experience with the company's reliable and efficient services. Learn more about my role and contributions at Washmen."
 		}
+		// urls: {
+		// site: 'https://washmen.com'
+		// }
 	},
 	{
 		literals: {
@@ -88,22 +86,22 @@ export const projects: Project[] = [
 		},
 		config: {
 			logo: PortfolioLogo,
-			path: 'personal-portfolio',
-			title: 'Personal Portfolio - Showcase of My Projects, Skills, and Achievements | My Work',
-			metaDescription:
-				'Explore my personal portfolio and discover my skills, projects, and achievements. As the creator of this portfolio, I have used Svelte, Skeleton UI, and TailwindCss to build a stunning and responsive website. See how I can add value to your business with my skills and experience.'
-		},
-		urls: {
-			github: { client: 'https://github.com/amjadorfali/personal-portfolio-app' },
-			site: 'https://amjadorfali.com'
+			path: 'personal-portfolio'
+			// title: 'Personal Portfolio - Showcase of My Projects, Skills, and Achievements | My Work',
+			// metaDescription:
+			// 'Explore my personal portfolio and discover my skills, projects, and achievements. As the creator of this portfolio, I have used Svelte, Skeleton UI, and TailwindCss to build a stunning and responsive website. See how I can add value to your business with my skills and experience.'
 		}
+		// urls: {
+		// github: { client: 'https://github.com/amjadorfali/personal-portfolio-app' },
+		// site: 'https://amjadorfali.com'
+		// }
 	}
 ];
 
-export const projectsKeyedByPath = projects.reduce<{ [key in string]: Project }>((acc, curr) => {
-	acc[curr.config.path] = curr;
-	return acc;
-}, {});
+// #export const projectsKeyedByPath = projects.reduce<{ [key in string]: Project }>((acc, curr) => {
+// #	acc[curr.config.path] = curr;
+// #	return acc;
+// #}, {});
 
 export const projectTuples = projects.reduce<[Project?, Project?][]>((acc, curr) => {
 	const lastArray = acc[acc.length - 1];

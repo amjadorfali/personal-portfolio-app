@@ -1,12 +1,6 @@
-export type RouteKeys = 'home' | 'about' | 'projects' | 'contact';
-
+export type RouteKeys = 'home';
 type Route = { url: string; label: string; key: RouteKeys };
-export const routes: Route[] = [
-	{ url: '/', label: 'Home', key: 'home' },
-	{ url: '/about', label: 'About', key: 'about' },
-	{ url: '/projects', label: 'Projects', key: 'projects' },
-	{ url: '/contact', label: 'Contact', key: 'contact' }
-];
+export const routes: Route[] = [{ url: '/', label: 'Home', key: 'home' }];
 
 type KeyedRoutes = { [key in RouteKeys]: Route };
 

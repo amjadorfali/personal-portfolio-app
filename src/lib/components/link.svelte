@@ -5,6 +5,7 @@
 	export let target = '';
 	export let rel = '';
 	export let ariaLabel = '';
+	export let underline = true;
 </script>
 
 <a
@@ -15,7 +16,7 @@
 	class={`my-link !text-primary-500  projects-link overflow-hidden text-base capitalize ${className}`}
 >
 	{text}
-	<div class="link-underline" />
+	<div class={`${underline && 'link-underline'}`} />
 </a>
 
 <style>

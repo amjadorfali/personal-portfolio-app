@@ -46,9 +46,9 @@
 					on:click={toggleStore}
 					class="peer"
 				/>
-				<span class=" bg-primary-300 peer-checked:bg-primary-400" />
-				<span class=" bg-primary-300 peer-checked:bg-primary-400" />
-				<span class=" bg-primary-300 peer-checked:bg-primary-400" />
+				<span class=" bg-secondary-300 peer-checked:bg-secondary-400" />
+				<span class=" bg-secondary-300 peer-checked:bg-secondary-400" />
+				<span class=" bg-secondary-300 peer-checked:bg-secondary-400" />
 			</div>
 		</div>
 		<div class="self-center">
