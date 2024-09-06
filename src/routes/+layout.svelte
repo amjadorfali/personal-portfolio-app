@@ -166,11 +166,6 @@
 		justify-content: center;
 	}
 
-	div p {
-		font-size: 1rem;
-		line-height: normal;
-	}
-
 	header {
 		position: fixed;
 		z-index: 1;
@@ -181,11 +176,5 @@
 	}
 	.scrolled {
 		transform: translate(0, calc(-100% - 1rem));
-	}
-
-	@media (min-width: 1000px) {
-		header {
-			/* grid-template-columns: 0.5fr 1fr 0.5fr; */
-		}
 	}
 </style>
