@@ -6,12 +6,14 @@
 	export let rel = '';
 	export let ariaLabel = '';
 	export let underline = true;
+	export let style = '';
 </script>
 
 <a
 	{target}
 	{rel}
 	{href}
+	{style}
 	aria-label={ariaLabel}
 	class={`my-link !text-primary-500  projects-link overflow-hidden text-base capitalize ${className}`}
 >

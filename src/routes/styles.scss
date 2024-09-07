@@ -17,14 +17,6 @@
 	--user-pref-blacknwhite-rgb: rgba(0, 0, 0, 2);
 }
 
-body::-webkit-scrollbar {
-	width: 1rem;
-}
-
-body::-webkit-scrollbar-track {
-	border-radius: 10px;
-}
-
 body {
 	font-synthesis: none;
 	margin: 0;
@@ -34,19 +26,4 @@ body {
 }
 .body-wrapper {
 	margin-bottom: max(2rem, env(safe-area-inset-bottom));
-}
-
-p {
-	font-size: 1.5rem;
-	font-weight: 500;
-}
-
-@media (max-width: 768px) {
-	h1 {
-		font-size: 1.75rem;
-	}
-
-	p {
-		font-size: 1rem;
-	}
 }

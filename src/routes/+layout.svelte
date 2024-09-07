@@ -3,24 +3,18 @@
 	import './styles.scss';
 
 	// ------------------------------------
-	import { crossfade, scale } from 'svelte/transition';
-	import { cubicInOut } from 'svelte/easing';
-
+	import { scale } from 'svelte/transition';
 	import { keyedRoutes, links } from '$lib/config';
-	import { InitialLoader, CustomDrawer, PageLoader, Link } from '$lib/components';
+	import { Link } from '$lib/components';
 
 	import FavIcon from '$lib/assets/favicon.png?w=48&h=48&format=webp&imagetools';
-	import { initializeStores } from '@skeletonlabs/skeleton';
 
 	import { Avatar } from '@skeletonlabs/skeleton';
 	// import BackgroundAnimation from '$lib/components/animations/backgroundAnimation.svelte';
-	import { navigating, page } from '$app/stores';
-	import { onDestroy } from 'svelte';
-	import { v4 as uuidv4 } from 'uuid';
 	import GithubIcon from '$lib/assets/github.svelte';
 	import LinkedInIcon from '$lib/assets/linkedin.svelte';
-	import InstagramIcon from '$lib/assets/instagram.svelte';
 	import { onMount } from 'svelte';
+
 	let myInput: HTMLElement;
 	let show = false;
 
@@ -43,120 +37,74 @@
 			window.onscroll = () => {};
 		};
 	});
-
-	initializeStores();
-	const [send, receive] = crossfade({
-		duration: 500,
-		easing: cubicInOut,
-		delay: 50
-	});
-	let routeOutroDone = true,
-		routeLoading = false,
-		showRoute = true,
-		currentKey: string = uuidv4(),
-		siteIntroDone = $page.url.pathname !== keyedRoutes.home.url,
-		showContent = siteIntroDone;
-
-	const unsub = navigating.subscribe((nav) => {
-		if (!nav) return (routeLoading = false);
-
-		if (nav?.type === 'link' && nav.from?.url.pathname !== nav.to?.url.pathname) {
-			if (showRoute) routeOutroDone = false;
-			currentKey = uuidv4();
-			routeLoading = true;
-			showRoute = false;
-		}
-	});
-
-	onDestroy(unsub);
 </script>
 
-<CustomDrawer />
+<div class="bg-primary z-[0]">
+	<header
+		class:scrolled={show}
+		bind:this={myInput}
+		class="flex justify-center w-full px-4 py-2 variant-glass-surface"
+	>
+		<div class="flex justify-between w-full xl:max-w-[75rem]">
+			<a
+				href={keyedRoutes.home.url}
+				class=" logo-wrapper gap-5 transition-all duration-150 hover:shadow-lg active:shadow-lg hover:-skew-y-3 active:-skew-y-3 hover:skew-x-3 active:skew-x-3 p-[0.3rem]"
+			>
+				<Avatar src={FavIcon} alt="" width="w-12" class="prevent-select " />
+			</a>
 
-{#if siteIntroDone}
-	<div class="bg-primary z-[0]">
-		<header
-			class:scrolled={show}
-			bind:this={myInput}
-			class="flex justify-center w-full px-4 py-2 variant-glass-surface"
-		>
-			<div class="flex justify-between w-full xl:max-w-[75rem]">
+			<Link
+				underline={false}
+				href={links.email}
+				className="font-bold !text-white rounded-tr-lg rounded-bl-lg active:scale-95 bg-primary-500 hover:bg-primary-500/50 transition-all duration-200 p-3"
+				text="Let's chat"
+			/>
+		</div>
+	</header>
+
+	<main in:scale|global out:scale|global={{ duration: 200 }} class="pt-16">
+		<slot />
+	</main>
+
+	<footer class=" bg-surface-600 justify-center flex mt-4 py-4 px-4 variant-glass-surface">
+		<div class="flex w-full justify-between xl:max-w-[75rem]">
+			<div class="flex gap-12 justify-center">
 				<a
-					href={keyedRoutes.home.url}
-					class=" logo-wrapper gap-5 transition-all duration-150 hover:shadow-lg active:shadow-lg hover:-skew-y-3 active:-skew-y-3 hover:skew-x-3 active:skew-x-3 p-[0.3rem]"
+					href={links.github}
+					class=""
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="GitHub"
 				>
-					<div in:receive|global={{ key: 'logo' }} on:introend={() => (showContent = true)}>
-						<Avatar src={FavIcon} alt="" width="w-12" class="prevent-select " />
-					</div>
+					<GithubIcon
+						className="size-6 over:scale-125 hover:fill-[black] active:scale-125  transition-all"
+					/>
 				</a>
 
+				<a
+					href={links.linkedIn}
+					class=""
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Linkedin"
+				>
+					<LinkedInIcon
+						className="size-6 hover:scale-125 hover:fill-[black] active:scale-125  transition-all"
+					/>
+				</a>
+			</div>
+			<div>
 				<Link
-					underline={false}
-					href={links.email}
-					className="font-bold !text-white rounded-tr-lg rounded-bl-lg active:scale-95 bg-primary-500 hover:bg-primary-500/50 transition-all duration-200 p-3"
-					text="Let's chat"
+					href={`https://github.com/amjadorfali/personal-portfolio-app`}
+					target="_blank"
+					rel="noopener noreferrer"
+					className="block "
+					text="Github source"
 				/>
 			</div>
-		</header>
-
-		{#if showContent}
-			{#if showRoute}
-				<main
-					in:scale|global
-					out:scale|global={{ duration: 200 }}
-					on:outroend={() => (routeOutroDone = true)}
-					class="pt-16"
-				>
-					<slot />
-				</main>
-			{:else if routeOutroDone}
-				{#key currentKey}
-					<PageLoader loadingDone={!routeLoading} on:tweenDone={() => (showRoute = true)} />
-				{/key}
-			{/if}
-		{/if}
-		<footer class=" bg-surface-600 justify-center flex mt-4 py-4 px-4 variant-glass-surface">
-			<div class="flex w-full justify-between xl:max-w-[75rem]">
-				<div class="flex gap-12 justify-center">
-					<a
-						href={links.github}
-						class=""
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="GitHub"
-					>
-						<GithubIcon
-							className="size-6 over:scale-125 hover:fill-[black] active:scale-125  transition-all"
-						/>
-					</a>
-
-					<a
-						href={links.linkedIn}
-						class=""
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="Linkedin"
-					>
-						<LinkedInIcon
-							className="size-6 hover:scale-125 hover:fill-[black] active:scale-125  transition-all"
-						/>
-					</a>
-				</div>
-				<div>
-					<Link
-						href={`https://github.com/amjadorfali/personal-portfolio-app`}
-						target="_blank"
-						rel="noopener noreferrer"
-						className="block "
-						text="Github source"
-					/>
-				</div>
-			</div>
-		</footer>
-	</div>
-{:else}
-	<InitialLoader sendLogo={send} on:transitionsEnded={() => (siteIntroDone = true)} />
-{/if}
+		</div>
+	</footer>
+</div>
 
 <style>
 	.logo-wrapper {
