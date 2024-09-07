@@ -26,7 +26,11 @@
 	</h1>
 
 	<div class="flex justify-center lg:justify-between items-stretch flex-wrap lg:flex-nowrap gap-20">
-		<img src={MyImage} alt="Me" class="lg:order-1 hero size-3/4 lg:h-auto lg:w-5/12" />
+		<img
+			src={MyImage}
+			alt="Me"
+			class="lg:order-1 hero size-3/4 lg:h-auto lg:w-5/12 min-w-60 min-h-36"
+		/>
 
 		<section class=" flex lg:basis-5/12 flex-col gap-4 card p-4 basis-full">
 			<h2 class="h2 uppercase card-header">About</h2>
