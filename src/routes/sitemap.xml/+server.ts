@@ -12,39 +12,10 @@ export async function GET() {
       >
         <url>
             <loc>https://www.amjadorfali.com/</loc>
-            <lastmod>2023-03-26</lastmod>
+            <lastmod>2024-09-07</lastmod>
         </url>
 
-        <url>
-        <loc>https://www.amjadorfali.com/projects</loc>
-        <lastmod>2023-03-26</lastmod>
-        </url>
-   
-        <url>
-        <loc>https://www.amjadorfali.com/projects/just-do-it</loc>
-        <lastmod>2023-03-26</lastmod>
-        </url>
-
-        <url>
-        <loc>https://www.amjadorfali.com/projects/washmen</loc>
-        <lastmod>2023-03-26</lastmod>
-        </url>
-
-        <url>
-        <loc>https://www.amjadorfali.com/projects/personal-portfolio</loc>
-        <lastmod>2023-03-26</lastmod>
-        </url>
-
-        <url>
-        <loc>https://www.amjadorfali.com/contact</loc>
-        <lastmod>2023-03-26</lastmod>
-        </url>
-        
-        <url>
-        <loc>https://www.amjadorfali.com/about</loc>
-        <lastmod>2023-03-26</lastmod>
-        </url>
-
+     
       </urlset>`.trim(),
 		{
 			headers: {
