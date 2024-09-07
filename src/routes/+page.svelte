@@ -21,12 +21,12 @@
 	class=" text-center text-balance lg:text-start items-center py-8 px-4 align-middle h-full min-h-[70vh] lg:min-h-[81.3vh] gap-20 lg:items-end xl:max-w-[75rem]"
 >
 	<h1 class="h1 self-center">
-		I build things;
+		I make things;
 		<span class="glitch inline-block" data-text="I break things">I break things</span>
 	</h1>
 
 	<div class="flex justify-center lg:justify-between items-stretch flex-wrap lg:flex-nowrap gap-20">
-		<img src={MyImage} srcset="" alt="Me" class="lg:order-1 hero size-3/4 lg:h-auto lg:w-5/12" />
+		<img src={MyImage} alt="Me" class="lg:order-1 hero size-3/4 lg:h-auto lg:w-5/12" />
 
 		<section class=" flex lg:basis-5/12 flex-col gap-4 card p-4 basis-full">
 			<h2 class="h2 uppercase card-header">About</h2>
@@ -62,7 +62,7 @@
 				class="flex basis-full justify-center lg:justify-start items-center gap-4 xl:basis-[44%] flex-wrap"
 			>
 				<Avatar background=" bg-surface-50 p-[0.35rem]">
-					<FineryLogo />
+					<FineryLogo className="size-12" />
 				</Avatar>
 				<caption class=" basis-full lg:basis-0 text-nowrap">Facility System</caption>
 				<p class=" p-3">
@@ -76,7 +76,7 @@
 				<Link
 					underline={false}
 					href={links.finery}
-					className=" min-w-32 font-bold !text-white rounded-tr-lg rounded-bl-lg bg-primary-500 hover:bg-primary-500/50 active:scale-95   transition-all duration-200  p-3"
+					className=" min-w-32 font-bold  rounded-tr-lg rounded-bl-lg bg-primary-500 hover:bg-primary-500/50 !text-on-primary-token active:scale-95   transition-all duration-200  p-3"
 					target="_blank"
 					rel="noopener noreferrer"
 					text="Visit Website"
@@ -89,7 +89,7 @@
 				class="flex basis-full items-center gap-4 justify-center lg:justify-start xl:basis-[44%] flex-wrap"
 			>
 				<Avatar background=" bg-surface-50 p-[0.35rem]">
-					<WashmenLogo />
+					<WashmenLogo className="size-12" />
 				</Avatar>
 				<caption class="basis-full lg:basis-0 text-nowrap">Facility App</caption>
 				<p class=" p-3">
@@ -104,7 +104,7 @@
 					href={links.washmen}
 					target="_blank"
 					rel="noopener noreferrer"
-					className="min-w-32 font-bold !text-white rounded-tr-lg rounded-bl-lg  bg-primary-500 hover:bg-primary-500/50 active:scale-95  transition-all duration-200 p-3"
+					className=" min-w-32 font-bold  rounded-tr-lg rounded-bl-lg bg-primary-500 hover:bg-primary-500/50 !text-on-primary-token active:scale-95   transition-all duration-200  p-3"
 					text="Visit Website"
 				/>
 			</section>
@@ -126,7 +126,7 @@
 				<Link
 					underline={false}
 					href={links.customerApp}
-					className=" min-w-32 font-bold !text-white rounded-tr-lg rounded-bl-lg  bg-primary-500 hover:bg-primary-500/50 active:scale-95  transition-all duration-200 p-3"
+					className=" min-w-32 font-bold  rounded-tr-lg rounded-bl-lg bg-primary-500 hover:bg-primary-500/50 !text-on-primary-token active:scale-95   transition-all duration-200  p-3"
 					text="Get app"
 					target="_blank"
 					rel="noopener noreferrer"
@@ -141,7 +141,7 @@
 				class="flex basis-full justify-center lg:justify-start items-center gap-4 xl:basis-[44%] flex-wrap"
 			>
 				<Avatar background=" bg-surface-50 p-[0.35rem]">
-					<WardsLogo className="fill-secondary-700" />
+					<WardsLogo className="fill-secondary-700 size-12" />
 				</Avatar>
 				<br />
 				<caption class="basis-full lg:basis-0 text-nowrap">System Monitoring</caption>
@@ -155,7 +155,7 @@
 				<Link
 					underline={false}
 					href={links.wardsDemo}
-					className=" min-w-32 font-bold !text-white rounded-tr-lg rounded-bl-lg bg-primary-500 hover:bg-primary-500/50 active:scale-95  transition-all duration-200 p-3"
+					className=" min-w-32 font-bold  rounded-tr-lg rounded-bl-lg bg-primary-500 hover:bg-primary-500/50 !text-on-primary-token active:scale-95   transition-all duration-200  p-3"
 					text="Visit Website"
 					target="_blank"
 					rel="noopener noreferrer"

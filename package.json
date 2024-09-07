@@ -36,6 +36,7 @@
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.43.0",
 		"globals": "^15.9.0",
+		"netlify-cli": "^17.35.0",
 		"postcss": "^8.4.41",
 		"postcss-import": "^16.1.0",
 		"prettier": "^3.3.3",
