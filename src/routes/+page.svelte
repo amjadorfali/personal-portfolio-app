@@ -50,7 +50,7 @@
 			<Link
 				target="_blank"
 				text="↓ Resume"
-				href="https://drive.google.com/file/d/1PTx72sU0U6gKpRv33ORKwhFPR0kaPEx7/view?usp=share_link"
+				href="https://drive.google.com/file/d/1J_anqRRFtht2mpxyswwBlZBLXtmSKGhY/view?usp=sharing"
 				className="w-fit self-center lg:self-start  "
 			/>
 		</section>
