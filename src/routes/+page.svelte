@@ -36,15 +36,9 @@
 			<h2 class="h2 uppercase card-header">About</h2>
 
 			<p>
-				Hi, I’m Amjad 👋
-				<br /><br /> Welcome to my portfolio! I’ve spent my career crafting robust, user-friendly
-				software with a keen focus on quality and performance. My journey began with a fascination
-				for computers and video games, which ignited my passion for coding.
-				<br /><br />
-				Over the years, this passion has evolved into a deep expertise in web development and a broad
-				exploration of software engineering. I’m dedicated to solving real-world problems and delivering
-				effective solutions from concept to execution. Let’s build something amazing together!
-				<br /><br /> Oh and I use Vim btw.
+				Hi, I’m Amjad 👋 I spend my days crafting software with a focus on quality and performance.
+				I approach every problem as a new challenge and am always eager to learn. Oh, and I use Vim,
+				by the way.
 			</p>
 
 			<Link
@@ -62,6 +56,10 @@
 		<h3 class="h3 py-4">[Washmen]</h3>
 
 		<div class="flex flex-col xl:flex-row xl:flex-wrap gap-20">
+			<caption>
+				Washmen is a digital laundry service that offers a convenient and efficient way to handle
+				laundry and dry cleaning.
+			</caption>
 			<section
 				class="flex basis-full justify-center lg:justify-start items-center gap-4 xl:basis-[44%] flex-wrap"
 			>
@@ -70,12 +68,12 @@
 				</Avatar>
 				<caption class=" basis-full lg:basis-0 text-nowrap">Facility System</caption>
 				<p class=" p-3">
-					I led a complete overhaul of our services and client applications, tackling performance
-					bottlenecks and integrating modern methodologies and technologies. The revamped Facility
-					System is now a scalable, high-performance platform, optimized for speed and ease of
-					development. By adopting Monorepos, trunk-based development, optimized CI/CD, and
-					automated testing, we achieved a streamlined and efficient workflow, emphasizing
-					simplicity and automation throughout our workflows.
+					I led our internal business tools team to revamp our Facility System, a critical platform
+					for managing our operations. The revamped project featured state-of-the-art technologies
+					and methodologies and was carefully planned and designed with cross-team collaboration,
+					involving over 20 people across various roles in tech, design, and product expertise. This
+					revamp led to a 5x increase in business operations performance and a 3x improvement in
+					software development speed.
 				</p>
 				<Link
 					underline={false}
@@ -97,11 +95,10 @@
 				</Avatar>
 				<caption class="basis-full lg:basis-0 text-nowrap">Facility App</caption>
 				<p class=" p-3">
-					As the lead developer for a team of five, I spearheaded the creation and maintenance of
-					our Facility App, a critical internal tool for managing and tracking laundry operations.
-					This comprehensive web app empowers our team to efficiently handle orders, monitor
-					inventory, and oversee customer requests in real-time. Its implementation has
-					significantly streamlined our processes and enhanced overall operational efficiency.
+					Working within the internal business tools team, I was responsible for developing and
+					maintaining our Facility App, a critical internal tool for managing and tracking laundry
+					operations. I led the development of new features, enhancements, and bug fixes, ensuring
+					the app was consistently up-to-date and running smoothly.
 				</p>
 				<Link
 					underline={false}
@@ -121,11 +118,10 @@
 
 				<caption class=" basis-full lg:basis-0 text-nowrap">Customer App</caption>
 				<p class=" p-3">
-					Sick of local laundromat incompetence, in 2015 we launched Washmen, a digital laundry &
-					dry cleaning service to put an end to laundry-related misery. Since then, our mission has
-					been to replace the machines you have at home using state-of-the-art technology and user
-					friendly app. We're an award-winning pioneer in our industry, well recognized for our
-					quality, consistency and convenience.
+					I contributed to the development of the Washmen Customer App, a user-friendly mobile app.
+					I handled cross-team collaboration, ensuring our business flow was implemented correctly
+					and efficiently. I also worked on PWAs and other web technologies to improve the user
+					experience.
 				</p>
 				<Link
 					underline={false}
@@ -141,6 +137,10 @@
 		<!-- Facility v2 -->
 		<h3 class="h3 py-4">[Wards]</h3>
 		<div class="flex flex-col xl:flex-row xl:flex-wrap gap-20">
+			<caption
+				>Wards is an advanced Remote Monitoring and Management (RMM) tool designed specifically for
+				health checks.
+			</caption>
 			<section
 				class="flex basis-full justify-center lg:justify-start items-center gap-4 xl:basis-[44%] flex-wrap"
 			>
@@ -150,17 +150,15 @@
 				<br />
 				<caption class="basis-full lg:basis-0 text-nowrap">System Monitoring</caption>
 				<p class=" p-3">
-					Wards is an advanced Remote Monitoring and Management (RMM) tool designed specifically for
-					health checks. It provides comprehensive monitoring, real-time alerts, and detailed
-					reports on system health, ensuring your IT infrastructure remains in optimal condition.
-					With Wards, you can efficiently manage and maintain the performance and reliability of
-					your systems through proactive health checks and actionable insights.
+					I built Wards from scratch with the help of my friend. I contributed to all parts of the
+					project, including code, design, and product management. The project is available on
+					GitHub and it's a proof of concept only.
 				</p>
 				<Link
 					underline={false}
 					href={links.wardsDemo}
-					className=" min-w-32 font-bold  rounded-tr-lg rounded-bl-lg bg-primary-500 hover:bg-primary-500/50 !text-on-primary-token active:scale-95   transition-all duration-200  p-3"
-					text="Visit Website"
+					className=" min-w-30 font-bold  rounded-tr-lg rounded-bl-lg bg-primary-500 hover:bg-primary-500/50 !text-on-primary-token active:scale-95   transition-all duration-200  p-3"
+					text="View Demo"
 					target="_blank"
 					rel="noopener noreferrer"
 				/>
