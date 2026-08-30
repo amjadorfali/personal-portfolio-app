@@ -38,7 +38,7 @@
 	<title>Amjad Orfali — Senior Full-Stack / Platform Engineer</title>
 	<meta
 		name="description"
-		content="Amjad Orfali — Senior Full-Stack / Platform Engineer. 6+ years building and operating production platforms: React/TypeScript frontends, Node.js backends, AWS serverless. Based in Beirut, open to relocation and remote."
+		content="Amjad Orfali — Senior Full-Stack / Platform Engineer. 6+ years building and operating production platforms: React/TypeScript frontends, Node.js backends, AWS serverless. Based in Beirut, open to relocation and remote. Get in touch by email."
 	/>
 </svelte:head>
 
@@ -49,9 +49,17 @@
 		<p class="h3 text-primary-400">Senior Full-Stack / Platform Engineer</p>
 		<p class="text-lg max-w-2xl">
 			6+ years building and operating production platforms — React/TypeScript frontends, Node.js
-			backends, AWS serverless infrastructure. Based in Beirut; open to relocation and remote
-			work.
+			backends, AWS serverless infrastructure. Based in Beirut; open to relocation and remote work.
 		</p>
+
+		<a
+			href={links.email}
+			class="w-fit text-xl font-bold !text-on-primary-token rounded-tr-2xl rounded-bl-2xl bg-primary-500 hover:bg-primary-500/50 transition-colors duration-200 px-8 py-4"
+			aria-label="Send email"
+		>
+			Email me
+		</a>
+
 		<nav class="flex flex-wrap gap-6 pt-2">
 			<a
 				href="/Amjad-Orfali-Resume.pdf"
@@ -85,7 +93,9 @@
 		<h2 class="h2 uppercase">Experience</h2>
 		<div class="flex flex-col gap-2">
 			<h3 class="h4">Washmen — Senior Full-Stack Engineer</h3>
-			<p class="opacity-75">6 years. Facility operations platform, customer app, and internal tooling.</p>
+			<p class="opacity-75">
+				6 years. Facility operations platform, customer app, and internal tooling.
+			</p>
 		</div>
 		<ul class="list-disc list-outside pl-6 flex flex-col gap-3 marker:text-primary-400">
 			{#each experience as item}

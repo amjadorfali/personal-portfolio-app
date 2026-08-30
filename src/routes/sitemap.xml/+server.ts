@@ -12,7 +12,7 @@ export async function GET() {
       >
         <url>
             <loc>https://www.amjadorfali.com/</loc>
-            <lastmod>2024-09-07</lastmod>
+            <lastmod>2026-08-30</lastmod>
         </url>
 
      
