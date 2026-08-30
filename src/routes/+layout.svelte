@@ -46,20 +46,16 @@
 		class="flex justify-center w-full px-4 py-2 variant-glass-surface"
 	>
 		<div class="flex justify-between w-full xl:max-w-[75rem]">
-			<a
-				href={keyedRoutes.home.url}
-				aria-label="Home"
-				class=" logo-wrapper gap-5 transition-all duration-150 hover:shadow-lg active:shadow-lg hover:-skew-y-3 active:-skew-y-3 hover:skew-x-3 active:skew-x-3 p-[0.3rem]"
-			>
-				<Avatar src={FavIcon} alt="" width="w-12" class="prevent-select " />
+			<a href={keyedRoutes.home.url} aria-label="Home" class="logo-wrapper">
+				<Avatar src={FavIcon} alt="" width="w-12" class="prevent-select" />
 			</a>
 
-			<Link
-				underline={false}
+			<a
 				href={links.email}
-				className="font-bold !text-on-primary-token rounded-tr-lg rounded-bl-lg active:scale-95 bg-primary-500 hover:bg-primary-500/50 transition-all duration-200 p-3"
-				text="Let's chat"
-			/>
+				class="font-bold !text-on-primary-token rounded-tr-lg rounded-bl-lg bg-primary-500 hover:bg-primary-500/50 transition-colors duration-200 p-3"
+			>
+				Email
+			</a>
 		</div>
 	</header>
 
